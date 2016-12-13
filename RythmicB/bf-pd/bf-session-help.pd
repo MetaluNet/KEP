@@ -1,0 +1,9 @@
+#N canvas 0 22 450 300 10;
+#X obj 25 104 bf-session mySession 127.0.0.1;
+#X text 21 254 Part of bf-pd \, implementation of the BOEUF framework
+by Luke Dahl and Florent Berthaut. More details on boeuf.hitmuri.net
+;
+#X text 22 172 outlet: All messages exchanged within the session;
+#X text 25 76 arguments: session_name network_broadcast_adress;
+#X text 25 36 bf-session connects all bf-instruments of the opened
+patches to a network session.;

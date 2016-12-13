@@ -1,0 +1,25 @@
+#N canvas 1399 278 450 300 10;
+#X obj 112 132 t b f;
+#X obj 100 182 * 1;
+#X obj 100 225 list trim;
+#X text 83 18 projColorParam \$0 nom_bouton nom_shader_param ref ref_sup
+;
+#X text 82 34 projColorParam \$0 ref ref_sup nom_bouton nom_shader_param
+;
+#X obj 100 60 r \$1-\$4-snd;
+#X obj 113 110 route \$5;
+#X obj 100 205 list prepend \$5;
+#X obj 100 248 s proj\$2Shader;
+#X obj 113 89 r proj\$3Shader;
+#X obj 155 152 r cleanAll;
+#X obj 154 131 r proj\$2ShaderLoaded;
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 1 0 7 0;
+#X connect 2 0 8 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
+#X connect 7 0 2 0;
+#X connect 9 0 6 0;
+#X connect 10 0 1 0;
+#X connect 11 0 1 0;

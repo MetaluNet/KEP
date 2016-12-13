@@ -1,0 +1,51 @@
+THi 0.181818 0;
+TLow 0.181818 0;
+Thresh 0.20202 0;
+Hmin 0.181818 0;
+Lmin 0.161616 0;
+Seuil 0.0808081 0;
+sample-4-file /home/al1/Dropbox/KEP/Demo/08condense003.wav 16 _ _ _
+_ _ _ _ _ _ _ _ _ _ _ _ _;
+sample-3-file /home/al1/Dropbox/KEP/Demo/07Rm1x01.wav 16 _ _ _ _ _
+_ _ _ _ _ _ _ _ _ _ _;
+sample-2-file /home/al1/Dropbox/KEP/Demo/06Kelzmer_clarinette001.wav
+16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
+sample-1-file /home/al1/Dropbox/KEP/Demo/05MS_CtBass001.wav 16 _ _
+_ _ _ _ _ _ _ _ _ _ _ _ _ _;
+Volume 1 0;
+Volume 1 0;
+Dur 0.59596 0;
+PosRnd 0.114848 0;
+-PosRnd- 0.393939 0;
+Pos 1 0;
+DensityRnd 0.345758 0;
+Density 0.494949 0;
+-tog1- 0 0;
+on 0 0;
+SpeedRnd 0.48899 0;
+Speed 0.171717 0;
+-toglR- 0 0;
+toglR 0 0;
+-togl4- 0 0;
+togl4 0 0;
+-togl3- 0 0;
+togl3 0 0;
+-togl2- 0 0;
+togl2 0 0;
+-togR- 0 0;
+togR 0 0;
+-tog4- 0 0;
+tog4 0 0;
+-tog3- 0 0;
+tog3 0 0;
+-tog2- 0 0;
+tog2 0 0;
+-togl1- 1 0;
+togl1 0 0;
+FX-patternMAX 2 0;
+FX orfilter1 mode 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX orfilter1 db -0.00505051 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX orfilter1 q 0.1 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX orfilter1 f 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX del1_time 0.68685 16 0.68685 1 0.496063 0 0 0 0 0 0 0 0 0 0 0 0
+0;

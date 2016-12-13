@@ -1,0 +1,61 @@
+#N canvas 8 23 641 736 10;
+#X obj 9 125 bf-session mySession 127.0.0.1;
+#X text 239 121 1 Add a bf-session object to your instrument patch
+with the session name and broadcast adress of the network;
+#X text 6 698 Part of bf-pd \, implementation of the BOEUF framework
+by Luke Dahl and Florent Berthaut. More details on boeuf.hitmuri.net
+;
+#X obj 9 172 bf-instrument myInstru;
+#X obj 9 305 bf-parameter myInstru param 1 cont;
+#X obj 9 495 bf-output myInstru out 8 bool;
+#X text 238 168 2 Add a bf-instrument object with your instrument name
+\, and connect your sound output to it to enable the default activity
+meter. This will also open a second window with a list of other instruments
+in the session. Click refresh others to refresh their parameters/outputs/meters
+;
+#X msg 190 279 0;
+#X msg 39 466 0 1;
+#X msg 9 466 0 0;
+#X obj 9 386 unpack f f;
+#X floatatom 181 391 5 0 0 0 - - -, f 5;
+#X floatatom 9 409 5 0 0 0 - - -, f 5;
+#X floatatom 65 410 5 0 0 0 - - -, f 5;
+#X msg 39 281 0 0.5;
+#X msg 9 281 0 0;
+#X text 239 274 3 Add a bf-parameter for each parameter that you want
+others to have access to.;
+#X text 241 351 Left inlet/outlet takes and outputs list of [value_index
+value]. Right inlet/outlet takes value_index and outputs the corresponding
+value.;
+#X text 9 14 bf-pd is an implementation of the BOEUF OrchEstra Unification
+framework for PureData. This framework allows one to connect their
+Digital Musical Instrument to a session with other instruments and
+access advanced collaboration possibilities. Go to boeuf.hitmuri.net
+for more details. This patch explains how to use bf-pd. Individual
+help files are also available for each component.;
+#X obj 10 578 bf-ask myInstru;
+#X obj 10 629 bf-watch myInstru;
+#X text 241 570 5 Select ask channels for parameters in the others
+window. Send index-values pairs to the corresponding inlet (or add
+channel number and send to the rightmost inlet).;
+#X text 240 621 6 Select watch channels for outputs in the others window.
+You will receive index-values pairs in the corresponding outlet \,
+or pairs with the channel index in the rightmost outlet.;
+#X text 242 398 Controls: value set the parameter values. asked shows
+values asked by other musicians. permission controls automatically
+setting parameter values from asked values;
+#X text 240 304 Arguments are the instrument name \, parameter name
+\, number of values and type of values: cont (float between 0 and 1)
+bang \, bool \, midi (int between 0 and 127).;
+#X text 241 492 4 Add bf-outputs for midi/bangs/controls that you want
+others to be able to use. Arguments are the same than for parameters.
+Left inlet takes lists with [value_index value];
+#X connect 4 0 10 0;
+#X connect 4 1 11 0;
+#X connect 7 0 4 1;
+#X connect 8 0 5 0;
+#X connect 9 0 5 0;
+#X connect 10 0 12 0;
+#X connect 10 1 13 0;
+#X connect 14 0 4 0;
+#X connect 15 0 4 0;

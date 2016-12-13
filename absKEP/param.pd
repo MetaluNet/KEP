@@ -1,0 +1,3 @@
+#N canvas 165 1353 399 189 10;
+#X text 124 25 param \$1 groupe nom;
+#X obj 124 53 apf \$1-\$2 \$3 \$1-\$3;

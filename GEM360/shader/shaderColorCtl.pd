@@ -1,0 +1,113 @@
+#N canvas 1 82 1278 693 10;
+#X obj 319 238 hsl 150 15 -1 1 0 0 \$0-shadContrast-snd \$0-shadContrast-rcv
+contrast 10 8 0 12 -260097 -1 -1 7450 1;
+#X obj 319 219 hsl 150 15 -1 1 0 0 \$0-shadLum-snd \$0-shadLum-rcv
+luminosite 10 8 0 12 -257985 -1 -1 7450 1;
+#X obj 305 197 tgl 15 0 \$0-contrastOn-snd \$0-contrastOn-rcv on/off
+17 7 0 10 -262144 -1 -1 1 1;
+#X obj 319 258 hsl 150 15 -1 1 0 0 \$0-shadSaturation-snd \$0-shadSaturation-rcv
+saturation 10 8 0 12 -4034 -1 -1 11450 1;
+#X obj 440 405 *;
+#X obj 466 403 *;
+#X obj 452 374 t f f f f f;
+#X obj 491 401 *;
+#X obj 516 401 *;
+#X obj 441 196 bng 15 250 50 0 empty empty reset 17 7 0 10 -4032 -1
+-1;
+#X msg 532 196 0;
+#X obj 441 427 + 1;
+#X obj 319 283 hsl 150 15 0 1 0 0 \$0-shadAlpha-snd \$0-shadAlpha-rcv
+alphaGeneral 10 8 0 12 -262144 -1 -1 0 1;
+#X obj 452 349 * 1.5;
+#X obj -87 107 apf \$0 lum \$0-shadLum;
+#X obj -87 128 apf \$0 contrast \$0-shadContrast;
+#X obj -87 148 apf \$0 sat \$0-shadSaturation;
+#X obj -90 297 apf \$0 alpha \$0-shadAlpha;
+#X obj 301 119 cnv 15 187 70 empty empty empty 20 12 0 14 -13330 -66577
+0;
+#X obj 371 124 vsl 15 60 0 2 0 0 \$0-teinteR-snd \$0-teinteR-rcv empty
+0 -9 0 10 -258113 -1 -1 2950 1;
+#X obj 388 124 vsl 15 60 0 2 0 0 \$0-teinteG-snd \$0-teinteG-rcv empty
+0 -9 0 10 -4034 -1 -1 2950 1;
+#X obj 406 124 vsl 15 60 0 2 0 0 \$0-teinteB-snd \$0-teinteB-rcv empty
+0 -9 0 10 -4160 -1 -1 2950 1;
+#X obj 306 129 tgl 15 0 \$0-teinteOn-snd \$0-teinteOn-rcv on/off 17
+7 0 10 -262144 -1 -262144 1 1;
+#X obj 442 152 bng 15 250 50 0 empty empty reset 17 7 0 10 -204800
+-1 -262144;
+#X msg 391 58 1;
+#X obj -89 204 api \$0 teinteOn \$0-teinteOn;
+#X obj -87 86 api \$0 contrastOn \$0-contrastOn;
+#X obj -89 226 apf \$0 teinteR \$0-teinteR;
+#X obj -89 247 apf \$0 teinteG \$0-teinteG;
+#X obj -89 269 apf \$0 teinteB \$0-teinteB;
+#X obj 430 26 loadbang;
+#X msg 197 232 1;
+#X obj 452 321 r \$0-shadContrast-snd;
+#X obj 209 136 init 1;
+#X msg 595 200 1;
+#X obj -87 47 apsubmaster \$0 proj color\$1;
+#X obj -92 331 projColorParam \$0 \$1 \$2 shadAlpha alpha;
+#X obj -96 459 projColorParam \$0 \$1 \$2 teinteOn teinteOn;
+#X obj -94 423 projColorParam \$0 \$1 \$2 shadLum B;
+#X obj -94 357 projColorParam \$0 \$1 \$2 contrastOn contrastOn;
+#X obj -94 380 projColorParam \$0 \$1 \$2 shadContrast_mod C;
+#X obj 440 449 s \$0-shadContrast_mod-snd;
+#X obj 252 408 *;
+#X obj 277 407 *;
+#X obj 263 378 t f f f f f;
+#X obj 303 409 *;
+#X obj 254 432 + 1;
+#X obj 327 410 *;
+#X obj 263 356 * 3;
+#X obj 264 331 r \$0-shadSaturation-snd;
+#X obj 254 453 s \$0-shadSaturation_mod-snd;
+#X obj -94 481 projColorParam \$0 \$1 \$2 teinteR teinteR;
+#X obj -93 503 projColorParam \$0 \$1 \$2 teinteG teinteG;
+#X obj -93 519 projColorParam \$0 \$1 \$2 teinteB teinteB;
+#X obj -94 403 projColorParam \$0 \$1 \$2 shadSaturation_mod S;
+#X floatatom 256 495 5 0 0 0 - - -;
+#X obj 617 293 r projColorSat-ALL;
+#X obj 617 315 s \$0-shadSaturation-rcv;
+#X connect 4 0 11 0;
+#X connect 5 0 4 1;
+#X connect 6 0 4 0;
+#X connect 6 1 5 0;
+#X connect 6 2 7 0;
+#X connect 6 3 8 0;
+#X connect 6 4 8 1;
+#X connect 7 0 5 1;
+#X connect 8 0 7 1;
+#X connect 9 0 10 0;
+#X connect 10 0 1 0;
+#X connect 10 0 0 0;
+#X connect 10 0 3 0;
+#X connect 11 0 41 0;
+#X connect 13 0 6 0;
+#X connect 23 0 24 0;
+#X connect 24 0 21 0;
+#X connect 24 0 20 0;
+#X connect 24 0 19 0;
+#X connect 30 0 24 0;
+#X connect 30 0 9 0;
+#X connect 31 0 22 0;
+#X connect 31 0 2 0;
+#X connect 32 0 13 0;
+#X connect 33 0 22 0;
+#X connect 33 0 2 0;
+#X connect 34 0 3 0;
+#X connect 42 0 46 0;
+#X connect 43 0 42 1;
+#X connect 44 0 42 0;
+#X connect 44 1 43 0;
+#X connect 44 2 45 0;
+#X connect 44 3 47 0;
+#X connect 44 4 47 1;
+#X connect 45 0 43 1;
+#X connect 46 0 50 0;
+#X connect 46 0 55 0;
+#X connect 47 0 45 1;
+#X connect 48 0 44 0;
+#X connect 49 0 48 0;
+#X connect 56 0 57 0;
+#X coords 0 -1 1 1 190 200 1 300 100;

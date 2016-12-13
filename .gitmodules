@@ -1,0 +1,6 @@
+[submodule "AutoPreset"]
+	path = AutoPreset
+	url = https://github.com/MetaluNet/AutoPreset.git
+[submodule "PdTl"]
+	path = PdTl
+	url = https://github.com/MetaluNet/PdTl.git

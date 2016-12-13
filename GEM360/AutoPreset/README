@@ -1,0 +1,15 @@
+AutoPreset abstractions
+--------------------------------
+	by : Antoine Rousseau 2004-2014
+	license : GNU Gpl 
+
+You need (at least) moonlib, zexy, hcs, iemlib, maxlib, ggee.
+
+
+
+Please visit help patchs for information :
+
+AutoPreset/0autopreset_help.pd
+
+
+

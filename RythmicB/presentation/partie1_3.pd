@@ -1,0 +1,17 @@
+#N canvas 494 94 781 275 24;
+#X text 176 31 Instrument de musique numérique;
+#X obj 145 185 processus_sonores;
+#X obj 145 140 mappings;
+#X obj 145 97 dispositif_interaction;
+#X obj 428 169 retours;
+#X obj 145 228 dac~;
+#X text 449 100 <- musicien;
+#X text 503 139 |;
+#X text 503 129 ^;
+#X connect 1 0 5 0;
+#X connect 1 0 5 1;
+#X connect 1 1 4 0;
+#X connect 2 0 1 0;
+#X connect 2 1 4 0;
+#X connect 3 0 2 0;
+#X connect 3 1 4 0;

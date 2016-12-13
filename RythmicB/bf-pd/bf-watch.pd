@@ -1,0 +1,16 @@
+#N canvas 711 212 450 300 10;
+#X obj 77 66 r watched-\$1;
+#X obj 77 100 outlet;
+#X obj 117 100 outlet;
+#X obj 157 100 outlet;
+#X obj 77 83 route 1 2 3 4 5;
+#X obj 197 100 outlet;
+#X obj 237 100 outlet;
+#X obj 277 100 outlet;
+#X connect 0 0 4 0;
+#X connect 4 0 1 0;
+#X connect 4 1 2 0;
+#X connect 4 2 3 0;
+#X connect 4 3 5 0;
+#X connect 4 4 6 0;
+#X connect 4 5 7 0;

@@ -1,0 +1,16 @@
+#N canvas 0 22 450 300 10;
+#X obj 30 92 phasor~;
+#X obj 30 109 threshold~ 0.9 1 0.1 1;
+#X obj 30 75 line~;
+#X msg 30 58 \$1 10;
+#X obj 30 126 outlet;
+#X obj 30 24 inlet;
+#X obj 30 41 expr $f1/60;
+#X text 103 22 Entrée: tempo en bpm;
+#X text 101 130 Sortie: bang à chaque temps;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 2 0 0 0;
+#X connect 3 0 2 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;

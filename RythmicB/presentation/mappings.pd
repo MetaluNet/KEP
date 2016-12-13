@@ -1,0 +1,137 @@
+#N canvas 495 455 843 428 24;
+#X obj 82 447 inlet;
+#X obj 82 794 outlet;
+#X obj 526 792 outlet;
+#X text 269 2122 OpenSoundControl;
+#X text 155 2202 Protocole pour envoi de messages sur réseau;
+#X obj 79 2496 udpsend;
+#X obj 472 2362 udpreceive 7000;
+#X msg 117 2457 connect 127.0.0.1 7000;
+#X obj 472 2399 unpackOSC;
+#X obj 79 2417 packOSC;
+#X msg 79 2377 sendtyped /test f \$1;
+#X obj 82 2344 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 472 2435 routeOSC /test;
+#X obj 472 2472 unpack f;
+#X obj 475 2512 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 179 2238 /instrument1/synthe1/volume f 0.5;
+#X text 75 2297 Création/Envoi;
+#X text 466 2299 Réception/Extraction;
+#X text 232 1476 Mais instruments acoustiques :;
+#X text 284 1510 1 à plusieurs \, plusieurs à plusieurs;
+#X text 241 1299 Mappings complexes;
+#X text 227 1547 Exemple: intensité du geste = volume + timbre;
+#X text 245 1705 Paramètres pertinents;
+#X text 320 431 Routage;
+#X obj 82 521 route mouvement bouton;
+#X msg 82 728 synthe1 note \$1;
+#X obj 82 658 / 1280;
+#X obj 82 690 clip 0 1;
+#X obj 82 581 route x y;
+#X obj 282 658 clip 0 1;
+#X obj 282 626 / 720;
+#X msg 282 728 synthe1 filtre \$1;
+#X text 295 878 Traitements;
+#X obj 95 1169 disjoin;
+#X obj 88 993 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 88 1060 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 85 1019 curve 0.5;
+#X text 83 924 Changements d'échelle \, modèle physique ...;
+#X obj 227 1004 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 89 1133 Tester les externals de la bibliothèque mapping;
+#X text 31 2043 Connecter ces paramètres pertinents entre eux;
+#X text 120 192 paramètres gestuels -> paramètres sonores;
+#X text 305 131 Mappings;
+#X obj 273 1903 diff_n 5;
+#X obj 276 1859 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 276 1961 hsl 128 15 -0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 273 1874 resample 30;
+#X text 72 1820 -Paramètres pertinents du geste: vitesse \, formes
+\, ...;
+#X text 73 1991 -Paramètres pertinents du son: hauteur \, volume \,
+énergie;
+#X text 41 1774 Transformer les paramètres de base en :;
+#X obj 210 1170 diff_n;
+#X obj 308 1170 stepper;
+#X obj 10 1327 cursor;
+#X obj 10 1510 mtof;
+#X obj 81 1481 spigot;
+#X obj 150 1467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 10 1452 t f f;
+#X obj 10 1539 osc~;
+#X obj 10 1644 dac~;
+#X obj 10 1302 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 10 1360 route motion;
+#X obj 10 1615 *~ 0.5;
+#X obj 81 1539 osc~;
+#X obj 10 1567 *~;
+#X obj 10 1393 route y;
+#X obj 10 1422 expr 1-($f1/720);
+#X obj 10 1481 * 80;
+#X text 179 1374 Mappings 1 à 1 : ex. position verticale -> note;
+#X text 227 1627 -> Toujours tester des mappings complexes;
+#X text 227 1588 ++ Expressivité \, complexité;
+#X obj 282 692 t f f;
+#X msg 513 727 synthe1 filtre \$1;
+#X text 376 690 duplique la valeur en entrée;
+#X obj 81 1510 expr (1-$f1)*20;
+#X obj 273 1932 abs;
+#X text 107 488 mouvement x 1000;
+#X text 105 551 x 1000;
+#X text 90 621 1000;
+#X text 402 487 Repartit les messages sur les sorties en filtrant la
+première partie, f 27;
+#X connect 0 0 24 0;
+#X connect 6 0 8 0;
+#X connect 7 0 5 0;
+#X connect 8 0 12 0;
+#X connect 9 0 5 0;
+#X connect 10 0 9 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 0;
+#X connect 24 0 28 0;
+#X connect 25 0 1 0;
+#X connect 26 0 27 0;
+#X connect 27 0 25 0;
+#X connect 28 0 26 0;
+#X connect 28 1 30 0;
+#X connect 29 0 70 0;
+#X connect 30 0 29 0;
+#X connect 31 0 1 0;
+#X connect 34 0 36 0;
+#X connect 36 0 35 0;
+#X connect 38 0 36 1;
+#X connect 43 0 74 0;
+#X connect 44 0 46 0;
+#X connect 46 0 43 0;
+#X connect 52 0 60 0;
+#X connect 53 0 57 0;
+#X connect 54 0 73 0;
+#X connect 55 0 54 1;
+#X connect 56 0 66 0;
+#X connect 56 1 54 0;
+#X connect 57 0 63 0;
+#X connect 59 0 52 0;
+#X connect 60 0 64 0;
+#X connect 61 0 58 0;
+#X connect 61 0 58 1;
+#X connect 62 0 63 1;
+#X connect 63 0 61 0;
+#X connect 64 0 65 0;
+#X connect 65 0 56 0;
+#X connect 66 0 53 0;
+#X connect 70 0 31 0;
+#X connect 70 1 71 0;
+#X connect 71 0 1 0;
+#X connect 73 0 62 0;
+#X connect 74 0 45 0;

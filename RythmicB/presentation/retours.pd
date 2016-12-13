@@ -1,0 +1,43 @@
+#N canvas 497 435 813 417 24;
+#X obj 30 1194 inlet;
+#X text 297 839 Graph on Parent;
+#X text 309 187 Retours visuels;
+#X text 356 432 Widgets;
+#X obj 206 569 bng 50 250 50 0 empty bfp-bang empty 17 7 0 10 -262144
+-166441 -233017;
+#X obj 287 570 tgl 50 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 380 554 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 464 560 vu 15 120 empty empty -1 -8 0 10 -66577 -1 1 0;
+#X obj 463 520 pack f f;
+#X obj 466 487 hsl 128 15 -100 12 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 477 505 hsl 128 15 -100 12 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 0 1;
+#X obj 131 723 s bfp-bang;
+#X obj 134 664 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 131 689 color \$1;
+#N canvas 135 124 665 301 processus 0;
+#X obj 122 136 tgl 30 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 122 17 loadbang;
+#X obj 236 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 122 46 metro 400;
+#X text 15 195 (Clic-droit au fond du patch -> Graph on parent);
+#X text 17 230 Placer widgets dans zone entourée en rouge;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 3 0 0 0;
+#X coords 0 -1 1 1 85 70 1 100 100;
+#X restore 274 1037 pd processus;
+#X text 58 927 Informations sur l'état et les paramètres des processus
+;
+#X text 58 960 Ouvrir les abstractions et sous-patchs;
+#X connect 8 0 7 0;
+#X connect 9 0 8 0;
+#X connect 10 0 8 1;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;

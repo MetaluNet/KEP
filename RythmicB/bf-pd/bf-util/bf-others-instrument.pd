@@ -1,0 +1,11 @@
+#N canvas 34 137 568 423 10;
+#X obj 10 10 cnv 15 380 1000 empty \$1-others-canvas empty 20 12 0
+14 -253822 -66577 0;
+#X symbolatom 15 15 10 0 0 0 - - -, f 10;
+#X obj 423 79 symbol \$1;
+#X text 248 85 Parameters;
+#X obj 423 62 r refreshOthersNames;
+#X text 63 86 Outputs;
+#X connect 2 0 1 0;
+#X connect 4 0 2 0;
+#X coords 0 -1 1 1 380 1000 2 10 10;

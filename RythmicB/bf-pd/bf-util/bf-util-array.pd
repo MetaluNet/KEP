@@ -1,0 +1,27 @@
+#N canvas 57 207 546 226 10;
+#X obj 13 156 float \$3;
+#X obj 28 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 99 2 r to-\$1-gui;
+#X obj 99 63 swap;
+#X obj 99 46 unpack f f;
+#X obj 46 19 route init;
+#N canvas 187 266 450 278 (subpatch) 0;
+#X array \$0-\$1-\$2 24 float 0;
+#X coords 0 1 23 0 100 30 2 0 0;
+#X restore 100 100 graph;
+#X obj 99 80 array set \$0-\$1-\$2;
+#X obj 13 181 array size \$0-\$1-\$2;
+#X obj 206 39 print;
+#X obj 13 89 t b b;
+#X connect 0 0 8 0;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 3 0 7 0;
+#X connect 3 1 7 1;
+#X connect 4 0 3 0;
+#X connect 4 1 3 1;
+#X connect 5 0 10 0;
+#X connect 5 1 4 0;
+#X connect 10 0 0 0;
+#X coords 0 0 1 1 100 30 2 100 100;

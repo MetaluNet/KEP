@@ -1,0 +1,4 @@
+#N canvas 20 490 450 300 10;
+#X obj 91 45 inlet;
+#X obj 91 78 s to-\$1-others-\$2/parameters/\$3-gui;
+#X connect 0 0 1 0;

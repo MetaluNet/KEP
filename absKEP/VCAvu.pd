@@ -1,0 +1,32 @@
+#N canvas 2041 395 422 323 10;
+#X obj 33 33 sel 0 1;
+#X msg 33 60 color 13 13 10;
+#X msg 53 82 color 16 16 0;
+#X obj 151 101 cnv 15 18 100 empty empty empty 20 12 0 14 -4034 -66577
+0;
+#X obj 151 101 tgl 18 0 on-VCA-\$1-snd on-VCA-\$1-rcv \$1 5 10 1 16
+-24198 -24198 -262144 1 1;
+#X obj 151 121 vsl 18 77 0 1 0 0 vol-VCA-\$1-snd vol-VCA-\$1-rcv empty
+0 -9 0 10 -261682 -1 -1 7600 1;
+#X obj 33 8 r on-VCA-\$1-snd;
+#X obj 33 106 s on-VCA-\$1-rcv;
+#X obj 39 126 r vol-VCA-\$1-snd;
+#X obj 50 154 r on-VCA-\$1-snd;
+#X obj 39 229 s VCA-\$1;
+#X obj 39 206 *;
+#X obj 50 177 t b f;
+#X obj 136 8 api MASTERS on-VCA-\$1 on-VCA-\$1 2;
+#X obj 129 34 apf MASTERS vol-VCA-\$1 vol-VCA-\$1 2;
+#X text 185 99 ------mute VCA;
+#X text 182 123 ------fader volume;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 1 0 7 0;
+#X connect 2 0 7 0;
+#X connect 6 0 0 0;
+#X connect 8 0 11 0;
+#X connect 9 0 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 11 0;
+#X connect 12 1 11 1;
+#X coords 0 -1 1 1 20 102 2 150 100;

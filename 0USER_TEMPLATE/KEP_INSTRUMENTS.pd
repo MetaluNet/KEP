@@ -1,0 +1,71 @@
+#N canvas 4 75 1177 702 10;
+#X obj 3 21 cnv 15 990 666 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 360 27 Melodic/MAIN Melodic1;
+#X obj 625 26 Pingnip/MAIN Pingnip1;
+#X obj 137 27 BassR/MAIN BassR1;
+#X obj 448 27 Rhodey/MAIN Rhodey1;
+#X obj 492 27 Poly/MAIN Poly1;
+#X obj 582 26 4sample/MAIN 4sample1;
+#X obj 539 26 Voco/MAIN Voco1;
+#X obj 762 26 Disto/MAIN Disto1;
+#X obj 805 26 Flange/MAIN Flange1;
+#X obj 848 26 Reverb/MAIN Reverb1;
+#N canvas 811 504 623 364 AutoloadRegie 0;
+#X obj 90 92 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 148 44 t b;
+#X obj 158 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 161 6 r KEPcontrol-pattern-snd;
+#X obj 199 43 r KEPcontrol-apmaster-snd;
+#X obj 201 66 route loaded;
+#X obj 166 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 170 160 AutoloadNoChange Rythmic 4 Kick;
+#X obj 143 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 122 189 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 100 214 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 90 119 del 10;
+#X obj 89 52 loadbang;
+#X obj 41 19 r reloadRegie;
+#X obj 146 195 AutoloadNoChange Rythmic 5 Snare;
+#X obj 125 224 AutoloadNoChange Rythmic 6 Hi-hat;
+#X obj 73 293 AutoloadNoChange Disto 1 BASE;
+#X obj 62 312 AutoloadNoChange Reverb 1 BASE;
+#X obj 53 331 AutoloadNoChange Voco 1 BASE;
+#X obj 84 251 AutoloadNoChange BassR 2 BASE;
+#X connect 0 0 11 0;
+#X connect 1 0 2 0;
+#X connect 1 0 11 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 8 0 14 0;
+#X connect 9 0 15 0;
+#X connect 10 0 19 0;
+#X connect 11 0 7 0;
+#X connect 11 0 14 0;
+#X connect 11 0 15 0;
+#X connect 11 0 16 0;
+#X connect 11 0 17 0;
+#X connect 11 0 18 0;
+#X connect 11 0 19 0;
+#X connect 13 0 0 0;
+#X restore 1040 612 pd AutoloadRegie;
+#X obj 1038 325 l VidCtl/MAIN VidCtl1;
+#X obj 1038 347 l VidCtl/MAIN VidCtl1;
+#X obj 1035 401 l VidCtl/MAIN VidCtl1;
+#X obj 404 27 Paf/MAIN Paf1;
+#X obj 184 27 Dec/MAIN Dec1;
+#X obj 8 27 Rythmic/MAIN Rythmic1;
+#X obj 51 27 Rythmic/MAIN Rythmic2;
+#X obj 94 27 Rythmic/MAIN Rythmic3;
+#X obj 672 26 Input/MAIN Input1;
+#X obj 227 27 Stre/MAIN Stre1;
+#X obj 313 27 Stre/MAIN Stre2;
+#X obj 270 27 Dec/MAIN Dec2;
+#X obj 943 24 Aubio/MAIN Aubio1;
+#X obj 715 26 Input/MAIN Input2;

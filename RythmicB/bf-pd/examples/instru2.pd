@@ -1,0 +1,76 @@
+#N canvas 887 104 653 416 10;
+#X declare -path ..;
+#X declare -stdpath mrpeach;
+#X declare -stdpath mrpeach/net;
+#X declare -stdpath osc;
+#X declare -stdpath cxc;
+#X declare -stdpath mapping;
+#X text 6 370 Part of bf-pd \, implementation of the BOEUF framework
+by Luke Dahl and Florent Berthaut. More details on boeuf.hitmuri.net
+;
+#X obj 51 216 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 68 177 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 22 300 dac~;
+#X obj 40 248 vline~;
+#X obj 86 248 osc~ 440;
+#X obj 40 265 *~;
+#X msg 40 231 1 10 \, 0 50 10;
+#X text 44 108 Change the route of the onsets output in the others
+window to retrieve bangs on different channels;
+#X obj 134 209 vline~;
+#X obj 134 265 *~;
+#X obj 184 209 phasor~ 110;
+#X msg 68 192 1 10 \, 0 100 10;
+#X obj 22 282 *~ 0.2;
+#X obj 296 267 unpack f f;
+#X obj 296 301 mtof;
+#X msg 296 318 \$1 10;
+#X obj 286 335 line~;
+#X obj 296 284 expr $f1*60+30;
+#X text 233 29 This second instrument only has one synthesizer and
+uses onsets from other instruments;
+#X obj 260 192 /~ 2;
+#X obj 217 231 *~ 2;
+#X obj 312 164 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 138 163 print watchedFromSecond;
+#X obj 51 138 bf-watch instru2;
+#X obj 312 147 bf-watch-single instru2 instru1 onsets;
+#X obj 296 192 bf-parameter instru2 pitch 1 cont;
+#X obj 22 9 bf-instrument instru2;
+#N canvas 3 63 450 300 declares 0;
+#X obj 29 21 declare -path ..;
+#X obj 29 51 declare -stdpath mrpeach;
+#X obj 28 77 declare -stdpath mrpeach/net;
+#X obj 28 107 declare -stdpath osc;
+#X obj 28 137 declare -stdpath cxc;
+#X obj 30 166 declare -stdpath mapping;
+#X restore 182 8 pd declares;
+#X connect 1 0 7 0;
+#X connect 2 0 12 0;
+#X connect 4 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 13 0;
+#X connect 7 0 4 0;
+#X connect 9 0 10 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 1;
+#X connect 12 0 9 0;
+#X connect 13 0 3 0;
+#X connect 13 0 3 1;
+#X connect 13 0 27 0;
+#X connect 14 1 18 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 20 0;
+#X connect 17 0 21 0;
+#X connect 18 0 15 0;
+#X connect 20 0 11 0;
+#X connect 21 0 5 0;
+#X connect 24 0 1 0;
+#X connect 24 1 2 0;
+#X connect 24 5 23 0;
+#X connect 25 0 22 0;
+#X connect 26 0 14 0;

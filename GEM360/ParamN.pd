@@ -1,0 +1,15 @@
+#N canvas 1 117 450 300 10;
+#X obj 290 172 loadbang;
+#X obj 287 199 list \$3 \$4;
+#X msg 287 219 range \$1 \$2;
+#X obj 287 242 s \$1-\$2-rcv;
+#X obj 345 173 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 106 117 nbx 5 20 0 90 0 0 \$1-\$2-snd \$1-\$2-rcv \$2 70 10
+0 12 -262144 -1 -1 0 256;
+#X obj 148 45 api \$1 \$2 \$1-\$2;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 4 0 1 0;
+#X coords 0 -1 1 1 160 40 1 100 100;

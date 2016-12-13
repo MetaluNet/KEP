@@ -1,0 +1,43 @@
+#N canvas 868 124 588 419 10;
+#X declare -path ..;
+#X declare -stdpath mrpeach;
+#X declare -stdpath mrpeach/net;
+#X declare -stdpath osc;
+#X declare -stdpath cxc;
+#X declare -stdpath mapping;
+#X text 6 370 Part of bf-pd \, implementation of the BOEUF framework
+by Luke Dahl and Florent Berthaut. More details on boeuf.hitmuri.net
+;
+#X msg 19 249 0 \$1;
+#X obj 22 234 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 22 164 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 19 179 0 \$1;
+#X msg 19 309 0 \$1;
+#X obj 22 294 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X text 216 54 This third instrument does not generate any sound \,
+it only controls other instruments parameters.;
+#X text 220 288 bf-ask single sends ask value to a specific instrument
+and parameter given as argument;
+#X text 215 162 bf-ask sends values to asked channels. In the others
+window \, input channel can be selected for each parameter;
+#X obj 18 40 bf-instrument instru3;
+#X obj 19 196 bf-ask instru3;
+#X obj 19 266 bf-ask-single instru3 instru1 tempo;
+#X obj 19 326 bf-ask-single instru3 instru2 pitch;
+#N canvas 3 63 450 300 declares 0;
+#X obj 29 21 declare -path ..;
+#X obj 29 51 declare -stdpath mrpeach;
+#X obj 28 77 declare -stdpath mrpeach/net;
+#X obj 28 107 declare -stdpath osc;
+#X obj 28 137 declare -stdpath cxc;
+#X obj 30 166 declare -stdpath mapping;
+#X restore 216 15 pd declares;
+#X connect 1 0 12 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 11 0;
+#X connect 5 0 13 0;
+#X connect 6 0 5 0;

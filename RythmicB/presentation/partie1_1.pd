@@ -1,0 +1,11 @@
+#N canvas 497 94 857 281 24;
+#X text 39 286 Téléchargez l'archive contenant les fichiers de l'atelier
+depuis boeuf.hitmuri.net/atelier.zip;
+#X text 61 105 Téléchargez PureData pour votre système d'exploitation
+depuis puredata.info et installez le.;
+#X text 12 843 fin;
+#X text 48 464 Dezippez l'archive et placez le dossier atelier dans
+un dossier de votre choix.;
+#X text 48 674 Lancez PureData.;
+#X text 48 714 (File->Open) atelier/presentation/partie1_instrument.pd
+;

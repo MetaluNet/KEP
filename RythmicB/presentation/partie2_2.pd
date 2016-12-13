@@ -1,0 +1,19 @@
+#N canvas 170 99 787 346 24;
+#X text 332 24 BOEUF;
+#X text 139 97 BOEUF OrchEstra Unification Framework;
+#X text 110 146 Classification des modes de collaboration;
+#X text 346 176 +;
+#X text 76 210 Ensemble de composants pour permettre ces modes;
+#X text 11 985 fin;
+#X text 140 691 bf-pd : implémentation pour PureData;
+#X text 210 355 Modes de collaboration;
+#X text 38 273 -> Faciliter collaboration dans orchestres numériques
+;
+#X text 52 452 Interactions entre musiciens au sein d'un orchestre
+;
+#X text 3 555 Trois catégories: Coopération \, Communication \, Organisation
+;
+#X text 47 840 Permettent d'accéder aux modes de collaboration;
+#X text 75 505 Englobent orchestres acoustiques et numériques;
+#X text 20 794 Ensemble de composants à ajouter à son instrument/patch
+;

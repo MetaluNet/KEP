@@ -1,0 +1,31 @@
+#N canvas 2219 354 422 323 10;
+#X obj 152 101 cnv 15 18 100 empty empty \$3 5 10 1 14 -4034 -66577
+0;
+#X obj 151 121 vsl 18 77 0 1 0 0 midi-VCA-\$1-snd midi-VCA-\$1-rcv
+empty 0 -9 0 10 -261682 -1 -1 0 1;
+#X obj 15 37 ctlin \$1 \$2;
+#X floatatom 26 103 5 0 0 0 - - -, f 5;
+#X text 9 169 arg1:ctl \; arg2:channel \; arg3:nVCA;
+#X obj 206 239 s vol-VCA-\$3-rcv;
+#X obj 15 65 / 127;
+#X obj 151 101 tgl 18 0 on-midi-VCA-\$3-snd on-midi-VCA-\$3-rcv \$3
+5 10 1 14 -258699 -258699 -233017 0 1;
+#X obj 151 208 spigot;
+#X obj 257 107 sel 0 1;
+#X msg 257 134 color 13 13 10;
+#X msg 277 156 color 16 16 0;
+#X obj 257 82 r on-midi-VCA-\$3-snd;
+#X obj 257 180 s on-midi-VCA-\$3-rcv;
+#X obj 88 11 api MASTERS on-midi-VCA-\$3 on-midi-VCA-\$3 2;
+#X connect 1 0 8 0;
+#X connect 2 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 0 1 0;
+#X connect 7 0 8 1;
+#X connect 8 0 5 0;
+#X connect 9 0 10 0;
+#X connect 9 1 11 0;
+#X connect 10 0 13 0;
+#X connect 11 0 13 0;
+#X connect 12 0 9 0;
+#X coords 0 -1 1 1 20 102 2 150 100;

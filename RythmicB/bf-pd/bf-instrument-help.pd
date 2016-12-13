@@ -1,0 +1,11 @@
+#N canvas 0 22 450 300 10;
+#X obj 20 78 bf-instrument myInstru;
+#X text 21 254 Part of bf-pd \, implementation of the BOEUF framework
+by Luke Dahl and Florent Berthaut. More details on boeuf.hitmuri.net
+;
+#X text 20 53 arguments: instrument_name;
+#X text 20 16 bf-instrument identifies your instrument in the sessions
+\, so that other instruments can see and interact with it;
+#X text 20 177 Each bf-instrument opens another window that shows the
+list of other instruments with their meters \, parameters and outputs.
+This list can be refreshed by clicking on the refresh bang.;

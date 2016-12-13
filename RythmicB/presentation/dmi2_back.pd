@@ -1,0 +1,43 @@
+#N canvas 495 23 748 716 16;
+#X text 19 29 PureData est un langage de programmation visuelle orienté
+multimédia. Il s'appuie sur les concepts de patchs contenant des boîtes
+reliées par des cables.;
+#X text 19 82 Commencez par créer un nouveau patch à l'aide du menu
+File->New. Vous devriez voir apparaitre une page blanche. Enregistrez
+la (File->Save) sous le nom instrument.pd;
+#X floatatom 395 204 5 0 0 0 - - -, f 5;
+#X text 19 190 Utilisez le menu Put pour ajouter deux boîtes nombre
+(number) à votre patch. PureData est maintenant passé en mode édition
+(le curseur est une main) pour interagir avec les nombres \, laissez
+la touche ctrl appuyée.;
+#X floatatom 396 250 5 0 0 0 - - -, f 5;
+#X floatatom 396 280 5 0 0 0 - - -, f 5;
+#X text 19 260 Les câbles permettent de connecter les boîtes. Tirez
+un câble entre la sortie de la première boîte et l'entrée de la
+deuxième \, puis modifiez la première.;
+#X text 19 135 Les boîtes créent ou modifient des flux de contrôle
+(texte \, nombres \, évènements) ou de flux audio. Elles ont des
+entrées et des sorties.;
+#X floatatom 396 314 5 0 0 0 - - -, f 5;
+#X floatatom 396 357 5 0 0 0 - - -, f 5;
+#X obj 396 336 + 1;
+#X text 20 314 Les objets sont un autre type de boîte qui possèdent
+un nom et un ensemble d'arguments qui vont définir leur fonction.
+Utilisez le menu Put pour ajouter un objet + avec l'argument 1 Placez-le
+entre les deux boîtes nombres et testez.;
+#X floatatom 396 434 5 0 0 0 - - -, f 5;
+#X floatatom 396 477 5 0 0 0 - - -, f 5;
+#X obj 396 456 + 1;
+#X text 20 384 Une liste des objets fournis avec PureData est disponible
+depuis le menu Help->List of objects. L'aide pour chaque objet est
+accessible via un clic droit sur l'objet. Regardez celle de l'objet
++;
+#X text 20 449 Le traitement est lancé uniquement quand une valeur
+arrive à l'entrée la plus à gauche gauche. Les valeurs résultats
+sont envoyées dans l'ordre de droite à gauche et le chemin complet
+du flux est traité à chaque fois.;
+#X connect 4 0 5 0;
+#X connect 8 0 10 0;
+#X connect 10 0 9 0;
+#X connect 12 0 14 0;
+#X connect 14 0 13 0;

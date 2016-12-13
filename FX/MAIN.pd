@@ -1,0 +1,44 @@
+#N canvas 2003 185 624 771 10;
+#X obj 1 1 cnv 15 40 570 empty empty \$1 2 5 1 8 -4032 -1 0;
+#X obj -76 149 mull~ 0 10;
+#X floatatom -64 118 5 0 0 0 - - -;
+#X obj -60 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj -65 86 init 2;
+#X text -27 -26 KEPtype nomUnique;
+#X obj 439 322 vsl 15 128 0 1 0 0 \$1-del1_time-snd \$1-del1_time-rcv
+del1_time 0 -9 0 10 -262144 -1 -1 7697 1;
+#X obj -122 4 l MASTERtypeIN \$1 1;
+#X obj -122 216 l MASTERtypeOUT\$1 1;
+#X obj 62 -5 l KEPface \$1;
+#X obj -10 622 KEPCommon \$1;
+#X obj 161 468 MORPHgroup \$1 FX;
+#X obj 7 559 bng 10 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
+;
+#X obj 24 559 bng 10 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 160 226 hsl 128 15 0 127 0 0 \$1-Volume-snd \$1-Volume-rcv volume
+-2 -8 0 10 -262144 -1 -1 41 1;
+#X obj 326 234 param \$1 FX del1_time;
+#X obj 4 100 MASTERtypeOUT \$1 1;
+#X obj 4 12 FXtypeIN \$1 1;
+#X obj 157 251 paramfixe \$1 volume;
+#X obj 58 16 KEPface \$1;
+#X obj 62 374 KEPbus \$1 Volume Volume_max b5;
+#X obj 62 352 KEPbus \$1 Feed-back Feed-back_max b4;
+#X obj 62 331 KEPbus \$1 Filtre1 Filtre2 b3;
+#X obj 62 310 KEPbus \$1 Ajust_tempo Ajust_vitesse b2;
+#X obj 62 289 KEPbus \$1 Vitesse Vitesse_max b1;
+#X obj 287 378 r \$1-Vitesse;
+#X obj 161 443 r \$1-Filtre1;
+#X floatatom 285 400 5 0 0 0 - - -;
+#X connect 1 0 16 0;
+#X connect 2 0 1 1;
+#X connect 3 0 4 0;
+#X connect 4 0 2 0;
+#X connect 12 0 10 0;
+#X connect 13 0 10 1;
+#X connect 17 0 1 0;
+#X connect 25 0 27 0;
+#X connect 26 0 11 0;
+#X coords 0 -1 1 1 42 572 2 0 0;

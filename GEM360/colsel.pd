@@ -1,0 +1,53 @@
+#N canvas 169 252 488 432 10;
+#X obj 113 122 hsl 80 15 0 1 0 0 \$1-\$2-R-snd \$1-\$2-R-rcv R -10
+7 0 10 -258113 -1 -1 4200 1;
+#X obj 113 140 hsl 80 15 0 1 0 0 \$1-\$2-V-snd \$1-\$2-V-rcv V -10
+7 0 10 -4034 -1 -1 0 1;
+#X obj 113 158 hsl 80 15 0 1 0 0 \$1-\$2-B-snd \$1-\$2-B-rcv B -10
+7 0 10 -4160 -1 -1 7900 1;
+#X obj 113 176 hsl 80 15 0 1 0 0 \$1-\$2-A-snd \$1-\$2-A-rcv A -10
+7 0 10 -262144 -1 -1 0 1;
+#X obj 67 216 r \$1-\$2-R-snd;
+#X obj 154 216 r \$1-\$2-V-snd;
+#X obj 240 216 r \$1-\$2-B-snd;
+#X obj 324 216 r \$1-\$2-A-snd;
+#X obj 67 244 outlet;
+#X obj 154 244 outlet;
+#X obj 240 244 outlet;
+#X obj 324 244 outlet;
+#X obj 96 275 r \$1-\$2-R-snd;
+#X obj 183 275 r \$1-\$2-V-snd;
+#X obj 269 275 r \$1-\$2-B-snd;
+#X obj 353 275 r \$1-\$2-A-snd;
+#X obj 96 299 t b f;
+#X obj 182 298 t b f;
+#X obj 268 299 t b f;
+#X obj 353 299 t b f;
+#X obj 96 321 del 1;
+#X obj 107 373 pack f f f f;
+#X obj 106 352 f;
+#X obj 410 405 outlet;
+#X obj 261 101 apf \$1 \$2-R \$1-\$2-R \$3;
+#X obj 261 121 apf \$1 \$2-V \$1-\$2-V \$3;
+#X obj 261 142 apf \$1 \$2-B \$1-\$2-B \$3;
+#X obj 261 162 apf \$1 \$2-A \$1-\$2-A \$3;
+#X connect 4 0 8 0;
+#X connect 5 0 9 0;
+#X connect 6 0 10 0;
+#X connect 7 0 11 0;
+#X connect 12 0 16 0;
+#X connect 13 0 17 0;
+#X connect 14 0 18 0;
+#X connect 15 0 19 0;
+#X connect 16 0 20 0;
+#X connect 16 1 22 1;
+#X connect 17 0 22 0;
+#X connect 17 1 21 1;
+#X connect 18 0 22 0;
+#X connect 18 1 21 2;
+#X connect 19 0 22 0;
+#X connect 19 1 21 3;
+#X connect 20 0 22 0;
+#X connect 21 0 23 0;
+#X connect 22 0 21 0;
+#X coords 0 -1 1 1 100 100 1 100 100;

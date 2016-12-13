@@ -1,0 +1,48 @@
+#N canvas 1331 357 269 577 10;
+#X declare -path absPlaylist;
+#X obj 13 354 declare -path absPlaylist;
+#X obj 69 -70 PLp song s;
+#X obj 23 -160 bng 40 250 50 0 PL-prev-snd PL-prev-rcv < 5 20 0 40
+-262144 -1 -1;
+#X obj 161 -160 bng 40 250 50 0 PL-next-snd PL-next-rcv > 5 20 0 40
+-262144 -1 -1;
+#X obj 66 -160 nbx 2 40 0 9 0 0 PL-numCurrent-snd PL-numCurrent-rcv
+empty 0 -8 0 40 -262144 -1 -1 0 256;
+#N canvas 189 330 450 300 guts 0;
+#X obj 84 107 apmasterfile PL;
+#X obj 85 75 apmaster PL absPlaylist/playlist.preset;
+#X obj 85 53 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
+;
+#X obj 314 52 bng 15 250 50 0 empty empty empty 17 7 0 10 -258113 -1
+-1;
+#X obj 121 200 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -4034 -1
+-1 0;
+#X obj 243 200 hradio 15 1 0 4 empty empty empty 0 -8 0 10 -258113
+-1 -1 0;
+#X msg 121 218 _all_ load \$1;
+#X msg 243 219 _all_ store \$1;
+#X obj 121 243 s PL-pattern-snd;
+#X obj 275 170 s PL-gui-current;
+#X obj 283 140 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 8 0;
+#X connect 10 0 9 0;
+#X restore 168 -100 pd guts;
+#X obj 69 -107 PLs title;
+#X obj 102 -15 PLp instru1 i;
+#X obj 101 48 PLp instru2 i;
+#X obj 100 108 PLp instru3 i;
+#X obj 100 167 PLp instru4 i;
+#X obj 99 230 PLp instru5 i;
+#X obj 98 290 PLp instru6 i;
+#X obj 15 -8 PLs player1;
+#X obj 14 55 PLs player2;
+#X obj 13 115 PLs player3;
+#X obj 13 174 PLs player4;
+#X obj 12 237 PLs player5;
+#X obj 11 297 PLs player6;

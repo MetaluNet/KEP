@@ -1,0 +1,32 @@
+#N canvas 490 114 795 349 24;
+#X obj 221 255 bf-session test 127.0.0.1;
+#X obj 56 557 bf-instrument soninstru;
+#X obj 55 427 bfw-metro;
+#X obj 55 495 bfw-bip;
+#X obj 58 412 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 150 523 dac~;
+#X obj 25 117 bf-instrument moninstru;
+#X obj 58 451 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 55 466 \$1 0.5;
+#X text 293 23 Communication;
+#X text 227 91 bf-instrument représente votre instrument;
+#X text 39 295 bf-session connecte votre instrument à l'orchestre
+;
+#X text 227 123 il a un nom \, une entrée audio;
+#X text 230 159 affiche une liste des autres instruments;
+#X text 259 444 le patch de collaboration ouvert par bf-instrument
+affiche l'activité de chaque autre instrument dans la session, f
+38;
+#X text 19 1034 fin;
+#X text 213 878 Improvisation libre 3-5mn;
+#X text 257 353 Patch de collaboration;
+#X text 171 737 Deuxième session par groupes de 3;
+#X text 161 842 Ajoutez bf-instrument et bf-session;
+#X connect 2 0 7 0;
+#X connect 3 0 1 0;
+#X connect 3 0 5 0;
+#X connect 4 0 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 3 0;

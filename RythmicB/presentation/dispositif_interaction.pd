@@ -1,0 +1,98 @@
+#N canvas 489 440 822 433 24;
+#X obj 237 2629 outlet;
+#X obj 698 2635 outlet;
+#X text 248 159 Dispositif d'interaction;
+#X text 259 437 Captation des gestes;
+#X text 336 1371 MIDI;
+#X text 57 937 Souris;
+#X text 57 1078 Clavier;
+#X obj 211 946 cursor;
+#X obj 209 1085 key;
+#X obj 211 1015 route x y;
+#X floatatom 211 1044 5 0 0 0 - - -, f 5;
+#X obj 211 931 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 273 1044 5 0 0 0 - - -, f 5;
+#X obj 211 975 route motion button;
+#X obj 341 1015 route 1 2 3;
+#X obj 341 1056 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 329 1085 keyup;
+#X msg 209 1143 1;
+#X msg 329 1143 0;
+#X obj 286 1198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 209 1114 select 32;
+#X obj 329 1114 select 32;
+#X obj 143 1548 ctlin;
+#X obj 509 1544 notein;
+#X text 96 1508 Control change;
+#X text 76 1439 Choisir entrée dans Preferences -> MIDI settings;
+#X text 507 1504 Notes;
+#X floatatom 83 1606 5 0 0 0 - - -, f 5;
+#X floatatom 158 1606 5 0 0 0 - - -, f 5;
+#X floatatom 233 1607 5 0 0 0 - - -, f 5;
+#X text 285 870 Souris/Clavier/Joystick;
+#X text 60 1230 HID: external hid \, accès à tous les dispositifs
+d'entrée;
+#X floatatom 473 1606 5 0 0 0 - - -, f 5;
+#X floatatom 548 1606 5 0 0 0 - - -, f 5;
+#X floatatom 623 1607 5 0 0 0 - - -, f 5;
+#X obj 240 2498 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 460 2628 s toSons;
+#X text 236 2259 Transmettre les données;
+#X obj 463 2457 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3200 1;
+#X msg 237 2520 mouvement \$1;
+#X obj 460 2517 symbol bouton1;
+#X obj 460 2550 pack s f;
+#X msg 460 2588 \$1 \$2;
+#X msg 287 2351 position x 0.5;
+#X text 233 2309 Construire les messages;
+#X text 225 2414 Les envoyer aux mappings;
+#X text 332 1812 Caméras;
+#X text 33 1899 Installer externals pdp (linux) \, apple (mac) \, Gem
+(32bits);
+#X text 33 1955 Détection mouvements \, changements luminosité ...
+;
+#X text 93 689 Acquisition:;
+#X text 257 690 Directe (mouvements \, forces);
+#X text 257 730 Indirecte (vidéo \, audio);
+#X text 93 549 Gestes: excitation (génération du son);
+#X text 190 583 modulation (modification du son/instrument);
+#X text 190 620 sélection (choix du composant de l'instrument);
+#X text 259 1640 Canal;
+#X text 150 1639 Contrôle;
+#X text 65 1637 Valeur;
+#X text 639 1640 Canal;
+#X text 469 1640 Note;
+#X text 530 1639 Vélocité;
+#X obj 460 2479 t b f;
+#X connect 7 0 13 0;
+#X connect 8 0 20 0;
+#X connect 9 0 10 0;
+#X connect 9 1 12 0;
+#X connect 11 0 7 0;
+#X connect 13 0 9 0;
+#X connect 13 1 14 0;
+#X connect 14 0 15 0;
+#X connect 16 0 21 0;
+#X connect 17 0 19 0;
+#X connect 18 0 19 0;
+#X connect 20 0 17 0;
+#X connect 21 0 18 0;
+#X connect 22 0 27 0;
+#X connect 22 1 28 0;
+#X connect 22 2 29 0;
+#X connect 23 0 32 0;
+#X connect 23 1 33 0;
+#X connect 23 2 34 0;
+#X connect 35 0 39 0;
+#X connect 38 0 61 0;
+#X connect 39 0 0 0;
+#X connect 40 0 41 0;
+#X connect 41 0 42 0;
+#X connect 42 0 36 0;
+#X connect 61 0 40 0;
+#X connect 61 1 41 1;

@@ -1,0 +1,16 @@
+Hur2B-SelectCache 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+Hur2A-SelectCache 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+Espagnole-SelectCache 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+Fluvita-SelectCache 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+Pingnip-SelectCache 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+KEG4-SelectCache 4 16 4 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+KEG2-SelectCache 2 16 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+KEG5-SelectCache 5 16 5 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+KEG3-SelectCache 3 16 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+KEG6-SelectCache 6 16 6 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+KEG1-SelectCache 1 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+play 1 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+song _ 16 portes _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
+SYNCHRO SYNCHRO-bpm 96.295 16 96.295 96.2885 96.2885 128.424 98.1657
+96.2885 44.797 103.241 53.6686 96.2885 0 0 0 0 0 0;
+SYNCHRO SYNCHRO-on_off 1 16 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;

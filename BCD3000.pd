@@ -1,0 +1,105 @@
+#N canvas 293 449 407 257 10;
+#X declare -path ./KEPabs;
+#X text 208 9 Hello !;
+#X text 236 32 Enjoy.;
+#X obj 169 101 hsl 128 15 0 4 0 0 VolumeNinjaDerivation empty empty
+-2 -8 0 10 -262144 -1 -1 0 1;
+#X obj 156 66 s playstop;
+#X obj 155 16 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 24 190 l ~/Documents/Mon_travail/njpoe-linux-15dec14/pdpatch/0LinuxMaster
+;
+#N canvas 668 81 600 641 VolBCD3000 0;
+#X obj 245 157 switch~;
+#X obj 245 137 init 1;
+#X obj 246 120 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
+-1;
+#X obj 107 138 mknob 25 100 0 127 0 1 empty empty phono/mic-main -2
+-6 0 8 -4160 -1 -1 0 1;
+#X obj 149 158 mknob 25 100 0 127 0 1 empty empty Phono/mic-mon -2
+-6 0 8 -4032 -1 -1 0 1;
+#X obj 109 220 mknob 25 100 0 127 0 1 empty empty CD-main -2 -6 0 8
+-86277 -1 -1 4200 1;
+#X obj 149 236 mknob 25 100 0 127 0 1 empty empty CD-mon -2 -6 0 8
+-86853 -1 -1 0 1;
+#X obj 34 31 ctlin 13;
+#X obj 99 28 ctlin 14;
+#X obj 171 31 ctlin 15;
+#X obj 246 28 ctlin 16;
+#X obj -157 340 mull~ 0 10;
+#X obj -88 339 mull~ 0 10;
+#X obj -129 289 / 127;
+#X obj -157 317 adc~ 1;
+#X obj -89 316 adc~ 2;
+#X obj -6 348 mull~ 0 10;
+#X obj 64 349 mull~ 0 10;
+#X obj -6 325 adc~ 1;
+#X obj 62 324 adc~ 2;
+#X obj 21 302 / 127;
+#X obj 136 344 mull~ 0 10;
+#X obj 205 343 mull~ 0 10;
+#X obj 164 293 / 127;
+#X obj 287 352 mull~ 0 10;
+#X obj 356 351 mull~ 0 10;
+#X obj 314 306 / 127;
+#X obj 136 321 adc~ 3;
+#X obj 204 320 adc~ 4;
+#X obj 287 329 adc~ 3;
+#X obj 355 328 adc~ 4;
+#X obj 119 170 tgl 15 1 empty empty Phono/Mic -4 24 0 10 -262144 -1
+-1 1 1;
+#X obj -72 159 pgmout 1;
+#X msg -72 132 1;
+#X msg -34 131 2;
+#X obj -73 94 sel 0 1;
+#X obj -156 364 OUT 1;
+#X obj -87 363 OUT 2;
+#X obj -5 372 OUT 3;
+#X obj 64 371 OUT 4;
+#X obj 137 368 OUT 1;
+#X obj 206 367 OUT 2;
+#X obj 289 376 OUT 3;
+#X obj 356 375 OUT 4;
+#X obj 90 482 declare -path ./KEPabs;
+#X connect 1 0 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 13 0;
+#X connect 4 0 20 0;
+#X connect 5 0 23 0;
+#X connect 6 0 26 0;
+#X connect 7 0 3 0;
+#X connect 8 0 4 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X connect 11 0 36 0;
+#X connect 12 0 37 0;
+#X connect 13 0 11 1;
+#X connect 13 0 12 1;
+#X connect 14 0 11 0;
+#X connect 15 0 12 0;
+#X connect 16 0 38 0;
+#X connect 17 0 39 0;
+#X connect 18 0 16 0;
+#X connect 19 0 17 0;
+#X connect 20 0 16 1;
+#X connect 20 0 17 1;
+#X connect 21 0 40 0;
+#X connect 22 0 41 0;
+#X connect 23 0 21 1;
+#X connect 23 0 22 1;
+#X connect 24 0 42 0;
+#X connect 25 0 43 0;
+#X connect 26 0 24 1;
+#X connect 26 0 25 1;
+#X connect 27 0 21 0;
+#X connect 28 0 22 0;
+#X connect 29 0 24 0;
+#X connect 30 0 25 0;
+#X connect 31 0 35 0;
+#X connect 33 0 32 0;
+#X connect 34 0 32 0;
+#X connect 35 0 33 0;
+#X connect 35 1 34 0;
+#X coords 0 -1 1 1 100 170 1 100 100;
+#X restore 27 11 pd VolBCD3000;
+#X connect 4 0 3 0;

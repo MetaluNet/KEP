@@ -1,0 +1,5 @@
+#N canvas 82 843 375 200 10;
+#X symbolatom 102 119 12 0 0 0 - PL-gui-#1-rcv PL-gui-#1-snd, f 12
+;
+#X obj 207 111 plscommon \$1;
+#X coords 0 -1 1 1 90 35 1 100 100;

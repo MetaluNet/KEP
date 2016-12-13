@@ -1,0 +1,22 @@
+#N canvas 490 94 825 345 24;
+#X text 170 139 Orchestres d'instruments numériques;
+#X text 262 347 Premiers Orchestres;
+#X text 77 492 The Hub (Californie \, 1986);
+#X text 78 452 League of Automatic Music Composers (Californie \, 1977)
+;
+#X text 262 677 Généralisation;
+#X text 64 757 Protocoles de communication MIDI / OpenSoundControl
+;
+#X text 140 1007 Différences avec les orchestres acoustiques;
+#X text 86 1119 problèmes pour synchronisations \, dialogues;
+#X text 38 1189 Possibilités de coopération supplémentaires;
+#X text 38 1082 Difficulté compréhension contributions de chacun
+;
+#X text 84 1221 partager des instruments \, des sons \, des messages
+...;
+#X text 83 1254 quelles interfaces \, quels accès ?;
+#X text 62 806 Laptops \, smartphones;
+#X text 61 856 Ninjam \, Ableton Link;
+#X text 19 1644 fin;
+#X text 197 1347 Première session par groupes de 3;
+#X text 246 1424 Improvisation libre 3-5mn;

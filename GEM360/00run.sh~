@@ -1,0 +1,7 @@
+#!/bin/bash
+xset -d :0 dpms force off
+sleep 0.5
+xset -d :0 dpms force on
+sleep 0.5
+xset -d :0 -dpms
+puredata -noaudio -open 0K360Gem.pd

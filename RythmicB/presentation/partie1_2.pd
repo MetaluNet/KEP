@@ -1,0 +1,72 @@
+#N canvas 478 104 780 274 24;
+#X text 40 563 Boîte : générer ou traiter des flux (contrôle ou
+audio);
+#X floatatom 297 830 5 0 0 0 - - -, f 5;
+#X text 55 337 Patch : (File->New) (File->Save->instrument.pd);
+#X floatatom 293 1262 5 0 0 0 - - -, f 5;
+#X floatatom 293 1305 5 0 0 0 - - -, f 5;
+#X text 75 762 Boîte interface nombre : (File->Put->Number);
+#X text 71 980 Mode édition/contrôle: Edit->Edit mode ou ctrl-e \,
+ou ctrl appuyé, f 50;
+#X text 92 1195 Connexions : Entre les sorties et entrées;
+#X floatatom 304 1510 5 0 0 0 - - -, f 5;
+#X floatatom 304 1590 5 0 0 0 - - -, f 5;
+#X floatatom 297 1040 5 0 0 0 - - -, f 5;
+#X text 96 1432 Objets: Boîtes avec fonction \, nom et arguments;
+#X text 96 1462 (Put->Object) + 1;
+#X obj 304 1548 + 1;
+#X text 76 1932 Liste d'objets: (Help->List of Objects);
+#X text 76 2002 Aide sur un objet: Clic-droit->Help;
+#X text 24 2880 fin;
+#X floatatom 264 1766 5 0 0 0 - - -, f 5;
+#X floatatom 264 1856 5 0 0 0 - - -, f 5;
+#X obj 264 1804 + 1;
+#X obj 203 2057 print;
+#X floatatom 344 1766 5 0 0 0 - - -, f 5;
+#X text 62 1682 Traitement effectué quand valeur dans entrée gauche
+;
+#X obj 89 2260 bang;
+#X obj 281 2057 trigger;
+#X obj 383 2057 send;
+#X text 145 2188 Types de données de contrôle;
+#X obj 171 2260 float 0.5;
+#X obj 302 2259 symbol test;
+#X obj 456 2235 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 456 2301 print;
+#X obj 89 2236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 171 2236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 302 2236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 89 2302 print;
+#X obj 171 2302 print;
+#X obj 302 2302 print;
+#X msg 456 2259 messages lists 1;
+#X text 62 1712 Sorties envoyées de droite à gauche;
+#X text 374 1544 argument: valeur ajoutée;
+#X text 222 2414 Abstraction = sous-patch;
+#X obj 273 2493 son;
+#X obj 273 2543 abstract 2;
+#X text 119 2442 (File->New): son.pd à côté d'instrument.pd;
+#X text 46 119 PureData : programmation graphique orientée musique
+;
+#X text 76 1965 Liste des externals + Tutoriels: (Help->Browser);
+#X text 236 2646 Ajout d'externals;
+#X text 29 2725 Dans le menu Help \, cliquez sur Find externals. Cherchez
+et installez mrpeach \, cxc \, hcs \, mapping \, purepd, f 52;
+#X connect 3 0 4 0;
+#X connect 8 0 13 0;
+#X connect 13 0 9 0;
+#X connect 17 0 19 0;
+#X connect 19 0 18 0;
+#X connect 21 0 19 1;
+#X connect 23 0 34 0;
+#X connect 27 0 35 0;
+#X connect 28 0 36 0;
+#X connect 29 0 37 0;
+#X connect 31 0 23 0;
+#X connect 32 0 27 0;
+#X connect 33 0 28 0;
+#X connect 37 0 30 0;
