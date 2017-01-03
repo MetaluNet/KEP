@@ -1,0 +1,406 @@
+#N canvas 1042 826 511 508 10;
+#X declare -stdpath moonlib -stdlib moonlib;
+#X text 160 258 Slice: \; arg1:NbSlice \; arg2:midi-ch \; arg3:ctl-Fader
+\; arg4:ctl-FaderTouch \; arg5:ctl-Vpot \; arg6:note-VpotTouch \; arg7:note-Rec
+\; arg8:note-select \; arg9:note-mute \; arg10:note-solo \;;
+#X text 9 361 Master: \; arg1:LayerMaster \; arg2:midi-ch \; arg3:ctl-Fader
+\; arg4:ctl-FaderTouch \; arg5:note-Rec \;;
+#X text 334 218 Knob: \; arg1:LayerKnob \; arg2:midi-ch \; arg3:ctl-K1
+\; arg4:note-K1Touch \; arg5:ctl-K2 \; arg6:note-K2Touch \; arg7:ctl-K3
+\; arg8:note-K3Touch \; arg9:ctl-K4 \; arg10:note-K4Touch \; arg11:ctl-K5
+\; arg12:note-K5Touch \; arg13:ctl-K6 \; arg14:note-K6Touch \; arg15:ctl-K7
+\; arg16:note-K7Touch \; arg17:ctl-K8 \; arg18:note-K8Touch \;;
+#X text 8 236 Transport: \; arg1:LayerTransport \; arg2:midi-ch \;
+arg3:note-T1 \; arg4:note-T2 \; arg5:note-T3 \; arg6:note-T4 \; arg7:note-T5
+\; arg8:note-T6 \;;
+#X obj 1 1 cnv 15 503 211 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 416 1 XtouchSlice 16 1 35 118 44 62 102 94 86 78;
+#X obj 439 1 XtouchMaster MB 1 36 119 103;
+#X obj 2 1 XtouchSlice 1 1 1 101 10 0 40 32 24 16;
+#X obj 25 1 XtouchSlice 2 1 2 102 11 1 41 33 25 17;
+#X obj 48 1 XtouchSlice 3 1 3 103 12 2 42 34 26 18;
+#X obj 71 1 XtouchSlice 4 1 4 104 13 3 43 35 27 19;
+#X obj 94 1 XtouchSlice 5 1 5 105 14 4 44 36 28 20;
+#X obj 117 1 XtouchSlice 6 1 6 106 15 5 45 37 29 21;
+#X obj 140 1 XtouchSlice 7 1 7 107 16 6 46 38 30 22;
+#X obj 163 1 XtouchSlice 8 1 8 108 17 7 47 39 31 23;
+#X obj 255 1 XtouchSlice 9 1 28 111 37 55 95 87 79 71;
+#X obj 278 1 XtouchSlice 10 1 29 112 38 56 96 88 80 72;
+#X obj 301 1 XtouchSlice 11 1 30 113 39 57 97 89 81 73;
+#X obj 324 1 XtouchSlice 12 1 31 114 40 58 98 90 82 74;
+#X obj 347 1 XtouchSlice 13 1 32 115 41 59 99 91 83 75;
+#X obj 370 1 XtouchSlice 14 1 33 116 42 60 100 92 84 76;
+#X obj 393 1 XtouchSlice 15 1 34 117 43 61 101 93 85 77;
+#X obj 186 1 XtouchMaster MA 1 9 109 48;
+#X obj 208 1 XtouchKnob KA 1 18 8 19 9 20 10 21 11 22 12 23 13 24 14
+25 15;
+#X obj 209 110 XtouchTransport TA 1 49 50 51 52 53 54;
+#X obj 461 1 XtouchKnob KB 1 45 63 46 64 47 65 48 66 49 67 50 68 51
+69 52 70;
+#X obj 462 110 XtouchTransport TB 1 104 105 106 107 108 109;
+#X obj 6 220 declare -stdpath moonlib -stdlib moonlib;
+#N canvas 165 1012 877 716 test-X-TOUCH-snd 1;
+#X obj 18 50 route Fader1 TFader1 Vpot1 TVpot1 Solo1 Mute1 Select1
+Rec1;
+#X obj 24 13 r X-TOUCH-snd;
+#X floatatom 18 74 5 0 0 0 - - -, f 5;
+#X floatatom 65 75 5 0 0 0 - - -, f 5;
+#X floatatom 114 76 5 0 0 0 - - -, f 5;
+#X floatatom 161 77 5 0 0 0 - - -, f 5;
+#X floatatom 217 79 5 0 0 0 - - -, f 5;
+#X floatatom 264 80 5 0 0 0 - - -, f 5;
+#X floatatom 313 81 5 0 0 0 - - -, f 5;
+#X floatatom 360 82 5 0 0 0 - - -, f 5;
+#X obj 14 106 r X-TOUCH-snd;
+#X floatatom 8 167 5 0 0 0 - - -, f 5;
+#X floatatom 55 168 5 0 0 0 - - -, f 5;
+#X floatatom 104 169 5 0 0 0 - - -, f 5;
+#X floatatom 151 170 5 0 0 0 - - -, f 5;
+#X floatatom 207 172 5 0 0 0 - - -, f 5;
+#X floatatom 254 173 5 0 0 0 - - -, f 5;
+#X floatatom 303 174 5 0 0 0 - - -, f 5;
+#X floatatom 350 175 5 0 0 0 - - -, f 5;
+#X obj 8 143 route Fader2 TFader2 Vpot2 TVpot2 Solo2 Mute2 Select2
+Rec2;
+#X obj 11 195 r X-TOUCH-snd;
+#X floatatom 5 256 5 0 0 0 - - -, f 5;
+#X floatatom 52 257 5 0 0 0 - - -, f 5;
+#X floatatom 101 258 5 0 0 0 - - -, f 5;
+#X floatatom 148 259 5 0 0 0 - - -, f 5;
+#X floatatom 252 262 5 0 0 0 - - -, f 5;
+#X floatatom 299 263 5 0 0 0 - - -, f 5;
+#X obj 5 232 route FaderMA TFaderMA RecMA FaderMB TFaderMB RecMB;
+#X obj 455 11 r X-TOUCH-snd;
+#X floatatom 454 58 5 0 0 0 - - -, f 5;
+#X floatatom 501 59 5 0 0 0 - - -, f 5;
+#X floatatom 550 60 5 0 0 0 - - -, f 5;
+#X floatatom 597 61 5 0 0 0 - - -, f 5;
+#X floatatom 653 63 5 0 0 0 - - -, f 5;
+#X floatatom 700 64 5 0 0 0 - - -, f 5;
+#X obj 459 82 r X-TOUCH-snd;
+#X floatatom 457 128 5 0 0 0 - - -, f 5;
+#X floatatom 504 129 5 0 0 0 - - -, f 5;
+#X floatatom 553 130 5 0 0 0 - - -, f 5;
+#X floatatom 600 131 5 0 0 0 - - -, f 5;
+#X floatatom 656 133 5 0 0 0 - - -, f 5;
+#X floatatom 703 134 5 0 0 0 - - -, f 5;
+#X obj 457 179 r X-TOUCH-snd;
+#X floatatom 444 222 5 0 0 0 - - -, f 5;
+#X floatatom 491 223 5 0 0 0 - - -, f 5;
+#X floatatom 540 224 5 0 0 0 - - -, f 5;
+#X floatatom 587 225 5 0 0 0 - - -, f 5;
+#X obj 456 202 route TA1 TA2 TA3 TA4 TA5 TA6;
+#X floatatom 629 228 5 0 0 0 - - -, f 5;
+#X floatatom 676 229 5 0 0 0 - - -, f 5;
+#X obj 460 245 r X-TOUCH-snd;
+#X floatatom 447 288 5 0 0 0 - - -, f 5;
+#X floatatom 494 289 5 0 0 0 - - -, f 5;
+#X floatatom 543 290 5 0 0 0 - - -, f 5;
+#X floatatom 590 291 5 0 0 0 - - -, f 5;
+#X floatatom 632 294 5 0 0 0 - - -, f 5;
+#X floatatom 679 295 5 0 0 0 - - -, f 5;
+#X obj 459 267 route TB1 TB2 TB3 TB4 TB5 TB6;
+#X obj 18 286 r X-TOUCH-snd;
+#X floatatom 12 347 5 0 0 0 - - -, f 5;
+#X floatatom 59 348 5 0 0 0 - - -, f 5;
+#X floatatom 108 349 5 0 0 0 - - -, f 5;
+#X floatatom 155 350 5 0 0 0 - - -, f 5;
+#X floatatom 211 352 5 0 0 0 - - -, f 5;
+#X floatatom 258 353 5 0 0 0 - - -, f 5;
+#X floatatom 307 354 5 0 0 0 - - -, f 5;
+#X floatatom 354 355 5 0 0 0 - - -, f 5;
+#X obj 16 384 r X-TOUCH-snd;
+#X floatatom 18 471 5 0 0 0 - - -, f 5;
+#X floatatom 65 472 5 0 0 0 - - -, f 5;
+#X floatatom 114 473 5 0 0 0 - - -, f 5;
+#X floatatom 161 474 5 0 0 0 - - -, f 5;
+#X floatatom 217 476 5 0 0 0 - - -, f 5;
+#X floatatom 264 477 5 0 0 0 - - -, f 5;
+#X floatatom 313 478 5 0 0 0 - - -, f 5;
+#X floatatom 360 479 5 0 0 0 - - -, f 5;
+#X obj 12 323 route Fader9 TFader9 Vpot9 TVpot9 Solo9 Mute9 Select9
+Rec9;
+#X obj 10 421 route Fader10 TFader10 Vpot10 TVpot10 Solo10 Mute10 Select10
+Rec10;
+#X obj 454 34 route KA1 TKA1 KA2 TKA2 KA3 TKA3;
+#X obj 456 105 route KB1 TKB1 KB2 TKB2 KB3 TKB3;
+#X connect 0 0 2 0;
+#X connect 0 1 3 0;
+#X connect 0 2 4 0;
+#X connect 0 3 5 0;
+#X connect 0 4 6 0;
+#X connect 0 5 7 0;
+#X connect 0 6 8 0;
+#X connect 0 7 9 0;
+#X connect 1 0 0 0;
+#X connect 10 0 19 0;
+#X connect 19 0 11 0;
+#X connect 19 1 12 0;
+#X connect 19 2 13 0;
+#X connect 19 3 14 0;
+#X connect 19 4 15 0;
+#X connect 19 5 16 0;
+#X connect 19 6 17 0;
+#X connect 19 7 18 0;
+#X connect 20 0 27 0;
+#X connect 27 0 21 0;
+#X connect 27 1 22 0;
+#X connect 27 2 23 0;
+#X connect 27 3 24 0;
+#X connect 27 4 25 0;
+#X connect 27 5 26 0;
+#X connect 28 0 78 0;
+#X connect 35 0 79 0;
+#X connect 42 0 47 0;
+#X connect 47 0 43 0;
+#X connect 47 1 44 0;
+#X connect 47 2 45 0;
+#X connect 47 3 46 0;
+#X connect 47 4 48 0;
+#X connect 47 5 49 0;
+#X connect 50 0 57 0;
+#X connect 57 0 51 0;
+#X connect 57 1 52 0;
+#X connect 57 2 53 0;
+#X connect 57 3 54 0;
+#X connect 57 4 55 0;
+#X connect 57 5 56 0;
+#X connect 58 0 76 0;
+#X connect 67 0 77 0;
+#X connect 76 0 59 0;
+#X connect 76 1 60 0;
+#X connect 76 2 61 0;
+#X connect 76 3 62 0;
+#X connect 76 4 63 0;
+#X connect 76 5 64 0;
+#X connect 76 6 65 0;
+#X connect 76 7 66 0;
+#X connect 77 0 68 0;
+#X connect 77 1 69 0;
+#X connect 77 2 70 0;
+#X connect 77 3 71 0;
+#X connect 77 4 72 0;
+#X connect 77 5 73 0;
+#X connect 77 6 74 0;
+#X connect 77 7 75 0;
+#X connect 78 0 29 0;
+#X connect 78 1 30 0;
+#X connect 78 2 31 0;
+#X connect 78 3 32 0;
+#X connect 78 4 33 0;
+#X connect 78 5 34 0;
+#X connect 79 0 36 0;
+#X connect 79 1 37 0;
+#X connect 79 2 38 0;
+#X connect 79 3 39 0;
+#X connect 79 4 40 0;
+#X connect 79 5 41 0;
+#X restore 25 472 pd test-X-TOUCH-snd;
+#N canvas 2026 239 877 716 test-X-TOUCH-rcv 0;
+#X obj 128 605 s X-TOUCH-rcv;
+#X obj 128 449 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 26 598 s X-TOUCH-rcv;
+#X obj 26 442 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 619 618 s X-TOUCH-rcv;
+#X obj 619 462 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 521 618 s X-TOUCH-rcv;
+#X obj 521 462 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 521 597 Fader9 \$1;
+#X msg 619 597 Fader10 \$1;
+#X msg 26 577 Fader1 \$1;
+#X msg 128 584 Fader2 \$1;
+#X obj 26 666 s X-TOUCH-rcv;
+#X obj 26 624 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 26 645 Rec1 \$1;
+#X obj 25 417 s X-TOUCH-rcv;
+#X obj 25 375 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 25 396 Select1 \$1;
+#X obj 23 352 s X-TOUCH-rcv;
+#X obj 23 310 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 23 331 Mute1 \$1;
+#X obj 24 287 s X-TOUCH-rcv;
+#X obj 24 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 24 266 Solo1 \$1;
+#X obj 23 169 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X msg 23 199 Vpot1 \$1;
+#X obj 23 219 s X-TOUCH-rcv;
+#X obj 130 418 s X-TOUCH-rcv;
+#X obj 130 376 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 128 353 s X-TOUCH-rcv;
+#X obj 128 311 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 129 288 s X-TOUCH-rcv;
+#X obj 129 246 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 128 170 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 128 220 s X-TOUCH-rcv;
+#X msg 128 200 Vpot2 \$1;
+#X msg 130 267 Solo2 \$1;
+#X msg 129 332 Mute2 \$1;
+#X msg 129 397 Select2 \$1;
+#X obj 133 669 s X-TOUCH-rcv;
+#X obj 133 627 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 134 648 Rec2 \$1;
+#X obj 621 682 s X-TOUCH-rcv;
+#X obj 621 640 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 620 433 s X-TOUCH-rcv;
+#X obj 620 391 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 618 368 s X-TOUCH-rcv;
+#X obj 618 326 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 619 303 s X-TOUCH-rcv;
+#X obj 619 261 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 618 185 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 618 235 s X-TOUCH-rcv;
+#X msg 618 215 Vpot10 \$1;
+#X msg 619 282 Solo10 \$1;
+#X msg 618 347 Mute10 \$1;
+#X msg 620 412 Select10 \$1;
+#X msg 621 661 Rec10 \$1;
+#X obj 518 429 s X-TOUCH-rcv;
+#X obj 518 387 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 516 364 s X-TOUCH-rcv;
+#X obj 517 321 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 517 299 s X-TOUCH-rcv;
+#X obj 517 257 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 516 181 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 516 231 s X-TOUCH-rcv;
+#X obj 521 680 s X-TOUCH-rcv;
+#X obj 521 638 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 517 408 Select9 \$1;
+#X msg 517 343 Mute9 \$1;
+#X msg 518 278 Solo9 \$1;
+#X msg 516 210 Vpot9 \$1;
+#X msg 522 659 Rec9 \$1;
+#X obj 280 181 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 280 231 s X-TOUCH-rcv;
+#X obj 266 594 s X-TOUCH-rcv;
+#X obj 266 438 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 271 658 s X-TOUCH-rcv;
+#X obj 271 616 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 266 573 FaderMA \$1;
+#X msg 272 637 RecMA \$1;
+#X msg 279 211 KA1 \$1;
+#X obj 385 178 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 385 228 s X-TOUCH-rcv;
+#X msg 384 208 KA2 \$1;
+#X obj 282 257 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 282 307 s X-TOUCH-rcv;
+#X obj 387 254 mknob 25 100 0 1 0 0 empty empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 387 304 s X-TOUCH-rcv;
+#X msg 281 287 KB1 \$1;
+#X msg 386 284 KB2 \$1;
+#X obj 282 371 s X-TOUCH-rcv;
+#X obj 282 330 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 283 351 TA1 \$1;
+#X obj 389 375 s X-TOUCH-rcv;
+#X obj 389 334 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 390 356 TA2 \$1;
+#X obj 291 437 s X-TOUCH-rcv;
+#X obj 291 396 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 398 441 s X-TOUCH-rcv;
+#X obj 398 400 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 292 417 TB1 \$1;
+#X msg 398 422 TB2 \$1;
+#X connect 1 0 11 0;
+#X connect 3 0 10 0;
+#X connect 5 0 9 0;
+#X connect 7 0 8 0;
+#X connect 8 0 6 0;
+#X connect 9 0 4 0;
+#X connect 10 0 2 0;
+#X connect 11 0 0 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 0;
+#X connect 16 0 17 0;
+#X connect 17 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 18 0;
+#X connect 22 0 23 0;
+#X connect 23 0 21 0;
+#X connect 24 0 25 0;
+#X connect 25 0 26 0;
+#X connect 28 0 38 0;
+#X connect 30 0 37 0;
+#X connect 32 0 36 0;
+#X connect 33 0 35 0;
+#X connect 35 0 34 0;
+#X connect 36 0 31 0;
+#X connect 37 0 29 0;
+#X connect 38 0 27 0;
+#X connect 40 0 41 0;
+#X connect 41 0 39 0;
+#X connect 43 0 56 0;
+#X connect 45 0 55 0;
+#X connect 47 0 54 0;
+#X connect 49 0 53 0;
+#X connect 50 0 52 0;
+#X connect 52 0 51 0;
+#X connect 53 0 48 0;
+#X connect 54 0 46 0;
+#X connect 55 0 44 0;
+#X connect 56 0 42 0;
+#X connect 58 0 67 0;
+#X connect 60 0 68 0;
+#X connect 62 0 69 0;
+#X connect 63 0 70 0;
+#X connect 66 0 71 0;
+#X connect 67 0 57 0;
+#X connect 68 0 59 0;
+#X connect 69 0 61 0;
+#X connect 70 0 64 0;
+#X connect 71 0 65 0;
+#X connect 72 0 80 0;
+#X connect 75 0 78 0;
+#X connect 77 0 79 0;
+#X connect 78 0 74 0;
+#X connect 79 0 76 0;
+#X connect 80 0 73 0;
+#X connect 81 0 83 0;
+#X connect 83 0 82 0;
+#X connect 84 0 88 0;
+#X connect 86 0 89 0;
+#X connect 88 0 85 0;
+#X connect 89 0 87 0;
+#X connect 91 0 92 0;
+#X connect 92 0 90 0;
+#X connect 94 0 95 0;
+#X connect 95 0 93 0;
+#X connect 97 0 100 0;
+#X connect 99 0 101 0;
+#X connect 100 0 96 0;
+#X connect 101 0 98 0;
+#X restore 216 471 pd test-X-TOUCH-rcv;
+#X coords 0 -1 1 1 505 213 1 0 0;

@@ -1,0 +1,51 @@
+#N canvas 1657 720 422 428 10;
+#X declare -lib libdir -lib ggee -stdpath ggee;
+#X obj 204 82 cnv 15 18 100 empty empty \$3 5 10 1 14 -4034 -66577
+0;
+#X obj 151 116 vsl 18 77 0 1 0 0 midi-XR18-\$1-snd midi-XR18-\$1-rcv
+empty 0 -9 0 10 -203904 -1 -1 4189 1;
+#X floatatom 42 332 5 0 0 0 - - -, f 5;
+#X obj 31 294 / 127;
+#X obj 182 64 tgl 18 0 on-slider-XR18-\$3-snd on-slider-XR18-\$3-rcv
+\$3 5 10 1 14 -24198 -24198 -262144 1 1;
+#X obj 235 201 spigot;
+#X obj 257 102 sel 0 1;
+#X msg 257 129 color 13 13 10;
+#X msg 277 151 color 16 16 0;
+#X text 9 164 arg1:ctlout \; arg2:channelout \; arg3:nslider \; arg4:ctlin
+\; arg5:channein;
+#X obj 31 266 ctlin \$4 \$5;
+#X obj 162 290 ctlout \$1 \$2;
+#X obj 160 259 * 127;
+#X obj 88 6 api MASTERS on-slider-XR18-\$3 on-slider-XR18-\$3 2;
+#X obj 257 175 s on-slider-XR18-\$3-rcv;
+#X obj 257 77 r on-slider-XR18-\$3-snd;
+#X msg 128 319 set \$1;
+#X obj 159 219 t f b;
+#X obj 102 355 spigot, f 7;
+#X msg 301 282 0;
+#X msg 347 288 1;
+#X floatatom 304 346 5 0 0 0 - - -, f 5;
+#X obj 346 263 del 50;
+#X connect 1 0 17 0;
+#X connect 3 0 2 0;
+#X connect 3 0 16 0;
+#X connect 4 0 5 1;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 14 0;
+#X connect 8 0 14 0;
+#X connect 10 0 3 0;
+#X connect 12 0 11 0;
+#X connect 15 0 6 0;
+#X connect 16 0 18 0;
+#X connect 17 0 12 0;
+#X connect 17 1 19 0;
+#X connect 17 1 22 0;
+#X connect 18 0 1 0;
+#X connect 19 0 18 1;
+#X connect 19 0 21 0;
+#X connect 20 0 18 1;
+#X connect 20 0 21 0;
+#X connect 22 0 20 0;
+#X coords 0 428 1 427 20 102 0;

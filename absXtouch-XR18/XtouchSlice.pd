@@ -1,0 +1,12 @@
+#N canvas 1172 864 422 631 10;
+#X obj 1 102 XtouchSlider \$1 \$2 \$3 \$4;
+#X text 11 249 arg1:NbSlice \; arg2:midi-ch \; arg3:ctl-Fader \; arg4:ctl-FaderTouch
+\; arg5:ctl-Vpot \; arg6:note-VpotTouch \; arg7:note-Rec \; arg8:note-select
+\; arg9:note-mute \; arg10:note-solo \;;
+#X obj 1 21 XtouchVpot \$1 \$2 \$5 \$6;
+#X obj 1 189 XtouchRec \$1 \$2 \$7;
+#X obj 1 81 XtouchSelect \$1 \$2 \$8;
+#X obj 1 61 XtouchMute \$1 \$2 \$9;
+#X obj 1 41 XtouchSolo \$1 \$2 \$10;
+#X obj 3 1 cnv 15 18 18 empty empty \$1 1 8 0 14 -261234 -66577 0;
+#X coords 0 -1 1 1 22 210 2 0 0;

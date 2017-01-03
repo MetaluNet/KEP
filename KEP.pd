@@ -1,4 +1,4 @@
-#N canvas 90 338 542 286 10;
+#N canvas 51 919 542 286 10;
 #X declare -path KEP/AutoAbstractions;
 #X declare -path KEP/AutoPreset;
 #X declare -path KEP/absKEP;
@@ -23,6 +23,11 @@
 #X declare -stdpath hcs -stdlib hcs;
 #X declare -stdpath motex -stdlib motex;
 #X declare -stdpath moonlib -stdlib moonlib;
+#X declare -stdpath osc -stdlib osc;
+#X declare -stdpath mrpeach -stdlib mrpeach;
+#X declare -path KEP/absXtouch-XR18;
+#X declare -stdpath pd-autotuned-master -stdlib pd-autotuned-master
+;
 #N canvas 1707 765 450 300 CPU 0;
 #X obj 1 1 cnv 15 35 30 empty empty empty 20 12 0 14 -1 -66577 0;
 #X obj 79 29 cputime;
@@ -35,7 +40,7 @@
 #X obj 79 58 int;
 #X text 164 -19 <-- on/off;
 #X obj 2 17 nbx 3 14 -1e+37 1e+37 0 0 empty empty CPU 2 -8 1 10 -262144
--1 -262144 49 256;
+-1 -262144 30 256;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 0;
@@ -47,7 +52,7 @@
 #X connect 8 0 7 0;
 #X coords 0 -1 1 1 37 32 2 0 0;
 #X restore 44 172 pd CPU;
-#N canvas 178 188 677 643 CACHEnoguis 0;
+#N canvas 172 720 677 643 CACHEnoguis 0;
 #X obj 93 220 CACHE KEPcontrol 1109;
 #X obj 282 18 CACHE KEPcontrol 1201;
 #X obj 11 16 CACHE KEPcontrol 1101;
@@ -88,10 +93,10 @@
 #X obj 236 209 r MASTERSvol;
 #X obj 335 206 bng 15 250 50 0 reloadRegie empty reloadRegie 17 7 0
 12 -260097 -1 -1;
-#N canvas 219 201 1016 639 declare 0;
+#N canvas 207 799 1016 639 declare 0;
 #X obj 10 550 l declare -path /usr/lib/pd-extended/extra/iemlib/;
-#X obj 782 60 moonlib/mknob 25 100 0 127 0 0 empty empty empty -2 -6
-0 8 2.1376e+08 2.1376e+08 2.1376e+08 0 1;
+#X obj 793 81 moonlib/mknob 25 100 0 127 0 0 -233017 empty empty -2
+-6 0 8 1.06696e+08 0 1.06696e+08 0 1;
 #X obj 576 515 l /home/al1/pd-externals/Bidouille/PdPatchs/0Morsso0/alternateur
 ;
 #X obj 2 310 declare -path KEP/AutoAbstractions;
@@ -132,24 +137,29 @@
 #X obj 640 206 ead~;
 #X obj 260 12 declare -stdpath moonlib -stdlib moonlib;
 #X obj 556 389 l declare -path KEP/FraisePd;
+#X obj 569 12 declare -stdpath osc -stdlib osc;
+#X obj 582 45 declare -stdpath mrpeach -stdlib mrpeach;
+#X obj 11 522 declare -path KEP/absXtouch-XR18;
+#X obj 548 157 declare -stdpath pd-autotuned-master -stdlib pd-autotuned-master
+, f 56;
 #X restore 304 76 pd declare;
 #X obj 328 123 l AutoAffectMonitor;
 #X obj 298 181 l Send2Gem;
 #X obj 386 180 l Playlist360;
-#N canvas 566 119 420 401 MASTERS 1;
+#N canvas 1819 630 420 401 MASTERS 1;
 #X obj 4 3 cnv 15 347 393 empty empty empty 20 12 1 14 -1 -262144 0
 ;
-#N canvas 799 312 343 237 SaveMaster 0;
+#N canvas 790 998 343 237 SaveMaster 0;
 #X obj 11 11 cnv 15 99 122 empty empty MASTERS 5 12 1 14 -260097 -1
 0;
-#X obj 14 201 apmaster MASTERS;
-#X obj 59 104 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
+#X obj 34 203 apmaster MASTERS;
+#X obj 38 54 bng 25 250 50 0 empty empty save 3 -7 1 10 -258113 -1
 -1;
-#X obj 15 76 bng 15 250 50 0 empty empty load 17 7 1 10 -4034 -1 -1
+#X obj 34 171 bng 15 250 50 0 empty empty load 17 7 1 10 -4034 -1 -1
 ;
-#X obj 15 55 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
+#X obj 89 171 bng 15 250 50 0 empty empty save_as 17 7 1 10 -258113
 -1 -1;
-#N canvas 630 365 351 454 apmaster_autoload 0;
+#N canvas 1033 1208 351 454 apmaster_autoload 0;
 #X obj 84 34 route loaded saved;
 #X obj 29 162 loadbang;
 #X msg 84 397 loadfile \$1;
@@ -157,7 +167,7 @@
 #X obj 84 369 symbol;
 #X obj 29 184 del 100;
 #X msg 84 196 set \$1;
-#X msg 84 223 MASTERS-demo;
+#X msg 84 223 MASTERS;
 #X obj 84 12 r MASTERS-apmaster-snd;
 #X obj 84 422 s MASTERS-apmaster-rcv;
 #X obj 27 119 split_path;
@@ -189,7 +199,7 @@
 #X connect 16 0 14 0;
 #X connect 17 0 11 0;
 #X connect 18 0 4 0;
-#X restore 142 70 pd apmaster_autoload;
+#X restore 152 69 pd apmaster_autoload;
 #N canvas 1754 680 284 213 apmaster_symbol 0;
 #X obj 75 38 route loaded saved;
 #X obj 75 155 outlet;
@@ -201,15 +211,20 @@
 #X connect 2 0 4 0;
 #X connect 3 0 0 0;
 #X connect 4 1 1 0;
-#X restore 154 41 pd apmaster_symbol;
-#X symbolatom 16 32 0 0 0 0 - - -;
-#X obj 144 167 s MASTERS-apmaster-rcv;
-#X msg 144 144 savein;
+#X restore 154 18 pd apmaster_symbol;
+#X symbolatom 154 43 0 0 0 0 - - -;
+#X obj 160 166 s MASTERS-apmaster-rcv;
+#X msg 160 143 savein;
+#X obj 38 104 bng 15 250 50 0 empty empty reload 17 7 1 10 -4034 -1
+-1;
+#X msg 107 143 loadin;
 #X connect 2 0 9 0;
 #X connect 3 0 1 0;
 #X connect 4 0 1 1;
 #X connect 6 0 7 0;
 #X connect 9 0 8 0;
+#X connect 10 0 11 0;
+#X connect 11 0 8 0;
 #X coords 0 -1 1 1 101 124 2 10 10;
 #X restore 245 9 pd SaveMaster;
 #X obj 72 137 cnv 15 177 124 empty empty MONITORS_OUT 20 10 0 14 -257985
@@ -234,14 +249,7 @@
 ;
 #X obj 10 9 cnv 15 177 124 empty empty VCA 20 10 0 14 -260097 -1 0
 ;
-#X obj 78 26 VCAvu 4;
 #X obj 15 26 VCAvu 1;
-#X obj 36 26 VCAvu 2;
-#X obj 57 26 VCAvu 3;
-#X obj 99 26 VCAvu 5;
-#X obj 120 26 VCAvu 6;
-#X obj 141 26 VCAvu 7;
-#X obj 162 26 VCAvu 8;
 #X obj 14 155 OUTvu 1;
 #X obj 43 155 OUTvu 2;
 #X obj 72 155 OUTvuM 3;
@@ -252,9 +260,20 @@
 #X obj 217 155 OUTvuM 8;
 #X obj 191 9 MASTERSvol;
 #X obj 293 265 REC-16;
+#X obj 125 10 tgl 14 0 XtouchVCAon-snd XtouchVCAon-rcv Xtouch 17 7
+0 10 -258699 -258699 -233017 0 1;
+#X obj 78 26 VCAvu 4;
+#X obj 36 26 VCAvu 2;
+#X obj 57 26 VCAvu 3;
+#X obj 99 26 VCAvu 5;
+#X obj 120 26 VCAvu 6;
+#X obj 141 26 VCAvu 7;
+#X obj 162 26 VCAvu 8;
+#X obj 209 400 tgl 15 0 MASTER-DSPswitchOffWhenMuted MASTER-DSPswitchOffWhenMuted
+DSPswitchOffWhenMuted 17 7 0 10 -262144 -1 -1 0 1;
 #X restore 258 109 pd MASTERS;
 #X obj 184 237 ../KEP_INSTRUMENTS;
-#N canvas 175 103 252 769 CACHEguis 0;
+#N canvas 169 594 252 769 CACHEguis 0;
 #N canvas 775 526 266 261 SaveKEPcontrol 0;
 #X obj 1 1 cnv 15 232 60 empty empty KEPcontrol 8 12 1 14 -162280 -1
 0;
@@ -380,7 +399,7 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X obj 9 544 CACHEgui KEPcontrol 1005;
 #X obj 9 662 CACHEgui KEPcontrol 1006;
 #X restore 184 163 pd CACHEguis;
-#N canvas 1064 484 309 388 SONG 0;
+#N canvas 1052 1024 309 388 SONG 0;
 #N canvas 869 427 343 197 SaveKEPsong 0;
 #X obj 1 1 cnv 15 300 60 empty empty KEPsong 8 12 1 14 -261234 -45076
 0;
@@ -519,24 +538,24 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X obj 149 15 cnv 15 100 110 empty empty game2 20 12 1 14 -24198 -66577
 0;
 #X obj 155 36 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
-#X obj 116 127 mknob 25 100 0 127 0 0 \$0-g1f-snd \$0-g1f-rcv fine
--2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 78 1;
-#X obj 175 92 mknob 25 100 0 127 0 0 \$0-g2f-snd \$0-g2f-rcv fine2
--2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 78 1;
-#X obj 20 129 mknob 25 100 0 127 0 0 \$0-g1trans-snd \$0-g1trans-rcv
-Transp -2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 0 1;
-#X obj 63 129 mknob 25 100 0 127 0 0 \$0-g1mode-snd \$0-g1mode-rcv
-Mode -2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 0 1;
+#X obj 116 127 mknob 25 100 0 127 0 0 -355 \$0-g1f-rcv fine -2 -6 0
+8 3.03386e+08 0 1.21049e+08 78 1;
+#X obj 175 92 mknob 25 100 0 127 0 0 -355 \$0-g2f-rcv fine2 -2 -6 0
+8 3.03386e+08 0 1.21049e+08 78 1;
+#X obj 20 129 mknob 25 100 0 127 0 0 -355 \$0-g1trans-rcv Transp -2
+-6 0 8 3.03386e+08 0 1.21049e+08 0 1;
+#X obj 63 129 mknob 25 100 0 127 0 0 -355 \$0-g1mode-rcv Mode -2 -6
+0 8 3.03386e+08 0 1.21049e+08 0 1;
 #X obj 20 81 cnv 10 120 30 empty empty empty 20 12 0 14 -241291 -66577
 0;
-#X obj 47 92 mknob 25 100 0 127 0 0 \$0-g1in-snd \$0-g1in-rcv InNb:1
--2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 0 1;
+#X obj 47 92 mknob 25 100 0 127 0 0 -355 \$0-g1in-rcv InNb:1 -2 -6
+0 8 3.03386e+08 0 1.21049e+08 0 1;
 #X obj 107 91 bng 10 250 50 0 \$0-g1raz-snd \$0-g1raz-rcv Raz -5 -6
 1 8 -258699 -1 -258699;
-#X obj 78 86 mknob 25 100 0 127 0 0 \$0-g1notes-snd \$0-g1notes-rcv
-notes:7 -2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 0 1;
-#X obj 21 87 mknob 25 100 0 127 0 0 \$0-g1thres-snd \$0-g1thres-rcv
-seuil -2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 0 1;
+#X obj 78 86 mknob 25 100 0 127 0 0 -355 \$0-g1notes-rcv notes:7 -2
+-6 0 8 3.03386e+08 0 1.21049e+08 0 1;
+#X obj 21 87 mknob 25 100 0 127 0 0 -355 \$0-g1thres-rcv seuil -2 -6
+0 8 3.03386e+08 0 1.21049e+08 0 1;
 #X obj 123 93 tgl 10 0 \$0-g1learn-snd \$0-g1learn-rcv learn -7 14
 1 8 -262144 -1 -1 0 1;
 #N canvas 759 480 369 296 guts 0;
@@ -1221,50 +1240,13 @@ seuil -2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 0 1;
 #X symbolatom 192 134 0 0 0 0 - - -;
 #X connect 3 0 7 0;
 #X restore 184 121 pd SONG;
-#N canvas 980 448 456 349 USB 0;
+#N canvas 542 1170 947 553 USB 0;
 #X obj 23 154 KEMfruit 1 KEG1 20 KE;
 #X obj 28 254 KEMfruit 1 KEG6 25 KE;
 #X obj 22 191 KEMfruit 1 KEG3 22 KE;
 #X obj 26 233 KEMfruit 1 KEG5 24 KE;
 #X obj 24 171 KEMfruit 1 KEG2 21 KE;
 #X obj 25 211 KEMfruit 1 KEG4 23 KE;
-#N canvas 847 126 398 298 UC-33>midi 0;
-#X floatatom 283 51 3 0 0 0 - - -, f 3;
-#X floatatom 381 80 3 0 0 0 - - -, f 3;
-#X obj 13 6 VCAmidi 7 1 1;
-#X obj 266 22 ctlin 28 1;
-#X obj 193 6 VolMaster-midi 28 1 M;
-#X obj 167 6 VCAmidi 7 8 8;
-#X obj 35 6 VCAmidi 7 2 2;
-#X obj 57 6 VCAmidi 7 3 3;
-#X obj 79 6 VCAmidi 7 4 4;
-#X obj 101 6 VCAmidi 7 5 5;
-#X obj 123 6 VCAmidi 7 6 6;
-#X obj 145 6 VCAmidi 7 7 7;
-#X obj 368 98 ctlout 0 1;
-#X floatatom 330 83 5 0 0 0 - - -, f 5;
-#X obj 354 156 XR18master-midi 31 1 M 28 1;
-#X obj 369 58 ctlin 14 1;
-#X obj 13 156 XR18slider-midi 0 1 1 13 1;
-#X obj 34 156 XR18slider-midi 1 1 2 13 2;
-#X obj 55 156 XR18slider-midi 2 1 3 13 3;
-#X obj 76 156 XR18slider-midi 3 1 4 13 4;
-#X obj 97 156 XR18slider-midi 4 1 5 13 5;
-#X obj 118 156 XR18slider-midi 5 1 6 13 6;
-#X obj 139 156 XR18slider-midi 6 1 7 13 7;
-#X obj 160 156 XR18slider-midi 7 1 8 13 8;
-#X obj 181 156 XR18slider-midi 8 1 9 12 1;
-#X obj 202 156 XR18slider-midi 9 1 10 12 2;
-#X obj 223 156 XR18slider-midi 10 1 11 12 3;
-#X obj 244 156 XR18slider-midi 11 1 12 12 4;
-#X obj 265 156 XR18slider-midi 12 1 13 12 5;
-#X obj 286 156 XR18slider-midi 13 1 14 12 6;
-#X obj 307 156 XR18slider-midi 14 1 15 12 7;
-#X obj 328 156 XR18slider-midi 15 1 16 12 8;
-#X connect 3 0 0 0;
-#X connect 13 0 12 0;
-#X connect 15 0 1 0;
-#X restore 281 7 pd UC-33>midi;
 #X obj 16 10 pied/pied 0 12346;
 #X obj 218 48 Hurface;
 #X obj 92 93 KEPfruit 1 Hur2A 50 HURFMUSIC-A;
@@ -1272,6 +1254,67 @@ seuil -2 -6 0 8 1.86881e+08 3.00275e+08 3.00275e+08 0 1;
 #X obj 191 155 l KEMfruit 1 Pingnip 16 KE;
 #X obj 190 173 l KEMfruit 1 Fluvita 17 KE;
 #X obj 192 193 l KEMfruit 1 Espagnole 18 KE;
+#N canvas 190 1145 996 554 XR18>midi 0;
+#X floatatom 283 51 3 0 0 0 - - -, f 3;
+#X floatatom 381 80 3 0 0 0 - - -, f 3;
+#X obj 266 22 ctlin 28 1;
+#X obj 368 98 ctlout 0 1;
+#X floatatom 330 83 5 0 0 0 - - -, f 5;
+#X obj 369 58 ctlin 14 1;
+#X obj 58 241 XR18slider-midi 2 1 3 13 3;
+#X obj 11 205 XR18slider-midi 3 1 4 13 4;
+#X obj 32 205 XR18slider-midi 4 1 5 13 5;
+#X obj 53 205 XR18slider-midi 5 1 6 13 6;
+#X obj 74 205 XR18slider-midi 6 1 7 13 7;
+#X obj 95 205 XR18slider-midi 7 1 8 13 8;
+#X obj 116 205 XR18slider-midi 8 1 9 12 1;
+#X obj 137 205 XR18slider-midi 9 1 10 12 2;
+#X obj 158 205 XR18slider-midi 10 1 11 12 3;
+#X obj 179 205 XR18slider-midi 11 1 12 12 4;
+#X obj 200 205 XR18slider-midi 12 1 13 12 5;
+#X obj 221 205 XR18slider-midi 13 1 14 12 6;
+#X obj 242 205 XR18slider-midi 14 1 15 12 7;
+#X obj 263 205 XR18slider-midi 15 1 16 12 8;
+#X obj 36 140 XR18slider-midi 1 1 2 1 1;
+#X obj 19 75 XR18slider-midi 0 1 1 0 1;
+#X text 249 490 updated for Pd version 0.34;
+#X msg 34 364 240 \, 45 \, 93 \, 3 \, 65 \, 1 \, 2 \, 3 \, 4 \, 247
+;
+#X text 27 325 You can format your own SYSEX messages as shown:;
+#X text 23 439 and receive SYSEX via:;
+#X msg 486 302 F0 0 20 32 32 TEXT F7;
+#X msg 521 344 240 0 32 50 50 TEXT 247;
+#X obj 34 394 midiout;
+#X obj 237 471 print;
+#X obj 470 488 print;
+#X msg 122 402 1;
+#X obj 245 433 sysexin 240 0 32 50 50 TEXT 247;
+#X obj 754 17 tgl 15 0 XtouchXR18on-snd XtouchXR18on-rcv empty 17 7
+0 10 -258699 -258699 -233017 0 1;
+#X obj 514 83 sel 0 1;
+#X msg 514 110 color 13 13 10;
+#X msg 534 132 color 16 16 0;
+#X obj 523 49 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 502 25 r XtouchXR18on-snd;
+#X obj 514 156 s XtouchXR18on-rcv;
+#X obj 786 352 Xtouch-TrancheXR18 1 0;
+#X connect 2 0 0 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
+#X connect 23 0 28 0;
+#X connect 26 0 28 0;
+#X connect 27 0 28 0;
+#X connect 31 0 28 1;
+#X connect 34 0 35 0;
+#X connect 34 1 36 0;
+#X connect 35 0 39 0;
+#X connect 36 0 39 0;
+#X connect 37 0 34 0;
+#X connect 38 0 34 0;
+#X restore 303 39 pd XR18>midi;
+#X obj 415 37 Xtouch;
+#X obj 340 289 XtouchVCA;
 #X restore 184 93 pd USB;
 #X obj 44 61 bng 20 250 50 0 show-INSTRUMENTS empty INSTRUMENTS 22
 10 0 10 -257985 -1 -1;

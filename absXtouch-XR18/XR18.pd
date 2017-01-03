@@ -1,0 +1,10 @@
+#N canvas 1036 824 511 508 10;
+#X obj 1 1 Xtouch-VCA 1;
+#X obj 20 1 Xtouch-VCA 2;
+#X obj 39 1 Xtouch-VCA 3;
+#X obj 58 1 Xtouch-VCA 4;
+#X obj 77 1 Xtouch-VCA 5;
+#X obj 96 1 Xtouch-VCA 6;
+#X obj 115 1 Xtouch-VCA 7;
+#X obj 134 1 Xtouch-VCA 8;
+#X coords 0 -1 1 1 505 213 1 0 0;

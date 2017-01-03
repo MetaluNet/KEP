@@ -1,0 +1,25 @@
+#N canvas 1654 594 511 508 10;
+#X obj 331 129 sel 0 1;
+#X msg 331 156 color 13 13 10;
+#X msg 351 178 color 16 16 0;
+#X obj 331 202 s XtouchVCAon-rcv;
+#X obj 340 95 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 295 42 r XtouchVCAon-snd;
+#X obj 153 1 Xtouch-MASTERS MA;
+#X obj 1 1 Xtouch-VCA 1;
+#X obj 20 1 Xtouch-VCA 2;
+#X obj 39 1 Xtouch-VCA 3;
+#X obj 58 1 Xtouch-VCA 4;
+#X obj 77 1 Xtouch-VCA 5;
+#X obj 96 1 Xtouch-VCA 6;
+#X obj 115 1 Xtouch-VCA 7;
+#X obj 134 1 Xtouch-VCA 8;
+#X obj 74 300 Xtouch-MASTERS-XR18 MB 1 31;
+#X connect 0 0 1 0;
+#X connect 0 1 2 0;
+#X connect 1 0 3 0;
+#X connect 2 0 3 0;
+#X connect 4 0 0 0;
+#X connect 5 0 0 0;
+#X coords 0 -1 1 1 174 104 1 0 0;

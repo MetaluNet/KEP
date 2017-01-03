@@ -1,0 +1,17 @@
+#N canvas 991 693 422 631 10;
+#X text 40 267 Knob: \; arg1:LayerKnob \; arg2:midi-ch \; arg3:ctl-K1
+\; arg4:note-K1Touch \; arg5:ctl-K2 \; arg6:note-K2Touch \; arg7:ctl-K3
+\; arg8:note-K3Touch \; arg9:ctl-K4 \; arg10:note-K4Touch \; arg11:ctl-K5
+\; arg12:note-K5Touch \; arg13:ctl-K6 \; arg14:note-K6Touch \; arg15:ctl-K7
+\; arg16:note-K7Touch \; arg17:ctl-K8 \; arg18:note-K8Touch \;;
+#X obj 13 2 cnv 15 18 18 empty empty \$1 1 8 0 14 -232576 -66577 0
+;
+#X obj 22 81 XtouchVpot2 \$1 \$2 \$17 \$18 8;
+#X obj 1 21 XtouchVpot2 \$1 \$2 \$3 \$4 1;
+#X obj 1 41 XtouchVpot2 \$1 \$2 \$7 \$8 3;
+#X obj 2 61 XtouchVpot2 \$1 \$2 \$11 \$12 5;
+#X obj 1 81 XtouchVpot2 \$1 \$2 \$15 \$16 è;
+#X obj 22 21 XtouchVpot2 \$1 \$2 \$5 \$6 2;
+#X obj 22 41 XtouchVpot2 \$1 \$2 \$9 \$10 4;
+#X obj 22 61 XtouchVpot2 \$1 \$2 \$13 \$14 6;
+#X coords 0 -1 1 1 43 101 2 0 0;

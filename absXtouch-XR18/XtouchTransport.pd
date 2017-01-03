@@ -1,0 +1,13 @@
+#N canvas 1049 730 422 631 10;
+#X obj 13 1 cnv 15 18 18 empty empty \$1 1 8 0 14 -262130 -66577 0
+;
+#X text 10 111 Transport: \; arg1:LayerTransport \; arg2:midi-ch \;
+arg3:note-T1 \; arg4:note-T2 \; arg5:note-T3 \; arg6:note-T4 \; arg7:note-T5
+\; arg8:note-T6 \;;
+#X obj 2 21 XtouchT \$1 \$2 \$3 1;
+#X obj 22 21 XtouchT \$1 \$2 \$4 2;
+#X obj 2 41 XtouchT \$1 \$2 \$5 3;
+#X obj 22 41 XtouchT \$1 \$2 \$6 4;
+#X obj 2 61 XtouchT \$1 \$2 \$7 5;
+#X obj 22 61 XtouchT \$1 \$2 \$8 6;
+#X coords 0 -1 1 1 43 101 2 0 0;
