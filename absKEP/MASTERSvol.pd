@@ -1,31 +1,37 @@
-#N canvas 2337 593 645 484 10;
+#N canvas 2623 679 726 484 10;
+#X declare -lib libdir -lib ggee -stdpath ggee;
+#X declare -lib libdir -lib ggee -stdpath ggee;
+#X declare -lib libdir -lib ggee -stdpath ggee;
+#X declare -lib libdir -lib ggee -stdpath ggee;
+#X declare -lib libdir -lib ggee -stdpath ggee;
+#X declare -lib libdir -lib ggee -stdpath ggee;
 #X obj 101 101 cnv 15 48 122 empty empty VOLUME 3 8 0 12 -260097 -1
 0;
-#X obj 102 125 vsl 15 95 0 1 0 0 MASTERVOL-snd MASTERVOL-rcv 44 6 -6
-1 8 -159808 -257985 -1 4145 1;
+#X obj 102 125 vsl 15 80 0 1 0 0 MASTERVOL-snd MASTERVOL-rcv 71 6 -6
+1 8 -159808 -257985 -1 5661 1;
 #X obj 117 125 vsl 8 95 0 1 0 0 MASTERVOL_max-snd MASTERVOL_max-rcv
-54 -2 -6 1 8 -260097 -257985 -1 5100 1;
-#X msg 234 160 label \$1;
-#X obj 234 140 makesymbol %s;
-#X obj 185 238 m 1;
-#X msg 205 381 label \$1;
-#X obj 205 357 makesymbol %s;
-#X obj 201 311 * 100;
-#X obj 203 331 i;
-#X obj 198 285 r MASTERVOL_max-snd;
-#X obj 203 406 s MASTERVOL_max-rcv;
-#X obj 200 218 r MASTERVOL_max-snd;
-#X obj 234 71 r MASTERVOL-snd;
-#X obj 233 185 s MASTERVOL-rcv;
-#X obj 185 259 s MASTER-lvl;
-#X obj 234 119 i;
-#X obj 234 96 * 100;
-#X obj 37 23 apf MASTERS MASTERVOL MASTERVOL 2;
-#X obj 36 44 apf MASTERS MASTERVOL_max MASTERVOL_max 2;
-#X obj 125 125 vsl 15 95 0 1 0 0 MONITORVOL-snd MONITORVOL-rcv 44 6
--6 1 8 -4034 -257985 -1 5300 1;
+52 -2 -6 1 8 -260097 -257985 -1 4900 1;
+#X msg 547 159 label \$1;
+#X obj 547 139 makesymbol %s;
+#X obj 175 340 m 1;
+#X msg 195 483 label \$1;
+#X obj 195 459 makesymbol %s;
+#X obj 191 413 * 100;
+#X obj 193 433 i;
+#X obj 188 387 r MASTERVOL_max-snd;
+#X obj 193 508 s MASTERVOL_max-rcv;
+#X obj 190 320 r MASTERVOL_max-snd;
+#X obj 547 70 r MASTERVOL-snd;
+#X obj 546 184 s MASTERVOL-rcv;
+#X obj 175 361 s MASTER-lvl;
+#X obj 547 118 i;
+#X obj 547 95 * 100;
+#X obj 8 10 apf MASTERS MASTERVOL MASTERVOL 2;
+#X obj 7 31 apf MASTERS MASTERVOL_max MASTERVOL_max 2;
+#X obj 125 125 vsl 15 80 0 1 0 0 MONITORVOL-snd MONITORVOL-rcv 54 6
+-6 1 8 -4034 -257985 -1 5105 1;
 #X obj 140 125 vsl 8 95 0 1 0 0 MONITORVOL_max-snd MONITORVOL_max-rcv
-43 -2 -6 1 8 -260097 -257985 -1 4100 1;
+79 -2 -6 1 8 -260097 -257985 -1 7500 1;
 #X msg 398 157 label \$1;
 #X obj 398 137 makesymbol %s;
 #X obj 349 235 m 1;
@@ -41,11 +47,34 @@
 #X obj 349 256 s MONITOR-lvl;
 #X obj 362 282 r MONITORVOL_max-snd;
 #X obj 367 403 s MONITORVOL_max-rcv;
-#X obj 295 19 apf MASTERS MONITORVOL MONITORVOL 2;
-#X obj 294 40 apf MASTERS MONITORVOL_max MONITORVOL_max 2;
-#X obj 52 285 r MASTERSvol;
+#X obj 322 18 apf MASTERS MONITORVOL MONITORVOL 2;
+#X obj 321 39 apf MASTERS MONITORVOL_max MONITORVOL_max 2;
+#X obj 50 247 r MASTERSvol;
 #X obj 39 324 s MASTERVOL-rcv;
 #X obj 47 362 s MONITORVOL-rcv;
+#X obj 532 243 sel 0 1;
+#X msg 532 270 color 13 13 10;
+#X msg 552 292 color 16 16 0;
+#X obj 102 208 tgl 15 0 on-MASTER-snd on-MASTER-rcv empty 5 10 1 16
+-24198 -24198 -262144 1 1;
+#X obj 532 218 r on-MASTER-snd;
+#X obj 533 316 s on-MASTER-rcv;
+#X obj 178 291 *;
+#X obj 189 262 t b f;
+#X obj 178 211 r MASTERVOL-snd;
+#X obj 189 239 r on-MASTER-snd;
+#X obj 326 138 *;
+#X obj 276 90 t b f;
+#X obj 276 67 r on-MONITOR-snd;
+#X obj 125 208 tgl 15 0 on-MONITOR-snd on-MONITOR-rcv empty 5 10 1
+16 -24198 -24198 -262144 1 1;
+#X obj 542 368 sel 0 1;
+#X msg 542 395 color 13 13 10;
+#X msg 562 417 color 16 16 0;
+#X obj 542 343 r on-MONITOR-snd;
+#X obj 544 441 s on-MONITOR-rcv;
+#X obj 8 51 api MASTERS on-MASTER on-MASTER 2;
+#X obj 11 73 api MASTERS on-MONITOR on-MONITOR 2;
 #X connect 3 0 14 0;
 #X connect 4 0 3 0;
 #X connect 5 0 15 0;
@@ -56,7 +85,6 @@
 #X connect 10 0 8 0;
 #X connect 12 0 5 1;
 #X connect 13 0 17 0;
-#X connect 13 0 5 0;
 #X connect 16 0 4 0;
 #X connect 17 0 16 0;
 #X connect 22 0 32 0;
@@ -69,9 +97,28 @@
 #X connect 29 0 23 0;
 #X connect 30 0 29 0;
 #X connect 31 0 30 0;
-#X connect 31 0 24 0;
+#X connect 31 0 52 0;
 #X connect 33 0 24 1;
 #X connect 35 0 27 0;
 #X connect 39 0 40 0;
 #X connect 39 0 41 0;
+#X connect 42 0 43 0;
+#X connect 42 1 44 0;
+#X connect 43 0 47 0;
+#X connect 44 0 47 0;
+#X connect 46 0 42 0;
+#X connect 48 0 5 0;
+#X connect 49 0 48 0;
+#X connect 49 1 48 1;
+#X connect 50 0 48 0;
+#X connect 51 0 49 0;
+#X connect 52 0 24 0;
+#X connect 53 0 52 0;
+#X connect 53 1 52 1;
+#X connect 54 0 53 0;
+#X connect 56 0 57 0;
+#X connect 56 1 58 0;
+#X connect 57 0 60 0;
+#X connect 58 0 60 0;
+#X connect 59 0 56 0;
 #X coords 0 -1 1 1 50 124 2 100 100;
