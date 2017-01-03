@@ -1,4 +1,4 @@
-#N canvas 80 768 833 552 10;
+#N canvas 87 308 833 552 10;
 #X declare -path AutoPreset -stdpath moonlib -stdpath iemlib -lib zexy
 ;
 #N canvas 466 531 450 300 config 0;
@@ -14,11 +14,11 @@
 #X connect 3 0 1 0;
 #X coords 0 -1 1 1 90 32 1 100 100;
 #X restore 113 19 pd config;
-#N canvas 0 81 450 300 declares 0;
+#N canvas 5 77 450 300 declares 0;
 #X obj 38 16 declare -path AutoPreset -stdpath moonlib -stdpath iemlib
 -lib zexy;
 #X restore 37 19 pd declares;
-#N canvas 0 330 542 366 masterMain 0;
+#N canvas 4 328 542 366 masterMain 0;
 #X obj 184 42 mull~ 1 10;
 #X obj 349 33 mull~ 1 10;
 #X obj 91 34 mull~ 1 10;
@@ -30,7 +30,7 @@
 #X obj 105 222 pow 2;
 #X obj 105 244 * 4;
 #X obj 141 135 vsl 15 80 0 1 0 1 empty empty OUT 0 -9 0 10 -262130
--1 -1 7900 1;
+-1 -1 2400 1;
 #X obj 141 222 pow 2;
 #X obj 141 244 * 4;
 #X obj 312 126 loadbang;
@@ -159,17 +159,17 @@
 #X obj 215 247 player \$1-sample-1;
 #X obj 17 164 *~ 0.2;
 #X obj 17 187 out \$0-Main;
-#X obj 17 57 sample \$1-sample-1 60;
-#X obj 17 83 sample \$1-sample-2 60;
-#X obj 17 109 sample \$1-sample-3 60;
-#X obj 16 135 sample \$1-sample-4 60;
-#X obj 27 404 autorec \$1-config \$1-arec1 \$1-sample \$1;
 #X obj 370 370 stretcher \$1 \$1-sample;
 #X obj 291 59 decoupeur \$1-sample-1 \$1-dctl;
 #X obj 292 110 decoupeur \$1-sample-3 \$1-dctl;
 #X obj 292 135 decoupeur \$1-sample-4 \$1-dctl;
 #X obj 291 84 decoupeur \$1-sample-2 \$1-dctl;
 #X obj 610 59 decoupeur_ctl \$1-config \$1-dctl \$1;
+#X obj 27 404 l autorec \$1-config \$1-arec1 \$1-sample \$1;
+#X obj 17 57 l sample \$1 sample-1 60;
+#X obj 17 83 l sample \$1 sample-2 60;
+#X obj 17 109 l sample \$1 sample-3 60;
+#X obj 17 135 l sample \$1 sample-4 60;
 #X connect 2 0 12 0;
 #X connect 2 1 13 0;
 #X connect 3 0 20 0;
@@ -181,16 +181,11 @@
 #X connect 9 0 20 1;
 #X connect 10 0 9 0;
 #X connect 14 0 2 0;
-#X connect 19 0 27 0;
 #X connect 20 0 4 0;
 #X connect 20 0 18 0;
 #X connect 20 1 5 0;
 #X connect 20 1 18 1;
 #X connect 21 0 22 0;
 #X connect 21 0 22 1;
-#X connect 23 0 21 0;
-#X connect 24 0 21 0;
-#X connect 25 0 21 0;
-#X connect 26 0 21 0;
-#X connect 28 0 15 0;
-#X connect 28 1 15 1;
+#X connect 23 0 15 0;
+#X connect 23 1 15 1;
