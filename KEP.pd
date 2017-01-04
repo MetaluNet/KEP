@@ -1,4 +1,4 @@
-#N canvas 52 586 542 286 10;
+#N canvas 506 182 542 286 10;
 #X declare -path KEP/AutoAbstractions;
 #X declare -path KEP/AutoPreset;
 #X declare -path KEP/absKEP;
@@ -40,7 +40,7 @@
 #X obj 79 58 int;
 #X text 164 -19 <-- on/off;
 #X obj 2 17 nbx 3 14 -1e+37 1e+37 0 0 empty empty CPU 2 -8 1 10 -262144
--1 -262144 43 256;
+-1 -262144 0 256;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 0;
@@ -52,7 +52,7 @@
 #X connect 8 0 7 0;
 #X coords 0 -1 1 1 37 32 2 0 0;
 #X restore 44 172 pd CPU;
-#N canvas 442 144 677 643 CACHEnoguis 1;
+#N canvas 759 200 677 643 CACHEnoguis 0;
 #X obj 93 220 CACHE KEPcontrol 1109;
 #X obj 282 18 CACHE KEPcontrol 1201;
 #X obj 11 16 CACHE KEPcontrol 1101;
@@ -93,10 +93,10 @@
 #X obj 236 209 r MASTERSvol;
 #X obj 335 206 bng 15 250 50 0 reloadRegie empty reloadRegie 17 7 0
 12 -260097 -1 -1;
-#N canvas 207 799 1016 639 declare 0;
+#N canvas 209 231 1016 639 declare 0;
 #X obj 10 550 l declare -path /usr/lib/pd-extended/extra/iemlib/;
 #X obj 793 81 moonlib/mknob 25 100 0 127 0 0 -233017 empty empty -2
--6 0 8 1.46041e+08 3.13176e+08 1.46041e+08 0 1;
+-6 0 8 -262144 -262144 -262144 0 1;
 #X obj 576 515 l /home/al1/pd-externals/Bidouille/PdPatchs/0Morsso0/alternateur
 ;
 #X obj 2 310 declare -path KEP/AutoAbstractions;
@@ -146,7 +146,7 @@
 #X obj 328 123 l AutoAffectMonitor;
 #X obj 298 181 l Send2Gem;
 #X obj 386 180 l Playlist360;
-#N canvas 1820 619 420 401 MASTERS 1;
+#N canvas 1820 619 420 401 MASTERS 0;
 #X obj 4 3 cnv 15 347 393 empty empty empty 20 12 1 14 -1 -262144 0
 ;
 #N canvas 790 998 343 237 SaveMaster 0;
@@ -272,9 +272,8 @@
 #X obj 209 400 tgl 15 0 MASTER-DSPswitchOffWhenMuted MASTER-DSPswitchOffWhenMuted
 DSPswitchOffWhenMuted 17 7 0 10 -262144 -1 -1 0 1;
 #X restore 258 109 pd MASTERS;
-#X obj 184 237 ../KEP_INSTRUMENTS;
-#N canvas 510 127 252 769 CACHEguis 1;
-#N canvas 776 552 266 261 SaveKEPcontrol 0;
+#N canvas 1132 103 252 769 CACHEguis 0;
+#N canvas 779 611 266 261 SaveKEPcontrol 0;
 #X obj 1 1 cnv 15 232 60 empty empty KEPcontrol 8 12 1 14 -162280 -1
 0;
 #X obj 3 45 bng 13 250 50 0 empty empty load 17 7 1 10 -4034 -1 -1
@@ -282,13 +281,12 @@ DSPswitchOffWhenMuted 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 3 25 bng 13 250 50 0 empty empty save_as 17 7 1 10 -258113 -1
 -1;
 #X symbolatom 66 42 0 0 0 0 - - -;
-#N canvas 597 299 288 475 apmaster_autoload 0;
+#N canvas 600 377 288 475 apmaster_autoload 0;
 #X obj 67 57 route loaded saved;
 #X obj 12 130 loadbang;
 #X msg 67 371 loadfile \$1;
 #X obj 67 98 symbol;
 #X obj 67 343 symbol;
-#X obj 12 152 del 100;
 #X msg 67 164 set \$1;
 #X obj 67 285 pack s s;
 #X msg 67 191 KEPctl-demo;
@@ -303,24 +301,24 @@ DSPswitchOffWhenMuted 17 7 0 10 -262144 -1 -1 0 1;
 -1 -1;
 #X obj 161 239 getdir 4;
 #X obj 67 262 getdir 4;
+#X obj 12 152 del 2000;
 #X connect 0 0 3 0;
 #X connect 0 1 3 0;
-#X connect 1 0 5 0;
-#X connect 2 0 13 0;
-#X connect 3 0 11 0;
+#X connect 2 0 12 0;
+#X connect 3 0 10 0;
 #X connect 4 0 2 0;
-#X connect 5 0 8 0;
-#X connect 6 0 8 0;
-#X connect 7 0 14 0;
-#X connect 8 0 10 0;
-#X connect 9 0 18 0;
-#X connect 9 1 7 1;
-#X connect 10 0 9 0;
-#X connect 11 1 6 0;
-#X connect 12 0 0 0;
-#X connect 14 0 4 0;
-#X connect 16 0 17 0;
-#X connect 17 0 15 0;
+#X connect 5 0 7 0;
+#X connect 6 0 13 0;
+#X connect 7 0 9 0;
+#X connect 8 0 17 0;
+#X connect 8 1 6 1;
+#X connect 9 0 8 0;
+#X connect 10 1 5 0;
+#X connect 11 0 0 0;
+#X connect 13 0 4 0;
+#X connect 15 0 16 0;
+#X connect 16 0 14 0;
+#X connect 17 0 6 0;
 #X connect 18 0 7 0;
 #X restore 133 157 pd apmaster_autoload;
 #N canvas 586 202 272 246 apmaster_symbol 0;
@@ -340,7 +338,7 @@ DSPswitchOffWhenMuted 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 10 224 tgl 13 0 KEPcontrol-save_tog-snd KEPcontrol-save_tog-rcv
 sessions 90 -16 1 10 -258113 -1 -1 0 1;
 #X obj 3 136 apmaster KEPcontrol;
-#N canvas 1766 522 450 300 patterns 1;
+#N canvas 1766 522 450 300 patterns 0;
 #X msg 37 41 \$1;
 #X obj 213 46 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
@@ -399,21 +397,20 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X obj 9 544 CACHEgui KEPcontrol 1005;
 #X obj 9 662 CACHEgui KEPcontrol 1006;
 #X restore 184 163 pd CACHEguis;
-#N canvas 1052 1024 309 388 SONG 0;
-#N canvas 869 427 343 197 SaveKEPsong 0;
+#N canvas 604 232 309 388 SONG 0;
+#N canvas 870 453 343 197 SaveKEPsong 0;
 #X obj 1 1 cnv 15 300 60 empty empty KEPsong 8 12 1 14 -261234 -45076
 0;
 #X obj 3 46 bng 13 250 50 0 empty empty load 17 7 1 10 -4034 -1 -1
 ;
 #X obj 3 26 bng 13 250 50 0 empty empty save_as 17 7 1 10 -258113 -1
 -1;
-#N canvas 572 397 314 475 apmaster_autoload 0;
+#N canvas 573 397 314 475 apmaster_autoload 0;
 #X obj 61 55 route loaded saved;
 #X obj 6 128 loadbang;
 #X msg 61 369 loadfile \$1;
 #X obj 61 96 symbol;
 #X obj 61 341 symbol;
-#X obj 6 150 del 100;
 #X msg 61 162 set \$1;
 #X obj 61 283 pack s s;
 #X msg 61 189 KEPsong;
@@ -428,24 +425,25 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X obj 61 307 makesymbol %s/KEPSETTINGS/ConfigSong/%s;
 #X obj 165 220 getdir 4;
 #X obj 61 260 getdir 4;
+#X obj 6 150 del 2000;
 #X connect 0 0 3 0;
 #X connect 0 1 3 0;
-#X connect 1 0 5 0;
-#X connect 2 0 13 0;
-#X connect 3 0 11 0;
+#X connect 1 0 18 0;
+#X connect 2 0 12 0;
+#X connect 3 0 10 0;
 #X connect 4 0 2 0;
-#X connect 5 0 8 0;
-#X connect 6 0 8 0;
-#X connect 7 0 16 0;
-#X connect 8 0 10 0;
-#X connect 9 0 18 0;
-#X connect 9 1 7 1;
-#X connect 10 0 9 0;
-#X connect 11 1 6 0;
-#X connect 12 0 0 0;
-#X connect 15 0 17 0;
-#X connect 16 0 4 0;
-#X connect 17 0 14 0;
+#X connect 5 0 7 0;
+#X connect 6 0 15 0;
+#X connect 7 0 9 0;
+#X connect 8 0 17 0;
+#X connect 8 1 6 1;
+#X connect 9 0 8 0;
+#X connect 10 1 5 0;
+#X connect 11 0 0 0;
+#X connect 14 0 16 0;
+#X connect 15 0 4 0;
+#X connect 16 0 13 0;
+#X connect 17 0 6 0;
 #X connect 18 0 7 0;
 #X restore 179 141 pd apmaster_autoload;
 #N canvas 666 549 272 246 apmaster_symbol 0;
@@ -525,7 +523,7 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X coords 0 -1 1 1 302 62 1 0 0;
 #X restore 4 6 pd SaveKEPsong;
 #X obj 4 70 SYNCHRO KEPsong SYNCHRO;
-#N canvas 425 415 282 203 gammes 0;
+#N canvas 427 467 282 203 gammes 0;
 #X obj 88 164 s \$0-g1-snd;
 #X obj 210 164 s \$0-g2-snd;
 #X obj 33 -11 r \$0-g1-rcv;
@@ -538,24 +536,24 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X obj 149 15 cnv 15 100 110 empty empty game2 20 12 1 14 -24198 -66577
 0;
 #X obj 155 36 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
-#X obj 116 127 mknob 25 100 0 127 0 0 -355 \$0-g1f-rcv fine -2 -6 0
-8 3.15065e+08 3.13176e+08 3.14334e+08 78 1;
-#X obj 175 92 mknob 25 100 0 127 0 0 -355 \$0-g2f-rcv fine2 -2 -6 0
-8 3.15065e+08 3.13176e+08 3.14334e+08 78 1;
-#X obj 20 129 mknob 25 100 0 127 0 0 -355 \$0-g1trans-rcv Transp -2
--6 0 8 3.15065e+08 3.13176e+08 3.14334e+08 0 1;
-#X obj 63 129 mknob 25 100 0 127 0 0 -355 \$0-g1mode-rcv Mode -2 -6
-0 8 3.15065e+08 3.13176e+08 3.14334e+08 0 1;
+#X obj 116 127 mknob 20 100 0 2 0 0 \$0-g1f-snd \$0-g1f-rcv fine -2
+-6 1 8 -262144 -1 -1 4950 1;
+#X obj 175 92 mknob 25 100 0 2 0 0 \$0-g2f-snd \$0-g2f-rcv fine2 -2
+-6 1 8 -262144 -1 -1 4950 1;
+#X obj 20 129 mknob 20 100 0 1 0 0 \$0-g1trans-snd \$0-g1trans-rcv
+Transp -2 -6 1 8 -260818 -1 -355 0 1;
+#X obj 63 129 mknob 20 100 0 1 0 0 \$0-g1mode-snd \$0-g1mode-rcv Mode
+-2 -6 1 8 -62784 -1 -355 0 1;
 #X obj 20 81 cnv 10 120 30 empty empty empty 20 12 0 14 -241291 -66577
 0;
-#X obj 47 92 mknob 25 100 0 127 0 0 -355 \$0-g1in-rcv InNb:1 -2 -6
-0 8 3.15065e+08 3.13176e+08 3.14334e+08 0 1;
+#X obj 47 92 mknob 15 100 0 1 0 0 \$0-g1in-snd \$0-g1in-rcv InNb:1
+-2 -6 1 8 -24198 -1 -355 0 1;
 #X obj 107 91 bng 10 250 50 0 \$0-g1raz-snd \$0-g1raz-rcv Raz -5 -6
 1 8 -258699 -1 -258699;
-#X obj 78 86 mknob 25 100 0 127 0 0 -355 \$0-g1notes-rcv notes:7 -2
--6 0 8 3.15065e+08 3.13176e+08 3.14334e+08 0 1;
-#X obj 21 87 mknob 25 100 0 127 0 0 -355 \$0-g1thres-rcv seuil -2 -6
-0 8 3.15065e+08 3.13176e+08 3.14334e+08 0 1;
+#X obj 78 86 mknob 15 100 0 1 0 0 \$0-g1notes-snd \$0-g1notes-rcv notes:7
+-10 20 1 8 -44926 -1 -355 0 1;
+#X obj 21 87 mknob 15 100 0 1 0 0 \$0-g1thres-snd \$0-g1thres-rcv seuil
+0 20 1 8 -260818 -1 -1 0 1;
 #X obj 123 93 tgl 10 0 \$0-g1learn-snd \$0-g1learn-rcv learn -7 14
 1 8 -262144 -1 -1 0 1;
 #N canvas 759 480 369 296 guts 0;
@@ -1242,15 +1240,9 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X restore 184 121 pd SONG;
 #N canvas 489 75 947 553 USB 0;
 #X obj 23 154 KEMfruit 1 KEG1 20 KE;
-#X obj 28 254 KEMfruit 1 KEG6 25 KE;
-#X obj 22 191 KEMfruit 1 KEG3 22 KE;
-#X obj 26 233 KEMfruit 1 KEG5 24 KE;
-#X obj 24 171 KEMfruit 1 KEG2 21 KE;
-#X obj 25 211 KEMfruit 1 KEG4 23 KE;
-#X obj 16 10 pied/pied 0 12346;
+#X obj 22 22 pied/pied 0 12346;
 #X obj 218 48 Hurface;
-#X obj 92 93 KEPfruit 1 Hur2A 50 HURFMUSIC-A;
-#X obj 92 113 KEPfruit 1 Hur2B 51 HURFMUSIC-B;
+#X obj 24 106 KEPfruit 1 Hur2A 50 HURFMUSIC-A;
 #X obj 191 155 l KEMfruit 1 Pingnip 16 KE;
 #X obj 190 173 l KEMfruit 1 Fluvita 17 KE;
 #X obj 192 193 l KEMfruit 1 Espagnole 18 KE;
@@ -1315,24 +1307,36 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X restore 303 39 pd XR18>midi;
 #X obj 415 37 Xtouch;
 #X obj 340 289 XtouchVCA;
+#X obj 28 254 KEMfruit 1 KEG6 25 KE;
+#X obj 22 191 KEMfruit 1 KEG3 22 KE;
+#X obj 26 233 KEMfruit 1 KEG5 24 KE;
+#X obj 24 171 KEMfruit 1 KEG2 21 KE;
+#X obj 25 211 KEMfruit 1 KEG4 23 KE;
+#X obj 24 126 KEPfruit 1 Hur2B 51 HURFMUSIC-B;
+#X msg 38 332 \; KEG\$1-SelectCache-rcv 0;
+#X msg 38 310 1 \, 2 \, 3 \, 4 \, 5 \, 6;
+#X obj 22 2 r FRAISEUSB-on;
+#X connect 17 0 16 0;
+#X connect 18 0 1 0;
 #X restore 184 93 pd USB;
 #X obj 44 61 bng 20 250 50 0 show-INSTRUMENTS empty INSTRUMENTS 22
 10 0 10 -257985 -1 -1;
-#N canvas 4 75 450 300 show 0;
+#N canvas 6 75 450 300 show 0;
 #X obj 58 123 r show-INSTRUMENTS;
 #X msg 58 146 \; pd-KEP_INSTRUMENTS.pd vis 1;
 #X obj 54 37 r show-USB;
 #X msg 54 60 \; pd-USB vis 1;
 #X obj 163 34 r show-SONG;
 #X msg 163 57 \; pd-SONG vis 1;
-#X obj 257 35 r show-CACHES;
+#X obj 249 203 r show-CACHES;
 #X msg 257 58 \; pd-CACHEguis vis 1 \; pd-CACHEnoguis vis 1;
 #X obj 277 130 r show-MASTERS;
 #X msg 277 153 \; pd-MASTERS vis 1;
+#X msg 249 226 \; pd-CACHES vis 1;
 #X connect 0 0 1 0;
 #X connect 2 0 3 0;
 #X connect 4 0 5 0;
-#X connect 6 0 7 0;
+#X connect 6 0 10 0;
 #X connect 8 0 9 0;
 #X restore 196 36 pd show;
 #X obj 44 83 bng 20 250 50 0 show-USB empty USB 22 10 0 10 -4034 -1
@@ -1367,4 +1371,5 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X connect 9 0 10 0;
 #X connect 10 0 11 0;
 #X restore 405 54 pd MAINDIR;
+#X obj 184 237 KEP_INSTRUMENTS;
 #X coords 0 -1 1 1 100 170 1 40 40;

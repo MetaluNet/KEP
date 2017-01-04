@@ -1,4 +1,4 @@
-#N canvas 34 469 280 266 10;
+#N canvas 932 449 429 294 10;
 #X obj 94 8 loadbang;
 #N canvas 284 101 1046 684 telecom_FRAISE 0;
 #N canvas 296 219 649 604 Commands 0;
@@ -417,9 +417,9 @@
 #X obj 711 388 pack f f f;
 #X obj 637 334 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 691 329 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 691 329 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 741 329 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 741 329 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 690 348 t b f;
 #X obj 735 350 t b f;
@@ -638,11 +638,50 @@
 #X connect 88 0 58 0;
 #X restore 96 87 pd telecom_FRAISE;
 #X obj 10 159 SelectCache \$2 KEPsong \$3;
-#X obj 10 210 CacheSet\$4 \$2;
 #X obj 11 240 Fruit2Net \$2 \$3;
 #X obj 11 7 CACHE KEPcontrol \$3;
 #X symbolatom 139 242 10 0 0 0 - - -, f 10;
-#X obj 94 27 DECrfid \$3 \$2 0;
 #X obj 11 110 fruit/fruit \$1 \$2 \$3 FraiseKE;
-#X connect 0 0 7 0;
-#X connect 4 0 6 0;
+#N canvas 805 478 476 300 setCache 0;
+#X obj 84 224 iem_s;
+#X msg 111 191 set \$1;
+#X msg 83 57 1001;
+#X obj 48 146 symbol \$2;
+#X msg 111 148 symbol set-\$1-rfid;
+#X msg 129 56 2001;
+#X obj 76 99 t b a b;
+#X msg 233 146 symbol rien;
+#X obj 45 34 r \$2-setCache;
+#X obj 324 128 symbol \$2;
+#X obj 324 106 t b f;
+#X obj 324 150 pack s f;
+#X msg 324 172 symbol \$1-\$2;
+#X obj 324 194 s \$2-setCache;
+#X obj 338 54 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144 -1
+-1 0;
+#X obj 324 83 + 1;
+#X obj 173 12 r \$2-setCacheNum;
+#X obj 324 24 r \$2-SelectCache-snd;
+#X connect 1 0 0 1;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 3 0;
+#X connect 6 1 4 0;
+#X connect 6 2 7 0;
+#X connect 7 0 0 0;
+#X connect 8 0 6 0;
+#X connect 9 0 11 0;
+#X connect 10 0 9 0;
+#X connect 10 1 11 1;
+#X connect 11 0 12 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 15 0 10 0;
+#X connect 17 0 15 0;
+#X restore 229 90 pd setCache;
+#X obj 10 210 l CacheSet\$4 \$2;
+#X obj 94 27 l DECrfid \$3 \$2 0;
+#X connect 0 0 9 0;
+#X connect 3 0 5 0;
