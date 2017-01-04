@@ -1,0 +1,16 @@
+Volume_max 0.777778 0;
+Volume 0.414141 0;
+Feed-back_max 0.636364 0;
+Feed-back 0.414141 0;
+Filtre2 0.626263 0;
+Filtre1 0.252525 0;
+Ajust_vitesse 0.919192 0;
+Ajust_tempo 0.262626 0;
+Vitesse_max 0.707071 0;
+Vitesse 0.292929 0;
+ 0 0;
+volume 69 0;
+Effet 0 0;
+ 0 0;
+FX-patternMAX 2 0;
+FX del1_time 0.505039 16 0 1 0.496063 0 0 0 0 0 0 0 0 0 0 0 0 0;

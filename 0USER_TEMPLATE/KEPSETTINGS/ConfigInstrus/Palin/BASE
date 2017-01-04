@@ -1,0 +1,53 @@
+THi 0.151515 0;
+TLow 0.222222 0;
+Thresh 0.292929 0;
+SnapTirage 2 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0;
+Hmin 0.111111 0;
+Lmin 0.141414 0;
+Seuil 0.050505 0;
+sample-4-file /home/al1/Dropbox/KEP/Demo/04PDM_Kerk001.wav 16 _ _ _
+_ _ _ _ _ _ _ _ _ _ _ _ _;
+sample-3-file /home/al1/Dropbox/KEP/Demo/03PDM_Djumb003.wav 16 _ _
+_ _ _ _ _ _ _ _ _ _ _ _ _ _;
+sample-2-file /home/al1/Dropbox/KEP/Demo/02Lio001.wav 16 _ _ _ _ _
+_ _ _ _ _ _ _ _ _ _ _;
+sample-1-file /home/al1/Dropbox/KEP/Demo/01Abeat003.wav 16 _ _ _ _
+_ _ _ _ _ _ _ _ _ _ _ _;
+-pitch- 1 0;
+Mesure 1 0;
+Mou 0.151515 0;
+Pitch 0.464646 0;
+-const- 0.141414 0;
+Mode 1 0;
+-mode- 1 0;
+Constance 0.0606061 0;
+Volume 1 0;
+Volume 1 0;
+-tog1- 0 0;
+on 1 0;
+-toglR- 0 0;
+toglR 0 0;
+-togl4- 0 0;
+togl4 1 0;
+-togl3- 0 0;
+togl3 1 0;
+-togl2- 0 0;
+togl2 1 0;
+-togR- 0 0;
+togR 0 0;
+-tog4- 0 0;
+tog4 1 0;
+-tog3- 0 0;
+tog3 1 0;
+-tog2- 0 0;
+tog2 0 0;
+-togl1- 1 0;
+togl1 1 0;
+FX-patternMAX 2 0;
+FX orfilter1 mode 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX orfilter1 db -0.00505051 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX orfilter1 q 0.1 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX orfilter1 f 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+FX del1_time 0.68685 16 0.68685 1 0.496063 0 0 0 0 0 0 0 0 0 0 0 0
+0;
