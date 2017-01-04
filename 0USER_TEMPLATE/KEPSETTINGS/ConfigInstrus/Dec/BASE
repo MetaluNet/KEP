@@ -1,3 +1,9 @@
+sample-4-file 04PDM_Kerk001.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+;
+sample-3-file 03PDM_Djumb003.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+;
+sample-2-file 02Lio001.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
+sample-1-file 01Abeat003.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
 FX-patternMAX 3 0;
 FX ortho1 mode 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
 FX ortho1 mode 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
@@ -66,33 +72,27 @@ SnapTirage 2 0 2 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
 0 0 0 0 0 0 0 0;
 Hmin 0.272727 0;
 Lmin 0.212121 0;
-Seuil 0.121212 0;
-sample-4-file /home/al1/Dropbox/KEP/Demo/04PDM_Kerk001.wav 16 _ _ _
-_ _ _ _ _ _ _ _ _ _ _ _ _;
-sample-3-file /home/al1/Dropbox/KEP/Demo/03PDM_Djumb003.wav 16 _ _
-_ _ _ _ _ _ _ _ _ _ _ _ _ _;
-sample-2-file /home/al1/Dropbox/KEP/Demo/02Lio001.wav 16 _ _ _ _ _
-_ _ _ _ _ _ _ _ _ _ _;
-sample-1-file /home/al1/Dropbox/KEP/Demo/01Abeat003.wav 16 _ _ _ _
-_ _ _ _ _ _ _ _ _ _ _ _;
+Seuil 0.040404 0;
+Volume 0.828283 0;
+Volume 0.828283 0;
+Constance 0.59596 0;
+Pitch 0.494949 0;
+Amorti 0.118687 0;
+Effet 0.722424 0;
+Rec4 0 0;
+Sa4 0 0;
+Rec3 0 0;
+Sa3 0 0;
+Rec2 0 0;
+Sa2 0 0;
+Rec1 0 0;
+Sa1 0 0;
+-FragDenum 0 0;
+Denum 0.31404 0;
+Mode 1 0;
+PalinMesure 1 0;
 SnR 0 0;
 P0 0 0;
-Constance 0 0;
-Volume 0.626263 0;
-Rever 0 0;
-Sa2 0 0;
-Norm 0 0;
-Sa1 0 0;
-Alea 0 0;
-Sa3 0 0;
-Palin 1 0;
-Sa4 0 0;
-Time 1 0;
-PalinMesure 1 0;
-Amorti 0.25 0;
-Pitch 0 0;
-FragDenum 0.464646 0;
-Denum 0.31404 0;
 -lv- 0 0;
 lv 0 0;
 -lr- 0 0;
@@ -105,7 +105,5 @@ l4 0 0;
 l3 0 0;
 -l2- 0 0;
 l2 0 0;
-Dir-in 0 0;
-Effet 0.722424 0;
 -l1- 0 0;
 l1 0 0;

@@ -1,3 +1,8 @@
+sample-4-file 14senza01.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
+sample-3-file 07Rm1x01.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
+sample-2-file 15MS_CtBass001.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+;
+sample-1-file 09T_B001.wav 16 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _;
 SaTrig 2048 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8 8
@@ -290,39 +295,31 @@ Thresh 0.808081 0;
 Hmin 0.272727 0;
 Lmin 0.212121 0;
 Seuil 0.121212 0;
-sample-4-file /home/al1/Dropbox/KEP/Demo/14senza01.wav 16 _ _ _ _ _
-_ _ _ _ _ _ _ _ _ _ _;
-sample-3-file /home/al1/Dropbox/KEP/Demo/07Rm1x01.wav 16 _ _ _ _ _
-_ _ _ _ _ _ _ _ _ _ _;
-sample-2-file /home/al1/Dropbox/KEP/Demo/15MS_CtBass001.wav 16 _ _
-_ _ _ _ _ _ _ _ _ _ _ _ _ _;
-sample-1-file /home/al1/Dropbox/KEP/Demo/09T_B001.wav 16 _ _ _ _ _
-_ _ _ _ _ _ _ _ _ _ _;
+Rec4 0 0;
+Sa4 0 0;
+Rec3 0 0;
+Sa3 0 0;
+Rec2 0 0;
+Sa2 0 0;
+Rec1 0 0;
+Sa1 0 0;
 TailleRec 1 0;
 Volume 0.858586 0;
 Trig 0 0;
 Rec 0 0;
 LenRnd 0.482323 0;
 Len 0.520404 0;
-PosRnd 1 0;
+PosRnd 0.59596 0;
 Pos 0.244646 0;
 SpeedRnd 0.565657 0;
 Speed 0.608586 0;
-Rever 0 0;
-Sa2 0 0;
-Norm 0 0;
-Sa1 0 0;
-Alea 0 0;
-Sa3 0 0;
-Palin 0 0;
-Sa4 0 0;
 -lv- 0 0;
 lv 0 0;
 -lr- 0 0;
 lr 0 0;
 -lR- 0 0;
 lR 0 0;
--l4- 1 0;
+-l4- 0 0;
 l4 0 0;
 -l3- 0 0;
 l3 0 0;
