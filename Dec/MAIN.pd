@@ -1,4 +1,4 @@
-#N canvas 1508 161 800 821 10;
+#N canvas 79 81 800 794 10;
 #X obj 1 1 cnv 15 40 654 empty empty \$1 1 5 1 8 -257985 -1 0;
 #X text -27 -26 KEPtype nomUnique;
 #X obj 7 643 bng 10 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
@@ -24,9 +24,9 @@
 #X obj 25 100 KEPbus \$1 Pitch Constance b4;
 #X obj 24 122 KEPbus \$1 Volume Volume b5;
 #X restore 119 684 pd KEPboutons;
-#N canvas 736 531 443 335 son 0;
-#N canvas 1916 108 662 797 ALLSOUND 0;
-#X obj 17 649 outlet~;
+#N canvas 734 535 443 335 son 1;
+#N canvas 705 81 662 794 ALLSOUND 0;
+#X obj 15 700 outlet~;
 #X msg 269 170 time \$1;
 #X msg 357 149 feed \$1;
 #N canvas 1649 298 572 524 time 0;
@@ -203,18 +203,18 @@
 #X msg 159 329 1 \$1;
 #X obj 26 258 *~ 10;
 #X obj 74 300 dist~ 1;
-#X obj 208 489 mknob 25 100 0 1 0 0 \$1-VolAdj-snd \$1-VolAdj-rcv VolAdj
+#X obj 250 360 mknob 25 100 0 1 0 0 \$1-VolAdj-snd \$1-VolAdj-rcv VolAdj
 -2 -6 1 8 -33289 -62784 -62784 7900 1;
-#X obj 66 510 * 3;
+#X obj 64 561 * 3;
 #X msg 230 170 tic;
-#X obj 175 500 m;
-#X obj 175 392 unpack f f;
-#X obj 175 412 != -1;
-#X obj 175 478 ||;
-#X obj 236 302 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
+#X obj 217 371 m;
+#X obj 217 263 unpack f f;
+#X obj 217 283 != -1;
+#X obj 217 349 ||;
+#X obj 302 328 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
 1;
-#X obj 236 282 sel 1;
-#X obj 27 530 mull~ 0.7 1;
+#X obj 302 308 sel 1;
+#X obj 25 581 mull~ 0.7 1;
 #X obj 118 328 * 10;
 #N canvas 433 654 190 272 vol-direct 0;
 #X msg 102 74 1 \$1;
@@ -241,15 +241,14 @@
 #X connect 8 0 0 0;
 #X connect 10 0 3 0;
 #X restore 96 198 pd vol-direct;
-#X obj 184 453 t b f;
-#X obj 236 262 change;
+#X obj 226 324 t b f;
+#X obj 302 288 change;
 #X obj 94 220 * 2;
-#X obj 171 521 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0.79798
+#X obj 213 392 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0.79798
 0.79798;
 #X obj 198 57 inlet~;
-#X obj 26 424 orfilter \$1 FX ortho1;
 #X obj 23 9 param \$1 FX Mul1;
-#X obj 175 372 r SYNCHRO-clock;
+#X obj 217 243 r SYNCHRO-clock;
 #N canvas 2812 854 226 221 Feedback-val 0;
 #X obj 49 92 m 1;
 #X obj 49 144 outlet;
@@ -259,13 +258,13 @@
 #X connect 2 0 0 0;
 #X connect 3 0 0 1;
 #X restore 357 120 pd Feedback-val;
-#X obj 236 242 r \$1-tSHIFT-snd;
+#X obj 302 268 r \$1-tSHIFT-snd;
 #X obj 23 30 param \$1 FX VolAdj;
 #X obj 205 107 r \$1-Dir-in;
 #X obj 386 40 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 295 204 r \$1-Sa1;
-#X obj 326 650 outlet~;
+#X obj 276 689 outlet~;
 #X obj 26 204 *~ 0.1;
 #N canvas 0 961 450 300 LedSa 0;
 #X obj 16 62 r \$1-Sa1;
@@ -385,17 +384,16 @@
 #X obj 264 55 apf \$1-SETTING THi \$1-THi 2;
 #X restore 214 15 pd apf-etc;
 #X obj 422 269 hip~ 10;
-#X obj 469 434 *~;
-#X obj 485 391 mull~ 0 3;
-#X obj 521 426 sig~ 1;
-#X obj 555 393 -;
-#X msg 555 372 1 \$1;
+#X obj 421 422 *~;
+#X obj 437 379 mull~ 0 3;
+#X obj 473 414 sig~ 1;
+#X obj 507 381 -;
+#X msg 507 360 1 \$1;
 #X obj 422 301 *~ 10;
-#X obj 470 343 dist~ 1;
-#X obj 462 553 * 3;
-#X obj 423 573 mull~ 0.7 1;
-#X obj 514 371 * 10;
-#X obj 422 467 orfilter \$1 FX ortho1;
+#X obj 422 331 dist~ 1;
+#X obj 195 556 * 3;
+#X obj 156 576 mull~ 0.7 1;
+#X obj 466 359 * 10;
 #X obj 422 247 *~ 0.1;
 #N canvas 433 654 190 272 vol-direct 0;
 #X msg 102 74 1 \$1;
@@ -428,24 +426,25 @@
 #X obj 407 61 l paramsym \$1 SETTING sample-3-file;
 #X obj 407 81 l paramsym \$1 SETTING sample-4-file;
 #X obj 463 122 paramsym;
+#X obj 25 475 orfilter-ste \$1 FX ortho1;
 #X connect 3 0 15 0;
 #X connect 3 1 1 0;
 #X connect 4 0 11 0;
-#X connect 5 0 30 0;
+#X connect 5 0 63 0;
 #X connect 6 0 5 1;
 #X connect 7 0 10 0;
 #X connect 7 0 23 0;
 #X connect 9 0 8 0;
 #X connect 10 0 9 0;
 #X connect 11 0 12 0;
-#X connect 11 0 30 0;
+#X connect 11 0 63 0;
 #X connect 12 0 6 0;
 #X connect 12 0 5 0;
 #X connect 13 0 16 1;
 #X connect 14 0 22 1;
 #X connect 16 0 14 0;
 #X connect 16 0 28 0;
-#X connect 16 0 53 0;
+#X connect 16 0 52 0;
 #X connect 17 0 18 0;
 #X connect 18 0 19 0;
 #X connect 19 0 16 0;
@@ -458,33 +457,33 @@
 #X connect 25 1 19 1;
 #X connect 26 0 21 0;
 #X connect 27 0 11 1;
-#X connect 29 0 40 0;
+#X connect 29 0 39 0;
 #X connect 29 0 0 0;
-#X connect 30 0 22 0;
-#X connect 32 0 17 0;
-#X connect 33 0 2 0;
-#X connect 34 0 26 0;
-#X connect 36 0 24 0;
-#X connect 36 0 58 0;
-#X connect 40 0 4 0;
-#X connect 43 0 39 0;
-#X connect 43 0 57 0;
-#X connect 45 0 51 0;
-#X connect 46 0 56 0;
-#X connect 47 0 46 1;
+#X connect 31 0 17 0;
+#X connect 32 0 2 0;
+#X connect 33 0 26 0;
+#X connect 35 0 24 0;
+#X connect 35 0 56 0;
+#X connect 39 0 4 0;
+#X connect 42 0 38 0;
+#X connect 42 0 55 0;
+#X connect 44 0 50 0;
+#X connect 45 0 63 1;
+#X connect 46 0 45 1;
+#X connect 48 0 47 0;
 #X connect 49 0 48 0;
-#X connect 50 0 49 0;
-#X connect 51 0 52 0;
-#X connect 51 0 56 0;
-#X connect 52 0 47 0;
-#X connect 52 0 46 0;
-#X connect 53 0 54 1;
-#X connect 54 0 39 0;
-#X connect 55 0 47 1;
-#X connect 56 0 54 0;
-#X connect 57 0 45 0;
-#X connect 58 0 59 0;
-#X connect 59 0 51 1;
+#X connect 50 0 51 0;
+#X connect 50 0 63 1;
+#X connect 51 0 46 0;
+#X connect 51 0 45 0;
+#X connect 52 0 53 1;
+#X connect 53 0 38 0;
+#X connect 54 0 46 1;
+#X connect 55 0 44 0;
+#X connect 56 0 57 0;
+#X connect 57 0 50 1;
+#X connect 63 0 22 0;
+#X connect 63 1 53 0;
 #X restore 32 110 pd ALLSOUND;
 #X obj 32 85 inlet~;
 #X obj 17 284 outlet~;
@@ -534,8 +533,8 @@
 #X obj 601 92 s \$1-tlREC-rcv;
 #X obj 588 69 r \$1-REC;
 #X obj 191 270 ./Dec/0Dec \$1;
-#X obj 101 436 mknob 25 100 0 1 0 0 \$1-Seuil-snd \$1-Seuil-rcv seuil:12dB
--2 -6 1 8 -33289 -62784 -62784 1200 1;
+#X obj 101 436 mknob 25 100 0 1 0 0 \$1-Seuil-snd \$1-Seuil-rcv seuil:4dB
+-2 -6 1 8 -33289 -62784 -62784 400 1;
 #X obj 186 436 mknob 25 100 0 1 0 0 \$1-Lmin-snd \$1-Lmin-rcv lmin:23.22ms
 -2 -6 1 8 -1 -62784 -62784 2100 1;
 #X obj 278 435 mknob 25 100 0 1 0 0 \$1-Hmin-snd \$1-Hmin-rcv hmin:46.4399ms
