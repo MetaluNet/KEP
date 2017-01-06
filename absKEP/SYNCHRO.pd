@@ -1,4 +1,4 @@
-#N canvas 672 219 473 393 10;
+#N canvas 833 216 473 393 10;
 #X obj 101 101 cnv 10 184 80 empty empty SYNCHRO 40 8 1 14 -261234
 -1 0;
 #X obj 103 117 hsl 170 15 5 240 0 0 \$2-bpm-snd \$2-bpm-rcv bpm:96.295
@@ -199,10 +199,10 @@
 #X connect 8 0 11 0;
 #X restore 313 269 pd mesure;
 #X obj 219 11 apsubmaster \$2 \$1 \$2;
-#X obj 212 72 api \$2 \$2-on_off \$2-on_off;
+#X obj 217 39 api \$2 \$2-on_off \$2-on_off;
 #X obj 27 72 apf \$2 \$2-bpm \$2-bpm;
-#X obj 314 98 r \$2-on_off-snd;
-#X obj 329 118 r \$2-bpm-snd;
+#X obj 314 72 r \$2-on_off-snd;
+#X obj 359 121 r \$2-bpm-snd;
 #X obj 314 208 s \$2-clock;
 #N canvas 267 193 804 499 shuflle 0;
 #X obj 184 34 inlet;
@@ -322,7 +322,7 @@ shuffle 4 8 0 10 -13330 -262144 -260097 0 1;
 #X restore 21 39 pd spigotSJ;
 #X obj 45 16 hsl 128 15 5 240 0 0 /\$2-bpmSJ/1 /\$2-bpmSJ/1/r /\$2-bpmSJ/1
 -2 -8 0 10 -262144 -1 -1 0 0;
-#N canvas 324 283 450 526 SJ 1;
+#N canvas 324 283 450 526 SJ 0;
 #X floatatom 131 182 5 0 0 0 - - -, f 5;
 #X msg 112 80 set-state /BPM \$1;
 #X obj 112 50 r \$2-bpm-snd;
@@ -384,11 +384,13 @@ shuffle 4 8 0 10 -13330 -262144 -260097 0 1;
 ;
 #X obj 255 136 bng 30 200 20 0 \$2-tic-snd \$2-tic-rcv empty 0 -6 0
 8 -1 -258699 -1;
+#X obj 314 96 change;
 #X connect 3 0 1 0;
 #X connect 6 0 13 0;
-#X connect 11 0 6 0;
+#X connect 11 0 29 0;
 #X connect 12 0 6 1;
 #X connect 16 0 15 0;
 #X connect 17 0 16 0;
 #X connect 22 0 21 0;
+#X connect 29 0 6 0;
 #X coords 0 -1 1 1 186 82 1 100 100;
