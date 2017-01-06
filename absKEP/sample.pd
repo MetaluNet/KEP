@@ -1,4 +1,4 @@
-#N canvas 348 368 870 437 10;
+#N canvas 350 366 869 437 10;
 #X obj 323 9 loadbang;
 #X obj 323 53 * 44100;
 #X msg 323 75 resize \$1;
@@ -15,8 +15,8 @@
 #X obj 705 318 del;
 #X obj 705 297 / 44.1;
 #X msg 597 229 0;
-#X obj 11 114 cnv 10 100 10 empty \$0-time sec:0 5 5 0 10 -233017 -66577
-0;
+#X obj 11 114 cnv 10 100 10 empty \$0-time sec:4.2 5 5 0 10 -233017
+-66577 0;
 #X msg 441 36 0 \$1;
 #X obj 430 80 / 4410;
 #X obj 430 102 i;
@@ -37,12 +37,12 @@
 #X obj 596 359 outlet~;
 #X msg 485 113 label;
 #X obj 485 87 loadbang;
-#X msg 596 84 symbol \$1/DATAS/SAMPLES;
-#X obj 596 37 loadbang;
-#X obj 596 106 s \$0-dir;
+#X msg 735 116 symbol \$1/DATAS/SAMPLES;
+#X obj 734 61 loadbang;
+#X obj 597 109 s \$0-dir;
 #X obj 52 154 r \$0-dir;
 #X obj 13 175 symbol;
-#X obj 654 37 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 793 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 65 56 pack s s;
 #X obj 110 32 r \$0-dir;
@@ -52,7 +52,7 @@
 #X obj 95 223 split_path;
 #X obj 8 32 split_path;
 #X obj 162 244 sel _;
-#X obj 596 62 getdir 5;
+#X obj 735 94 getdir 5;
 #X obj 8 10 r \$1-\$2-file-snd;
 #X obj 180 8 table \$1-\$2;
 #X obj 180 30 table \$1-\$2-len 1;
@@ -74,6 +74,8 @@
 #X obj 20 268 b;
 #X obj 13 388 moses 1;
 #X msg 71 389 1;
+#X obj 597 61 r KEP_DATASDIR;
+#X msg 597 86 symbol \$1/SAMPLES;
 #X connect 0 0 52 0;
 #X connect 1 0 2 0;
 #X connect 2 0 53 0;
@@ -107,8 +109,6 @@
 #X connect 29 1 60 0;
 #X connect 32 0 19 0;
 #X connect 33 0 32 0;
-#X connect 34 0 36 0;
-#X connect 35 0 48 0;
 #X connect 37 0 38 1;
 #X connect 38 0 22 0;
 #X connect 39 0 48 0;
@@ -139,4 +139,6 @@
 #X connect 67 0 65 0;
 #X connect 68 1 62 0;
 #X connect 69 0 62 0;
+#X connect 70 0 71 0;
+#X connect 71 0 36 0;
 #X coords 0 -1 1 1 250 32 1 10 100;
