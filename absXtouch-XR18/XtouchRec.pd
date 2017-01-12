@@ -1,4 +1,4 @@
-#N canvas 1896 501 376 401 10;
+#N canvas 1890 553 376 401 10;
 #X obj 203 106 / 127;
 #X floatatom 187 194 5 0 0 0 - - -, f 5;
 #X obj 160 226 sel 0 1;
@@ -7,10 +7,10 @@
 #X obj 197 3 notein \$2;
 #X obj 197 25 pack f f;
 #X obj 3 2 tgl 15 0 \$0-XtouchRec-\$1-snd \$0-XtouchRec-\$1-rcv empty
-17 7 0 10 -233017 -128992 -233017 0 1;
+17 7 0 10 -233017 -128992 -233017 1 1;
 #X text 21 324 arg1:NbSlice \; arg2:midi-ch \; arg3:note-Solo \;;
 #X obj 197 46 route \$3;
-#N canvas 2168 199 223 140 route-in 1;
+#N canvas 2168 199 223 140 route-in 0;
 #X obj 30 70 outlet;
 #X floatatom 87 72 5 0 0 0 - - -, f 5;
 #X obj 31 43 route Rec\$1;
@@ -97,4 +97,4 @@
 #X connect 25 0 27 0;
 #X connect 26 0 27 0;
 #X connect 27 0 22 1;
-#X coords 0 -1 1 1 20 20 2 0 0;
+#X coords 0 -1 1 1 20 20 1 0 0;
