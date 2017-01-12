@@ -1,6 +1,6 @@
-#N canvas 1444 51 1272 969 10;
+#N canvas 325 79 1272 821 10;
 #X obj 588 54 vsl 10 50 0 1 0 0 \$1-vol-snd \$1-vol-rcv empty 0 -9
-0 10 -258113 -1 -1 4306 1;
+0 10 -258113 -1 -1 4379 1;
 #X obj 697 68 nbx 4 14 -24 72 0 0 \$1-pitch-snd \$1-pitch-rcv pitch
 0 -8 0 10 -261682 -1 -1 0 256;
 #X obj 744 67 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -22,7 +22,7 @@
 #X obj 219 192 mod 2;
 #X obj 249 168 v \$0-n;
 #X obj 152 151 metro 200;
-#X obj 150 97 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 1 1
+#X obj 150 97 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 0 1
 ;
 #X floatatom 210 98 5 50 2000 0 - - -, f 5;
 #X obj 227 135 sel 0 1;
@@ -127,14 +127,14 @@
 #X obj 779 501 mull~ 1 50;
 #X obj 505 329 s \$0-tfade;
 #X obj 523 59 tgl 15 0 \$1-on-snd \$1-on-rcv on 0 -7 0 10 -4034 -1
--1 1 1;
+-1 0 1;
 #X obj 102 84 r \$1-on-snd;
 #X obj 256 76 hsl 80 10 0 1 0 0 \$1-speed-snd \$1-speed-rcv speed -2
--6 0 10 -257985 -1 -1 3950 1;
+-6 0 10 -257985 -1 -1 4500 1;
 #X obj 256 96 hsl 80 10 0 1 0 0 \$1-speedrnd-snd \$1-speedrnd-rcv speedrnd
--2 -6 0 10 -260097 -1 -1 4469 1;
+-2 -6 0 10 -260097 -1 -1 0 1;
 #X obj 345 76 hsl 80 10 0 1 0 0 \$1-pos-snd \$1-pos-rcv pos -2 -6 0
-10 -261234 -1 -1 3688 1;
+10 -261234 -1 -1 0 1;
 #X obj 124 152 r \$1-speed-snd;
 #X obj 124 195 * 399;
 #X obj 124 217 + 1;
@@ -166,14 +166,14 @@
 #X obj 838 382 r \$0-nbfrag;
 #X obj 748 188 symbol \$2;
 #X obj 438 76 hsl 80 10 0 1 0 0 \$1-len-snd \$1-len-rcv len -2 -6 0
-10 -204800 -1 -1 7900 1;
+10 -204800 -1 -1 0 1;
 #X obj 291 166 r \$1-len-snd;
 #X obj 291 188 pow 2;
 #X obj 291 210 * 1000;
 #X obj 345 96 hsl 80 10 0 1 0 0 \$1-posrnd-snd \$1-posrnd-rcv posrnd
--2 -6 0 10 -261234 -1 -1 3989 1;
+-2 -6 0 10 -261234 -1 -1 0 1;
 #X obj 438 96 hsl 80 10 0 1 0 0 \$1-lenrnd-snd \$1-lenrnd-rcv lenrnd
--2 -6 0 10 -204800 -1 -1 3910 1;
+-2 -6 0 10 -204800 -1 -1 0 1;
 #X obj 446 399 r \$1-lenrnd-snd;
 #X obj 388 201 r \$1-posrnd-snd;
 #X obj 388 223 * 2;
@@ -398,7 +398,7 @@
 #X obj 219 192 mod 2;
 #X obj 249 168 v \$0-n;
 #X obj 152 151 metro 200;
-#X obj 150 97 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 1 1
+#X obj 150 97 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 0 1
 ;
 #X floatatom 210 98 5 50 2000 0 - - -, f 5;
 #X obj 227 135 sel 0 1;
@@ -564,6 +564,14 @@
 -1 -1 0 1;
 #X floatatom 444 962 5 0 0 0 - - -, f 5;
 #X floatatom 532 966 5 0 0 0 - - -, f 5;
+#X floatatom 915 159 5 0 0 0 - - -, f 5;
+#X floatatom 222 121 5 0 0 0 - - -, f 5;
+#X obj 892 29 apf \$1-MODE speed \$1-speed;
+#X obj 893 49 apf \$1-MODE speedrnd \$1-speedrnd;
+#X obj 892 92 apf \$1-MODE posrnd \$1-posrnd;
+#X obj 893 118 apf \$1-MODE len \$1-len;
+#X obj 893 138 apf \$1-MODE lenrnd \$1-lenrnd;
+#X obj 892 72 l apf \$1-MODE pos \$1-pos;
 #X connect 2 0 3 0;
 #X connect 3 0 1 0;
 #X connect 5 0 78 0;
@@ -575,6 +583,7 @@
 #X connect 13 0 14 0;
 #X connect 17 0 75 0;
 #X connect 20 0 13 0;
+#X connect 21 0 179 0;
 #X connect 24 0 173 0;
 #X connect 25 0 26 0;
 #X connect 26 0 13 1;

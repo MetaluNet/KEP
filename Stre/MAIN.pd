@@ -1,11 +1,11 @@
-#N canvas 918 81 509 794 10;
+#N canvas 793 105 509 794 10;
 #X obj 1 1 cnv 15 40 654 empty empty \$1 1 5 1 8 -257985 -1 0;
 #X text -27 -26 KEPtype nomUnique;
 #X obj 7 643 bng 10 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
 ;
 #X obj 24 643 bng 10 250 50 0 empty empty empty 17 7 0 10 -258113 -1
 -1;
-#N canvas 1057 165 379 707 KEPboutons 0;
+#N canvas 247 193 379 707 KEPboutons 0;
 #X obj 35 285 KEPbus \$1 l1 -l1- tl1;
 #X obj 26 78 KEPbus \$1 Effet Dir-in b3;
 #X obj 35 308 KEPbus \$1 l2 -l2- tl2;
@@ -14,18 +14,18 @@
 #X obj 32 376 KEPbus \$1 lR -lR- tlREC;
 #X obj 193 283 KEPbus \$1 lr -lr- lrouge;
 #X obj 193 306 KEPbus \$1 lv -lv- lvert;
-#X obj 27 34 KEPbus \$1 Speed SpeedRnd b1;
-#X obj 26 55 KEPbus \$1 Pos PosRnd b2;
-#X obj 25 100 KEPbus \$1 Len LenRnd b4;
 #X obj 32 251 KEPbus \$1 Rec Trig tREC;
 #X obj 25 122 KEPbus \$1 Volume TailleRec b5;
 #X obj 31 163 KEPbus \$1 Sa1 Rec1 t1;
 #X obj 32 184 KEPbus \$1 Sa2 Rec2 t2;
 #X obj 32 205 KEPbus \$1 Sa3 Rec3 t3;
 #X obj 33 227 KEPbus \$1 Sa4 Rec4 t4;
+#X obj 25 100 KEPbus \$1 -Len -LenRnd b4;
+#X obj 26 55 KEPbus \$1 Pos -PosRnd b2;
+#X obj 27 34 KEPbus \$1 Mode -SpeedRnd b1;
 #X restore 124 113 pd KEPboutons;
-#N canvas 705 500 443 335 son 0;
-#N canvas 586 81 662 794 ALLSOUND 0;
+#N canvas 699 498 443 335 son 0;
+#N canvas 583 80 662 794 ALLSOUND 0;
 #X obj 61 683 outlet~;
 #X msg 515 402 time \$1;
 #X msg 521 344 feed \$1;
@@ -260,12 +260,12 @@
 #X obj 541 436 r \$1-Sa1;
 #X obj 310 678 outlet~;
 #X obj 26 204 *~ 0.1;
-#X obj 292 708 mknob 25 100 0 1 0 0 \$1-Seuil-snd \$1-Seuil-rcv seuil:12dB
--2 -6 1 8 -62784 -1 -1 1200 1;
+#X obj 292 708 mknob 25 100 0 1 0 0 \$1-Seuil-snd \$1-Seuil-rcv seuil:44dB
+-2 -6 1 8 -62784 -1 -1 0 1;
 #X obj 377 708 mknob 25 100 0 1 0 0 \$1-Lmin-snd \$1-Lmin-rcv lmin:23.22ms
--2 -6 1 8 -66577 -1 -1 2100 1;
+-2 -6 1 8 -66577 -1 -1 0 1;
 #X obj 469 707 mknob 25 100 0 1 0 0 \$1-Hmin-snd \$1-Hmin-rcv hmin:46.4399ms
--2 -6 1 8 -262144 -1 -1 2700 1;
+-2 -6 1 8 -262144 -1 -1 0 1;
 #N canvas 0 330 450 300 LedSa 0;
 #X obj 16 62 r \$1-Sa1;
 #X obj 16 108 s \$1-tl1-rcv;
@@ -364,29 +364,21 @@
 #X connect 7 0 8 0;
 #X restore 66 770 pd OnDec;
 #X obj 290 754 mknob 25 100 0 1 0 0 \$1-THi-snd \$1-THi-rcv tHi:0.18s
--2 -6 1 8 -66577 -1 -1 1800 1;
-#X obj 375 754 mknob 25 100 0 1 0 0 \$1-TLow-snd \$1-TLow-rcv tLow:0.53s
--2 -6 1 8 -66577 -1 -1 1500 1;
-#X obj 467 753 mknob 25 100 0 1 0 0 \$1-Thresh-snd \$1-Thresh-rcv Threshold:82.7273
--2 -6 1 8 -66577 -1 -1 8000 1;
+-2 -6 1 8 -66577 -1 -1 0 1;
+#X obj 375 754 mknob 25 100 0 1 0 0 \$1-TLow-snd \$1-TLow-rcv tLow:0.15s
+-2 -6 1 8 -66577 -1 -1 0 1;
+#X obj 467 753 mknob 25 100 0 1 0 0 \$1-Thresh-snd \$1-Thresh-rcv Threshold:10
+-2 -6 1 8 -66577 -1 -1 0 1;
 #X obj 216 42 inlet~;
 #X obj 311 42 inlet~;
-#N canvas 5 495 450 300 apf-etc 0;
-#X symbolatom 8 156 0 0 0 0 - #1-sample-1-file-rcv #1-sample-1-file-snd
-;
-#X symbolatom 8 196 0 0 0 0 - #1-sample-2-file-rcv #1-sample-2-file-snd
-;
-#X symbolatom 8 229 0 0 0 0 - #1-sample-3-file-rcv #1-sample-3-file-snd
-;
-#X symbolatom 7 265 0 0 0 0 - #1-sample-4-file-rcv #1-sample-4-file-snd
-;
-#X obj 29 46 apf \$1-SETTING Seuil \$1-Seuil 2;
-#X obj 28 67 apf \$1-SETTING Lmin \$1-Lmin 2;
-#X obj 25 89 apf \$1-SETTING Hmin \$1-Hmin 2;
-#X obj 255 45 apf \$1-SETTING Thresh \$1-Thresh 2;
-#X obj 251 88 apf \$1-SETTING TLow \$1-TLow 2;
-#X obj 254 65 apf \$1-SETTING THi \$1-THi 2;
-#X obj 108 125 l aptab \$1-SETTING SnapTirage \$1-SnapTirage 2;
+#N canvas 1048 243 450 300 apf-etc 0;
+#X obj 67 139 l aptab \$1-SETTING SnapTirage \$1-SnapTirage 2;
+#X obj 4 46 l apf \$1-SETTING Seuil \$1-Seuil 2;
+#X obj 3 67 l apf \$1-SETTING Lmin \$1-Lmin 2;
+#X obj 0 89 l apf \$1-SETTING Hmin \$1-Hmin 2;
+#X obj 255 45 l apf \$1-SETTING Thresh \$1-Thresh 2;
+#X obj 254 65 l apf \$1-SETTING THi \$1-THi 2;
+#X obj 251 88 l apf \$1-SETTING TLow \$1-TLow 2;
 #X restore 372 88 pd apf-etc;
 #X obj 224 182 hip~ 10;
 #X obj 174 382 *~;
@@ -774,7 +766,7 @@
 1;
 #X obj 215 155 switch~;
 #X obj 216 114 mainDSPswitch \$1;
-#X obj 185 256 4samples \$1;
+#X obj 203 248 4samples \$1;
 #X connect 2 0 9 0;
 #X connect 3 0 9 1;
 #X connect 5 0 6 0;

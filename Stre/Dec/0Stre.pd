@@ -1,19 +1,6 @@
-#N canvas 87 308 833 552 10;
+#N canvas 472 185 833 552 10;
 #X declare -path AutoPreset -stdpath moonlib -stdpath iemlib -lib zexy
 ;
-#N canvas 466 531 450 300 config 0;
-#X obj 100 157 apmaster config;
-#X obj 100 200 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1
--1;
-#X obj 159 101 bng 30 250 50 0 empty empty save 3 15 0 10 -258113 -1
--1;
-#X obj 100 179 loadbang;
-#X obj 100 224 apmasterfile \$1-config presets/config.txt;
-#X connect 1 0 4 0;
-#X connect 2 0 4 1;
-#X connect 3 0 1 0;
-#X coords 0 -1 1 1 90 32 1 100 100;
-#X restore 113 19 pd config;
 #N canvas 5 77 450 300 declares 0;
 #X obj 38 16 declare -path AutoPreset -stdpath moonlib -stdpath iemlib
 -lib zexy;
@@ -151,7 +138,7 @@
 #X obj 64 331 outlet~ l;
 #X obj 167 360 outlet~ r;
 #X obj 105 170 inlet~ in;
-#X obj 377 447 out \$0-Main;
+#X obj 370 447 out \$0-Main;
 #X obj 374 347 out \$0-Main;
 #X obj 374 245 out \$0-Main;
 #X obj 213 324 out \$0-Main;
@@ -170,22 +157,41 @@
 #X obj 17 83 l sample \$1 sample-2 60;
 #X obj 17 109 l sample \$1 sample-3 60;
 #X obj 17 135 l sample \$1 sample-4 60;
-#X connect 2 0 12 0;
-#X connect 2 1 13 0;
-#X connect 3 0 20 0;
-#X connect 4 0 18 1;
-#X connect 5 0 18 0;
-#X connect 6 0 7 0;
-#X connect 7 0 3 0;
-#X connect 8 0 7 1;
-#X connect 9 0 20 1;
-#X connect 10 0 9 0;
-#X connect 14 0 2 0;
-#X connect 20 0 4 0;
-#X connect 20 0 18 0;
-#X connect 20 1 5 0;
-#X connect 20 1 18 1;
-#X connect 21 0 22 0;
-#X connect 21 0 22 1;
-#X connect 23 0 15 0;
-#X connect 23 1 15 1;
+#X obj 503 208 r \$1-Mode;
+#X obj 594 204 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 11600 1;
+#N canvas 460 529 450 300 MODE 1;
+#X obj 101 116 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1
+-1;
+#X obj 146 116 bng 15 250 50 0 empty empty save 16 7 0 10 -258113 -1
+-1;
+#X obj 35 139 loadbang;
+#X obj 109 190 apmaster \$1-MODE;
+#X obj 101 224 apmasterfile \$1-MODE MODE.txt;
+#X connect 0 0 4 0;
+#X connect 1 0 4 1;
+#X connect 2 0 4 0;
+#X coords 0 -1 1 1 90 32 1 100 100;
+#X restore 504 292 pd MODE;
+#X obj 503 228 MORPHgroup2 \$1 MODE;
+#X connect 1 0 11 0;
+#X connect 1 1 12 0;
+#X connect 2 0 19 0;
+#X connect 3 0 17 1;
+#X connect 4 0 17 0;
+#X connect 5 0 6 0;
+#X connect 6 0 2 0;
+#X connect 7 0 6 1;
+#X connect 8 0 19 1;
+#X connect 9 0 8 0;
+#X connect 13 0 1 0;
+#X connect 19 0 3 0;
+#X connect 19 0 17 0;
+#X connect 19 1 4 0;
+#X connect 19 1 17 1;
+#X connect 20 0 21 0;
+#X connect 20 0 21 1;
+#X connect 22 0 14 0;
+#X connect 22 1 14 1;
+#X connect 33 0 36 0;
+#X connect 34 0 36 0;
