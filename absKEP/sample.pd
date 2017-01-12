@@ -1,4 +1,4 @@
-#N canvas 350 366 869 437 10;
+#N canvas 728 201 869 437 10;
 #X obj 323 9 loadbang;
 #X obj 323 53 * 44100;
 #X msg 323 75 resize \$1;
@@ -15,8 +15,8 @@
 #X obj 705 318 del;
 #X obj 705 297 / 44.1;
 #X msg 597 229 0;
-#X obj 11 114 cnv 10 100 10 empty \$0-time sec:4.2 5 5 0 10 -233017
--66577 0;
+#X obj 11 111 cnv 10 100 10 empty \$0-time empty 5 5 0 10 -233017 -66577
+0;
 #X msg 441 36 0 \$1;
 #X obj 430 80 / 4410;
 #X obj 430 102 i;
@@ -76,6 +76,12 @@
 #X msg 71 389 1;
 #X obj 597 61 r KEP_DATASDIR;
 #X msg 597 86 symbol \$1/SAMPLES;
+#X obj 12 121 cnv 10 100 10 empty \$0-namecan empty 2 6 0 8 -257985
+-66577 0;
+#X msg 181 305 label \$1;
+#X obj 181 331 s \$0-namecan;
+#X symbolatom 154 172 10 0 0 0 - - -, f 10;
+#X msg 226 371 label;
 #X connect 0 0 52 0;
 #X connect 1 0 2 0;
 #X connect 2 0 53 0;
@@ -103,6 +109,7 @@
 #X connect 26 0 24 0;
 #X connect 27 0 20 0;
 #X connect 28 0 25 0;
+#X connect 28 0 45 0;
 #X connect 28 1 57 0;
 #X connect 29 0 45 0;
 #X connect 29 0 65 0;
@@ -118,6 +125,7 @@
 #X connect 43 0 44 1;
 #X connect 44 0 23 0;
 #X connect 45 1 47 0;
+#X connect 45 1 73 0;
 #X connect 46 1 40 0;
 #X connect 47 1 63 0;
 #X connect 48 0 34 0;
@@ -141,4 +149,6 @@
 #X connect 69 0 62 0;
 #X connect 70 0 71 0;
 #X connect 71 0 36 0;
+#X connect 73 0 74 0;
+#X connect 76 0 74 0;
 #X coords 0 -1 1 1 250 32 1 10 100;
