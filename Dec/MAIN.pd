@@ -1,4 +1,4 @@
-#N canvas 79 81 800 794 10;
+#N canvas 76 80 800 794 10;
 #X obj 1 1 cnv 15 40 654 empty empty \$1 1 5 1 8 -257985 -1 0;
 #X text -27 -26 KEPtype nomUnique;
 #X obj 7 643 bng 10 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
@@ -24,8 +24,8 @@
 #X obj 25 100 KEPbus \$1 Pitch Constance b4;
 #X obj 24 122 KEPbus \$1 Volume Volume b5;
 #X restore 119 684 pd KEPboutons;
-#N canvas 734 535 443 335 son 1;
-#N canvas 705 81 662 794 ALLSOUND 0;
+#N canvas 731 534 443 335 son 1;
+#N canvas 699 79 662 794 ALLSOUND 1;
 #X obj 15 700 outlet~;
 #X msg 269 170 time \$1;
 #X msg 357 149 feed \$1;
@@ -366,15 +366,7 @@
 #X connect 7 0 8 0;
 #X restore 302 28 pd OnDec;
 #X obj 275 57 inlet~;
-#N canvas 6 493 527 300 apf-etc 0;
-#X symbolatom 18 146 0 0 0 0 - #1-sample-1-file-rcv #1-sample-1-file-snd
-;
-#X symbolatom 18 186 0 0 0 0 - #1-sample-2-file-rcv #1-sample-2-file-snd
-;
-#X symbolatom 18 219 0 0 0 0 - #1-sample-3-file-rcv #1-sample-3-file-snd
-;
-#X symbolatom 17 255 0 0 0 0 - #1-sample-4-file-rcv #1-sample-4-file-snd
-;
+#N canvas 3 492 527 300 apf-etc 0;
 #X obj 39 36 apf \$1-SETTING Seuil \$1-Seuil 2;
 #X obj 38 57 apf \$1-SETTING Lmin \$1-Lmin 2;
 #X obj 35 79 apf \$1-SETTING Hmin \$1-Hmin 2;
@@ -543,8 +535,8 @@
 -2 -6 1 8 -1 -62784 -62784 1000 1;
 #X obj 184 482 mknob 25 100 0 1 0 0 \$1-TLow-snd \$1-TLow-rcv tLow:0.53s
 -2 -6 1 8 -1 -62784 -62784 1500 1;
-#X obj 276 481 mknob 25 100 0 1 0 0 \$1-Thresh-snd \$1-Thresh-rcv Threshold:82.7273
--2 -6 1 8 -1 -62784 -62784 8000 1;
+#X obj 276 481 mknob 25 100 0 1 0 0 \$1-Thresh-snd \$1-Thresh-rcv Threshold:73.6364
+-2 -6 1 8 -1 -62784 -62784 7000 1;
 #X obj 391 167 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 390 185 switch~;
