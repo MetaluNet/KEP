@@ -1,4 +1,4 @@
-#N canvas 801 586 542 286 10;
+#N canvas 798 818 542 286 10;
 #X declare -path KEP/AutoAbstractions;
 #X declare -path KEP/AutoPreset;
 #X declare -path KEP/absKEP;
@@ -24,7 +24,6 @@
 #X declare -stdpath motex -stdlib motex;
 #X declare -stdpath moonlib -stdlib moonlib;
 #X declare -stdpath osc -stdlib osc;
-#X declare -stdpath mrpeach -stdlib mrpeach;
 #X declare -path KEP/absXtouch-XR18;
 #X declare -stdpath pd-autotuned-master -stdlib pd-autotuned-master
 ;
@@ -40,7 +39,7 @@
 #X obj 79 58 int;
 #X text 164 -19 <-- on/off;
 #X obj 2 17 nbx 3 14 -1e+37 1e+37 0 0 empty empty CPU 2 -8 1 10 -262144
--1 -262144 44 256;
+-1 -262144 30 256;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 0;
@@ -93,7 +92,7 @@
 #X obj 236 209 r MASTERSvol;
 #X obj 335 206 bng 15 250 50 0 reloadRegie empty reloadRegie 17 7 0
 12 -260097 -1 -1;
-#N canvas 209 231 1016 639 declare 0;
+#N canvas 206 818 1016 639 declare 0;
 #X obj 10 550 l declare -path /usr/lib/pd-extended/extra/iemlib/;
 #X obj 793 81 moonlib/mknob 25 100 0 127 0 0 -233017 empty empty -2
 -6 0 8 -262144 -262144 -262144 0 1;
@@ -138,7 +137,6 @@
 #X obj 260 12 declare -stdpath moonlib -stdlib moonlib;
 #X obj 556 389 l declare -path KEP/FraisePd;
 #X obj 569 12 declare -stdpath osc -stdlib osc;
-#X obj 582 45 declare -stdpath mrpeach -stdlib mrpeach;
 #X obj 11 522 declare -path KEP/absXtouch-XR18;
 #X obj 548 157 declare -stdpath pd-autotuned-master -stdlib pd-autotuned-master
 , f 56;
@@ -146,7 +144,7 @@
 #X obj 328 123 l AutoAffectMonitor;
 #X obj 298 181 l Send2Gem;
 #X obj 386 180 l Playlist360;
-#N canvas 1822 606 420 401 MASTERS 1;
+#N canvas 1822 606 420 401 MASTERS 0;
 #X obj 4 3 cnv 15 347 393 empty empty empty 20 12 1 14 -1 -262144 0
 ;
 #N canvas 792 635 343 237 SaveMaster 0;
