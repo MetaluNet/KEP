@@ -1,4 +1,4 @@
-#N canvas 448 818 660 595 10;
+#N canvas 445 79 660 595 10;
 #X obj 102 17 inlet~;
 #X obj 101 336 outlet~;
 #X obj 54 294 *~ 0.2;
@@ -166,13 +166,9 @@
 #X connect 13 0 10 0;
 #X connect 13 2 9 0;
 #X restore 383 372 pd dbl;
-#X obj 102 153 sample \$1 sample-1 60;
 #X obj 121 281 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 6700 1;
 #X obj 118 304 pow 2;
-#X obj 102 185 sample \$1 sample-2 60;
-#X obj 102 217 sample \$1 sample-3 60;
-#X obj 102 249 sample \$1 sample-4 60;
 #X obj 335 497 s \$1-sample-1-reload_file;
 #X obj 344 478 s \$1-sample-2-reload_file;
 #X obj 358 458 s \$1-sample-3-reload_file;
@@ -186,7 +182,11 @@
 ;
 #X symbolatom 422 182 0 0 0 0 - #1-sample-4-file-rcv #1-sample-4-file-snd
 ;
-#X connect 0 0 35 0;
+#X obj 102 153 sample \$1 sample-1 120;
+#X obj 102 185 sample \$1 sample-2 120;
+#X obj 102 217 sample \$1 sample-3 120;
+#X obj 102 249 sample \$1 sample-4 120;
+#X connect 0 0 31 0;
 #X connect 2 0 1 0;
 #X connect 3 0 17 0;
 #X connect 5 0 12 0;
@@ -206,17 +206,17 @@
 #X connect 19 0 23 0;
 #X connect 20 0 24 0;
 #X connect 21 0 5 0;
-#X connect 21 1 31 0;
+#X connect 21 1 27 0;
 #X connect 22 0 9 0;
-#X connect 22 1 32 0;
+#X connect 22 1 28 0;
 #X connect 23 0 10 0;
-#X connect 23 1 33 0;
+#X connect 23 1 29 0;
 #X connect 24 0 11 0;
-#X connect 24 1 34 0;
-#X connect 25 0 2 0;
-#X connect 26 0 27 0;
-#X connect 27 0 2 1;
-#X connect 28 0 2 0;
-#X connect 29 0 2 0;
-#X connect 30 0 2 0;
+#X connect 24 1 30 0;
+#X connect 25 0 26 0;
+#X connect 26 0 2 1;
+#X connect 36 0 2 0;
+#X connect 37 0 2 0;
+#X connect 38 0 2 0;
+#X connect 39 0 2 0;
 #X coords 0 -1 1 1 255 247 1 100 50;
