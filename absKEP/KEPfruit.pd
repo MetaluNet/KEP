@@ -1,4 +1,4 @@
-#N canvas 256 533 362 367 10;
+#N canvas 253 559 362 367 10;
 #X obj 96 5 loadbang;
 #N canvas 721 79 431 693 telecom_FRAISE 0;
 #X obj 45 176 unpack f f f;
@@ -593,7 +593,6 @@
 #X obj 13 154 SelectCache \$2 KEPsong \$3;
 #X obj 15 223 Fruit2Net \$2 \$3;
 #X obj 12 5 CACHE KEPcontrol \$3;
-#X obj 13 107 fruit/fruit \$1 \$2 \$3 FraiseKE;
 #N canvas 372 466 450 300 setCache 0;
 #X obj 90 214 iem_s;
 #X msg 117 181 set \$1;
@@ -635,4 +634,5 @@
 #X restore 229 90 pd setCache;
 #X obj 14 200 l CacheSet\$4 \$2;
 #X obj 96 25 l DECrfid \$3 \$2 0;
-#X connect 0 0 8 0;
+#X obj 13 107 fruit/fruit \$1 \$2 \$3 FraiseKE \$5;
+#X connect 0 0 7 0;
