@@ -39,7 +39,7 @@
 #X obj 79 58 int;
 #X text 164 -19 <-- on/off;
 #X obj 2 17 nbx 3 14 -1e+37 1e+37 0 0 empty empty CPU 2 -8 1 10 -262144
--1 -262144 30 256;
+-1 -262144 28 256;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 0;
@@ -402,7 +402,7 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X obj 9 544 CACHEgui KEPcontrol 1005;
 #X obj 9 662 CACHEgui KEPcontrol 1006;
 #X restore 184 163 pd CACHEguis;
-#N canvas 606 284 309 388 SONG 0;
+#N canvas 329 535 309 388 SONG 1;
 #N canvas 871 479 343 197 SaveKEPsong 0;
 #X obj 1 1 cnv 15 300 60 empty empty KEPsong 8 12 1 14 -261234 -45076
 0;
@@ -1244,8 +1244,7 @@ Transp -2 -6 1 8 -260818 -1 -355 0 1;
 #X symbolatom 192 134 0 0 0 0 - - -;
 #X connect 3 0 7 0;
 #X restore 184 121 pd SONG;
-#N canvas 489 75 947 553 USB 0;
-#X obj 23 154 KEMfruit 1 KEG1 20 KE;
+#N canvas 688 576 947 553 USB 1;
 #X obj 22 22 pied/pied 0 12346;
 #X obj 218 48 Hurface;
 #X obj 24 106 KEPfruit 1 Hur2A 50 HURFMUSIC-A;
@@ -1313,17 +1312,19 @@ Transp -2 -6 1 8 -260818 -1 -355 0 1;
 #X restore 303 39 pd XR18>midi;
 #X obj 415 37 Xtouch;
 #X obj 340 289 XtouchVCA;
+#X obj 24 126 KEPfruit 1 Hur2B 51 HURFMUSIC-B;
+#X msg 38 332 \; KEG\$1-SelectCache-rcv 0;
+#X msg 38 310 1 \, 2 \, 3 \, 4 \, 5 \, 6;
+#X obj 22 2 r FRAISEUSB-on;
+#X obj 23 154 KEMfruit 1 KEG1 20 KE;
 #X obj 28 254 KEMfruit 1 KEG6 25 KE;
 #X obj 22 191 KEMfruit 1 KEG3 22 KE;
 #X obj 26 233 KEMfruit 1 KEG5 24 KE;
 #X obj 24 171 KEMfruit 1 KEG2 21 KE;
 #X obj 25 211 KEMfruit 1 KEG4 23 KE;
-#X obj 24 126 KEPfruit 1 Hur2B 51 HURFMUSIC-B;
-#X msg 38 332 \; KEG\$1-SelectCache-rcv 0;
-#X msg 38 310 1 \, 2 \, 3 \, 4 \, 5 \, 6;
-#X obj 22 2 r FRAISEUSB-on;
-#X connect 17 0 16 0;
-#X connect 18 0 1 0;
+#X obj 28 278 KEPfruit 1 KEP0 30 KE 1;
+#X connect 11 0 10 0;
+#X connect 12 0 0 0;
 #X restore 184 93 pd USB;
 #X obj 44 61 bng 20 250 50 0 show-INSTRUMENTS empty INSTRUMENTS 22
 10 0 10 -257985 -1 -1;
