@@ -1,4 +1,4 @@
-#N canvas 798 818 542 286 10;
+#N canvas 792 816 542 286 10;
 #X declare -path KEP/AutoAbstractions;
 #X declare -path KEP/AutoPreset;
 #X declare -path KEP/absKEP;
@@ -39,7 +39,7 @@
 #X obj 79 58 int;
 #X text 164 -19 <-- on/off;
 #X obj 2 17 nbx 3 14 -1e+37 1e+37 0 0 empty empty CPU 2 -8 1 10 -262144
--1 -262144 28 256;
+-1 -262144 31 256;
 #X connect 1 0 8 0;
 #X connect 2 0 4 0;
 #X connect 3 0 6 0;
@@ -144,7 +144,7 @@
 #X obj 328 123 l AutoAffectMonitor;
 #X obj 298 181 l Send2Gem;
 #X obj 386 180 l Playlist360;
-#N canvas 1822 606 420 401 MASTERS 0;
+#N canvas 1920 817 420 401 MASTERS 0;
 #X obj 4 3 cnv 15 347 393 empty empty empty 20 12 1 14 -1 -262144 0
 ;
 #N canvas 792 635 343 237 SaveMaster 0;
@@ -402,15 +402,15 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X obj 9 544 CACHEgui KEPcontrol 1005;
 #X obj 9 662 CACHEgui KEPcontrol 1006;
 #X restore 184 163 pd CACHEguis;
-#N canvas 329 535 309 388 SONG 1;
-#N canvas 871 479 343 197 SaveKEPsong 0;
+#N canvas 1416 96 309 388 SONG 1;
+#N canvas 868 505 343 197 SaveKEPsong 1;
 #X obj 1 1 cnv 15 300 60 empty empty KEPsong 8 12 1 14 -261234 -45076
 0;
 #X obj 3 46 bng 13 250 50 0 empty empty load 17 7 1 10 -4034 -1 -1
 ;
 #X obj 3 26 bng 13 250 50 0 empty empty save_as 17 7 1 10 -258113 -1
 -1;
-#N canvas 352 380 313 475 apmaster_autoload 0;
+#N canvas 349 406 313 475 apmaster_autoload 0;
 #X obj 61 55 route loaded saved;
 #X obj 6 128 loadbang;
 #X msg 61 369 loadfile \$1;
@@ -524,7 +524,6 @@ _1_.2_.3_.4_.5_.6_.7_.8_.9.10.11.12.13.14.15.16 0 -4 1 9 -262144 -1
 #X connect 7 0 8 0;
 #X connect 8 0 12 0;
 #X connect 13 0 15 0;
-#X connect 14 0 9 0;
 #X connect 15 0 14 0;
 #X coords 0 -1 1 1 302 62 1 0 0;
 #X restore 4 6 pd SaveKEPsong;
@@ -1244,10 +1243,9 @@ Transp -2 -6 1 8 -260818 -1 -355 0 1;
 #X symbolatom 192 134 0 0 0 0 - - -;
 #X connect 3 0 7 0;
 #X restore 184 121 pd SONG;
-#N canvas 688 576 947 553 USB 1;
+#N canvas 685 575 947 553 USB 1;
 #X obj 22 22 pied/pied 0 12346;
 #X obj 218 48 Hurface;
-#X obj 24 106 KEPfruit 1 Hur2A 50 HURFMUSIC-A;
 #X obj 191 155 l KEMfruit 1 Pingnip 16 KE;
 #X obj 190 173 l KEMfruit 1 Fluvita 17 KE;
 #X obj 192 193 l KEMfruit 1 Espagnole 18 KE;
@@ -1312,7 +1310,6 @@ Transp -2 -6 1 8 -260818 -1 -355 0 1;
 #X restore 303 39 pd XR18>midi;
 #X obj 415 37 Xtouch;
 #X obj 340 289 XtouchVCA;
-#X obj 24 126 KEPfruit 1 Hur2B 51 HURFMUSIC-B;
 #X msg 38 332 \; KEG\$1-SelectCache-rcv 0;
 #X msg 38 310 1 \, 2 \, 3 \, 4 \, 5 \, 6;
 #X obj 22 2 r FRAISEUSB-on;
@@ -1322,9 +1319,11 @@ Transp -2 -6 1 8 -260818 -1 -355 0 1;
 #X obj 26 233 KEMfruit 1 KEG5 24 KE;
 #X obj 24 171 KEMfruit 1 KEG2 21 KE;
 #X obj 25 211 KEMfruit 1 KEG4 23 KE;
+#X obj 24 106 KEPfruit 1 Hur2A 50 HURFMUSIC-A;
+#X obj 24 126 KEPfruit 1 Hur2B 51 HURFMUSIC-B;
 #X obj 28 278 KEPfruit 1 KEP0 30 KE 1;
-#X connect 11 0 10 0;
-#X connect 12 0 0 0;
+#X connect 9 0 8 0;
+#X connect 10 0 0 0;
 #X restore 184 93 pd USB;
 #X obj 44 61 bng 20 250 50 0 show-INSTRUMENTS empty INSTRUMENTS 22
 10 0 10 -257985 -1 -1;
