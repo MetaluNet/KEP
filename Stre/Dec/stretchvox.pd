@@ -1,4 +1,4 @@
-#N canvas 574 330 573 481 10;
+#N canvas 923 606 573 481 10;
 #X obj 168 162 spigot;
 #X obj 427 32 loadbang;
 #X msg 427 57 bang;
@@ -34,8 +34,8 @@
 #X obj 436 271 mod 2;
 #X msg 441 376 set \$1;
 #X obj 97 281 tabplay~;
-#X msg 52 188 set \$1;
-#X obj 52 84 r \$1-sample;
+#X msg 42 230 set \$1;
+#X obj 32 54 r \$1-sample;
 #X obj 205 35 r \$1-command;
 #X obj 427 81 v \$1-n;
 #X obj 97 450 throw~ \$1-out1;
@@ -43,8 +43,19 @@
 #X obj 456 348 symbol \$1-out2;
 #X obj 404 211 s \$1-command;
 #X obj 333 250 r \$1-tfade;
-#X obj 32 141 unpack s s;
-#X symbolatom 94 117 0 0 0 0 - - -;
+#X obj 32 96 unpack s s;
+#X symbolatom 63 122 0 0 0 0 - - -;
+#X obj 96 141 symbol;
+#X obj 113 193 t s s;
+#X obj 96 163 sel same;
+#X symbolatom 32 308 0 0 0 0 - - -;
+#X symbolatom 15 180 0 0 0 0 - - -;
+#X obj 295 441 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 171 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 300 159 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 12 0;
 #X connect 1 0 2 0;
 #X connect 2 0 38 0;
@@ -74,6 +85,7 @@
 #X connect 19 0 23 0;
 #X connect 21 0 18 0;
 #X connect 22 0 21 0;
+#X connect 22 0 46 0;
 #X connect 22 1 19 0;
 #X connect 23 0 25 0;
 #X connect 23 0 26 0;
@@ -102,5 +114,8 @@
 #X connect 43 0 21 1;
 #X connect 43 0 25 1;
 #X connect 43 0 26 1;
-#X connect 44 1 45 0;
-#X connect 44 1 35 0;
+#X connect 44 1 46 1;
+#X connect 46 0 48 0;
+#X connect 47 0 35 0;
+#X connect 47 1 48 1;
+#X connect 48 1 47 0;
