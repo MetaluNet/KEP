@@ -1,10 +1,10 @@
-#N canvas 833 216 473 393 10;
+#N canvas 830 215 473 393 10;
 #X obj 101 101 cnv 10 184 80 empty empty SYNCHRO 40 8 1 14 -261234
 -1 0;
-#X obj 103 117 hsl 170 15 5 240 0 0 \$2-bpm-snd \$2-bpm-rcv bpm:96.295
-4 10 0 15 -129097 -262144 -241291 6565 1;
-#X obj 225 136 tgl 30 0 \$2-on_off-snd \$2-on_off-rcv ON 0 17 1 15
--35364 -35364 -262144 1 1;
+#X obj 103 117 hsl 170 15 5 240 0 0 \$2-bpm-snd \$2-bpm-rcv bpm:77.9853
+4 10 0 15 -129097 -262144 -241291 5249 1;
+#X obj 225 136 tgl 30 0 \$2-on_off-snd \$2-on_off-rcv OFF 0 17 1 15
+-35364 -35364 -262144 0 1;
 #X obj 102 146 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #N canvas 2607 171 276 202 on/off 0;
@@ -198,9 +198,9 @@
 #X connect 8 0 10 0;
 #X connect 8 0 11 0;
 #X restore 313 269 pd mesure;
-#X obj 219 11 apsubmaster \$2 \$1 \$2;
+#X obj 182 0 apsubmaster \$2 \$1 \$2;
 #X obj 217 39 api \$2 \$2-on_off \$2-on_off;
-#X obj 27 72 apf \$2 \$2-bpm \$2-bpm;
+#X obj 18 61 apf \$2 \$2-bpm \$2-bpm;
 #X obj 314 72 r \$2-on_off-snd;
 #X obj 359 121 r \$2-bpm-snd;
 #X obj 314 208 s \$2-clock;
@@ -385,6 +385,10 @@ shuffle 4 8 0 10 -13330 -262144 -260097 0 1;
 #X obj 255 136 bng 30 200 20 0 \$2-tic-snd \$2-tic-rcv empty 0 -6 0
 8 -1 -258699 -1;
 #X obj 314 96 change;
+#X obj 180 144 mknob 20 100 0 2 0 0 \$2-g1f-snd \$2-g1f-rcv fine -2
+-6 1 8 -262144 -1 -1 0 1;
+#X obj 127 226 outlet;
+#X obj 19 82 apf \$2 \$2-g1f \$2-g1f;
 #X connect 3 0 1 0;
 #X connect 6 0 13 0;
 #X connect 11 0 29 0;
@@ -393,4 +397,5 @@ shuffle 4 8 0 10 -13330 -262144 -260097 0 1;
 #X connect 17 0 16 0;
 #X connect 22 0 21 0;
 #X connect 29 0 6 0;
+#X connect 30 0 31 0;
 #X coords 0 -1 1 1 186 82 1 100 100;
