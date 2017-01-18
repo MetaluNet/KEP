@@ -1,4 +1,4 @@
-#N canvas 7 293 959 579 10;
+#N canvas 4 292 959 579 10;
 #X floatatom 47 373 5 0 1000 0 - - -, f 5;
 #X obj 361 289 s \$0-smooth;
 #X floatatom 318 232 5 0 10000 0 - - -, f 5;
@@ -106,7 +106,7 @@
 #X obj 282 30 init 8;
 #X obj 215 459 outlet;
 #X obj 154 -4 inlet;
-#X obj 154 20 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 1 1
+#X obj 154 20 tgl 15 0 empty empty empty 20 8 0 8 -262144 -1 -1 0 1
 ;
 #X obj 173 41 inlet;
 #X obj 173 61 t b f;
@@ -820,7 +820,7 @@
 #X obj 25 348 bng 15 250 50 0 empty empty empty 0 -6 0 8 -262144 -1
 -1;
 #X obj 254 423 tgl 15 0 \$1-on-snd \$1-on-rcv on 0 -7 0 10 -4034 -1
--1 1 1;
+-1 0 1;
 #X obj 213 49 r \$1-on-snd;
 #X obj 361 421 hradio 15 1 0 5 \$1-mode-snd \$1-mode-rcv Mode:palin
 0 -6 0 10 -203904 -1 -1 3;
@@ -855,8 +855,8 @@
 #X restore 555 326 pd printtemps;
 #X obj 146 26 r \$1-timemode-snd;
 #X obj 146 49 + 1;
-#X obj 275 422 hradio 11 1 0 7 \$1-denum-snd \$1-denum-rcv denum:3
-0 -6 0 10 -257985 -1 -1 2;
+#X obj 275 422 hradio 11 1 0 7 \$1-denum-snd \$1-denum-rcv denum:8
+0 -6 0 10 -257985 -1 -1 4;
 #X obj 275 341 r \$1-denum-snd;
 #N canvas 548 330 600 400 printdenum 0;
 #X obj 182 120 inlet;
@@ -906,7 +906,7 @@
 #X obj 145 464 outlet~;
 #X obj 336 383 s \$1-denum;
 #X obj 523 451 hradio 15 1 0 4 \$1-fragdenum-snd \$1-fragdenum-rcv
-fragdenum:1 0 -8 0 10 -204800 -1 -1 0;
+fragdenum:4 0 -8 0 10 -204800 -1 -1 4;
 #X obj 680 306 r \$1-fragdenum-snd;
 #X obj 816 347 s \$1-fragdenum;
 #N canvas 555 124 600 400 printfragdenum 0;
@@ -946,7 +946,7 @@ fragdenum:1 0 -8 0 10 -204800 -1 -1 0;
 #X obj 680 347 s \$1-fragdenum-rcv;
 #X obj 555 347 s \$1-timemode-rcv;
 #X obj 276 454 hsl 80 10 2 150 1 0 \$1-smooth-snd \$1-smooth-rcv amorti
--2 -6 0 10 -261682 -1 -1 0 1;
+-2 -6 0 10 -261682 -1 -1 770 1;
 #X obj 669 419 r \$1-palinmesure-snd;
 #N canvas 551 134 600 400 printpalinmesure 0;
 #X obj 182 120 inlet;
@@ -980,9 +980,9 @@ fragdenum:1 0 -8 0 10 -204800 -1 -1 0;
 #X obj 669 460 s \$1-palinmesure-rcv;
 #X obj 818 460 s \$1-palinmesure;
 #X obj 362 449 hradio 15 1 0 5 \$1-palinmesure-snd \$1-palinmesure-rcv
-palinmesure:4 0 -6 0 10 -203904 -1 -1 1;
+palinmesure:16 0 -6 0 10 -203904 -1 -1 4;
 #X obj 448 410 nbx 5 14 0 50 0 0 \$1-constance-snd \$1-constance-rcv
-constance 0 -6 0 10 -262144 -1 -1 50 256;
+constance 0 -6 0 10 -262144 -1 -1 0.512715 256;
 #X obj 448 424 bng 15 250 50 0 \$1-changeall-snd \$1-changeall-rcv
 changeAll 17 7 0 10 -262144 -1 -1;
 #X obj 551 0 loadbang;
@@ -999,7 +999,7 @@ changeAll 17 7 0 10 -262144 -1 -1;
 #X msg 668 36 3;
 #X msg 805 51 2;
 #X obj 637 405 vsl 10 60 0 1 0 0 \$1-vol-snd \$1-vol-rcv empty 0 -9
-0 10 -258113 -1 -1 1669 1;
+0 10 -258113 -1 -1 4053 1;
 #X obj 160 357 r \$1-vol-snd;
 #X msg 160 422 vol \$1;
 #X obj 160 400 * 2;
@@ -1011,7 +1011,7 @@ changeAll 17 7 0 10 -262144 -1 -1;
 -1 -1;
 #X msg 605 477 0;
 #X obj 449 452 hradio 15 1 0 4 empty empty sample 0 -8 0 10 -4034 -1
--1 0;
+-1 3;
 #X obj 194 247 + 1;
 #X symbolatom 243 230 10 0 0 0 - - -, f 10;
 #X msg 194 270 sample sample\$1;
@@ -1022,7 +1022,7 @@ changeAll 17 7 0 10 -262144 -1 -1;
 #X obj 133 175 t b a;
 #X msg 124 145 set sample \$1;
 #X symbolatom 315 210 10 0 0 0 - - -, f 10;
-#X msg 77 221 sample Dec1-sample-1;
+#X msg 77 221 sample Dec2-sample-4;
 #X obj 226 105 makesymbol \$2-sample-%d;
 #X obj 183 61 makesymbol \$2-%s;
 #X connect 0 0 2 0;
@@ -1036,8 +1036,8 @@ changeAll 17 7 0 10 -262144 -1 -1;
 #X restore 503 526 pd QampleName;
 #X obj 730 158 tgl 15 0 empty empty auto 17 7 0 10 -260097 -1 -1 0
 1;
-#X obj 384 178 mknob 25 100 1 3.5 0 0 empty empty mou -2 -6 0 8 2.46648e+08
-2.93013e+08 2.93013e+08 0 1;
+#X obj 384 178 mknob 25 100 1 3.5 0 0 empty empty mou -2 -6 0 8 -262144
+-1 -1 0 1;
 #N canvas 661 497 450 300 sa 0;
 #X obj 87 48 r \$3-Sa1;
 #X obj 159 44 r \$3-Sa2;
@@ -1220,12 +1220,14 @@ changeAll 17 7 0 10 -262144 -1 -1;
 #X connect 8 0 3 0;
 #X connect 9 0 4 0;
 #X restore 468 271 pd Palin;
-#N canvas 467 400 450 300 Constance 0;
+#N canvas 464 399 450 300 Constance 0;
 #X obj 95 37 r \$3-Constance;
 #X obj 96 92 * 50;
 #X obj 97 121 s \$1-constance-rcv;
-#X connect 0 0 1 0;
+#X obj 96 63 pow 2;
+#X connect 0 0 3 0;
 #X connect 1 0 2 0;
+#X connect 3 0 1 0;
 #X restore 468 292 pd Constance;
 #X obj 424 372 s \$1-mode-rcv;
 #X obj 237 180 s \$3-lvert;
