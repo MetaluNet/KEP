@@ -1,4 +1,4 @@
-#N canvas 728 201 869 437 10;
+#N canvas 1832 601 869 437 10;
 #X obj 323 9 loadbang;
 #X obj 323 53 * 44100;
 #X msg 323 75 resize \$1;
@@ -15,8 +15,8 @@
 #X obj 705 318 del;
 #X obj 705 297 / 44.1;
 #X msg 597 229 0;
-#X obj 11 111 cnv 10 100 10 empty \$0-time empty 5 5 0 10 -233017 -66577
-0;
+#X obj 11 111 cnv 10 100 10 empty \$0-time sec:8.6 5 5 0 10 -233017
+-66577 0;
 #X msg 441 36 0 \$1;
 #X obj 430 80 / 4410;
 #X obj 430 102 i;
@@ -76,7 +76,7 @@
 #X msg 71 389 1;
 #X obj 597 61 r KEP_DATASDIR;
 #X msg 597 86 symbol \$1/SAMPLES;
-#X obj 12 121 cnv 10 100 10 empty \$0-namecan empty 2 6 0 8 -257985
+#X obj 12 121 cnv 10 100 10 empty \$0-namecan cistre.wav 2 6 0 8 -257985
 -66577 0;
 #X msg 181 305 label \$1;
 #X obj 181 331 s \$0-namecan;

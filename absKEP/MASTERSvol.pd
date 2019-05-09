@@ -1,16 +1,10 @@
-#N canvas 2623 679 726 484 10;
-#X declare -lib libdir -lib ggee -stdpath ggee;
-#X declare -lib libdir -lib ggee -stdpath ggee;
-#X declare -lib libdir -lib ggee -stdpath ggee;
-#X declare -lib libdir -lib ggee -stdpath ggee;
-#X declare -lib libdir -lib ggee -stdpath ggee;
-#X declare -lib libdir -lib ggee -stdpath ggee;
+#N canvas 640 284 726 484 10;
 #X obj 101 101 cnv 15 48 122 empty empty VOLUME 3 8 0 12 -260097 -1
 0;
 #X obj 102 125 vsl 15 80 0 1 0 0 MASTERVOL-snd MASTERVOL-rcv 71 6 -6
-1 8 -159808 -257985 -1 5661 1;
+1 8 -159808 -257985 -1 0 1;
 #X obj 117 125 vsl 8 95 0 1 0 0 MASTERVOL_max-snd MASTERVOL_max-rcv
-52 -2 -6 1 8 -260097 -257985 -1 4900 1;
+52 -2 -6 1 8 -260097 -257985 -1 0 1;
 #X msg 547 159 label \$1;
 #X obj 547 139 makesymbol %s;
 #X obj 175 340 m 1;
@@ -29,9 +23,9 @@
 #X obj 8 10 apf MASTERS MASTERVOL MASTERVOL 2;
 #X obj 7 31 apf MASTERS MASTERVOL_max MASTERVOL_max 2;
 #X obj 125 125 vsl 15 80 0 1 0 0 MONITORVOL-snd MONITORVOL-rcv 54 6
--6 1 8 -4034 -257985 -1 5105 1;
+-6 1 8 -4034 -257985 -1 0 1;
 #X obj 140 125 vsl 8 95 0 1 0 0 MONITORVOL_max-snd MONITORVOL_max-rcv
-79 -2 -6 1 8 -260097 -257985 -1 7500 1;
+79 -2 -6 1 8 -260097 -257985 -1 0 1;
 #X msg 398 157 label \$1;
 #X obj 398 137 makesymbol %s;
 #X obj 349 235 m 1;
@@ -56,7 +50,7 @@
 #X msg 532 270 color 13 13 10;
 #X msg 552 292 color 16 16 0;
 #X obj 102 208 tgl 15 0 on-MASTER-snd on-MASTER-rcv empty 5 10 1 16
--24198 -24198 -262144 1 1;
+-24198 -24198 -262144 0 1;
 #X obj 532 218 r on-MASTER-snd;
 #X obj 533 316 s on-MASTER-rcv;
 #X obj 178 291 *;
@@ -67,7 +61,7 @@
 #X obj 276 90 t b f;
 #X obj 276 67 r on-MONITOR-snd;
 #X obj 125 208 tgl 15 0 on-MONITOR-snd on-MONITOR-rcv empty 5 10 1
-16 -24198 -24198 -262144 1 1;
+16 -24198 -24198 -262144 0 1;
 #X obj 542 368 sel 0 1;
 #X msg 542 395 color 13 13 10;
 #X msg 562 417 color 16 16 0;

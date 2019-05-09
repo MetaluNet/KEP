@@ -1,4 +1,5 @@
-#N canvas 201 50 666 682 10;
+#N canvas 201 79 666 682 10;
+#X declare -path creb;
 #X obj 22 79 unpack f f;
 #X obj 27 135 sel -1;
 #X msg 27 185 0;
@@ -103,6 +104,7 @@
 #X obj 447 567 outlet;
 #X obj 447 545 fmod 1;
 #X obj 27 47 route nd;
+#X obj 414 92 declare -path creb;
 #X connect 0 0 49 0;
 #X connect 0 1 9 0;
 #X connect 0 1 13 0;

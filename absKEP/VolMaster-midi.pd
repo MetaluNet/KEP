@@ -1,9 +1,8 @@
-#N canvas 1611 329 519 323 10;
-#X declare -lib libdir -lib ggee -stdpath ggee;
+#N canvas 847 329 519 323 10;
 #X obj 151 121 vsl 18 77 0 1 0 0 midi-MASTERVOL-\$1-snd midi-MASTERVOL-\$1-rcv
 empty 0 -9 0 10 -159808 -1 -1 0 1;
 #X obj 15 37 ctlin \$1 \$2;
-#X floatatom 26 103 5 0 0 0 - - -, f 5;
+#X floatatom 26 103 5 0 0 0 - - -;
 #X text 148 29 arg1:ctl \; arg2:channel \; arg3:nVCA;
 #X obj 15 65 / 127;
 #X obj 206 239 s MASTERVOL-rcv;

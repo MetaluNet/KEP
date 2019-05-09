@@ -1,4 +1,4 @@
-#N canvas 1647 141 420 857 10;
+#N canvas 2527 129 420 981 10;
 #X obj 11 11 cnv 15 32 538 empty empty empty 0 12 0 8 -1 -262144 0
 ;
 #N canvas 1600 107 450 300 vu 0;
@@ -60,11 +60,11 @@
 #X connect 11 0 9 0;
 #X restore 103 535 pd clean_limit;
 #X msg 198 558 size 8 \$1;
-#X obj 123 769 pan~;
-#X obj 164 759 * 90;
-#X obj 164 779 - 45;
-#X obj 105 817 OUT 1;
-#X obj 147 817 OUT 2;
+#X obj 124 802 pan~;
+#X obj 165 792 * 90;
+#X obj 165 812 - 45;
+#X obj 106 850 OUT 1;
+#X obj 148 850 OUT 2;
 #N canvas 1710 617 605 337 mon 0;
 #X obj 73 53 inlet~;
 #X obj 107 88 monitor \$1 \$2 1 3 \$0;
@@ -239,9 +239,9 @@
 #X restore 221 138 pd color_mute;
 #X obj 17 12 cnv 15 21 109 empty empty FX 5 6 0 8 -4032 -1 0;
 #X obj 20 24 tgl 8 0 pre-FX-1-\$1-\$2-snd pre-FX-1-\$1-\$2-rcv p 2
-3 1 8 -24198 -24198 -1 0 1;
+3 1 8 -261689 -261689 -1 0 1;
 #X obj 20 73 tgl 8 0 pre-FX-3-\$1-\$2-snd pre-FX-3-\$1-\$2-rcv p 2
-3 1 8 -24198 -24198 -1 0 1;
+3 1 8 -261689 -261689 -1 0 1;
 #X obj 27 86 tgl 8 0 pre-FX-4-\$1-\$2-snd pre-FX-4-\$1-\$2-rcv p 2
 3 1 8 -261689 -261689 -1 0 1;
 #X obj 17 124 cnv 15 21 158 empty empty MON 3 6 0 8 -257985 -1 0;
@@ -636,15 +636,15 @@
 #X obj 313 758 r \$0-diff-VCA;
 #X obj 205 679 Vcurve;
 #X obj 21 136 tgl 8 0 pre-OUT-1-\$1-\$2-snd pre-OUT-1-\$1-\$2-rcv p
-2 3 1 8 -24198 -24198 -1 0 1;
+2 3 1 8 -261689 -261689 -1 0 1;
 #X obj 26 148 tgl 8 0 pre-OUT-2-\$1-\$2-snd pre-OUT-2-\$1-\$2-rcv p
 2 3 1 8 -261689 -261689 -1 0 1;
 #X obj 21 185 tgl 8 0 pre-OUT-3-\$1-\$2-snd pre-OUT-3-\$1-\$2-rcv p
-2 3 1 8 -24198 -24198 -1 0 1;
+2 3 1 8 -261689 -261689 -1 0 1;
 #X obj 26 198 tgl 8 0 pre-OUT-4-\$1-\$2-snd pre-OUT-4-\$1-\$2-rcv p
 2 3 1 8 -261689 -261689 -1 0 1;
 #X obj 21 234 tgl 8 0 pre-OUT-5-\$1-\$2-snd pre-OUT-5-\$1-\$2-rcv p
-2 3 1 8 -24198 -24198 -1 0 1;
+2 3 1 8 -261689 -261689 -1 0 1;
 #X obj 26 247 tgl 8 0 pre-OUT-6-\$1-\$2-snd pre-OUT-6-\$1-\$2-rcv p
 2 3 1 8 -261689 -261689 -1 0 1;
 #X obj 17 342 cnv 15 21 70 empty empty empty 3 6 0 8 -257985 -1 0;
@@ -817,7 +817,7 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X obj 341 487 api MASTERS bus-15-\$1-\$2 bus-15-\$1-\$2 2;
 #X obj 341 507 api MASTERS bus-16-\$1-\$2 bus-16-\$1-\$2 2;
 #X restore 235 323 pd apf;
-#X obj 164 737 r pan-OUT-\$1-\$2-snd;
+#X obj 165 770 r pan-OUT-\$1-\$2-snd;
 #X obj 198 576 s comp_rouge-\$1-\$2-rcv;
 #X obj 341 540 switch~;
 #X obj 341 521 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1
@@ -827,7 +827,7 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X obj 156 643 m;
 #X obj 205 660 r diff-OUT-\$1-\$2-snd;
 #X obj 123 718 mull~ 0 10;
-#X floatatom 218 774 5 0 0 0 - - -, f 5;
+#X floatatom 219 807 5 0 0 0 - - -, f 5;
 #X obj 30 363 tgl 10 0 on-lr-\$1-\$2-snd on-lr-\$1-\$2-rcv lr 3 5 1
 8 -24198 -24198 -1 1 1;
 #N canvas 2027 319 345 183 color_lr 0;
@@ -843,9 +843,9 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X connect 4 0 2 0;
 #X restore 220 227 pd color_lr;
 #X text 46 369 -----------panoramique lr et centre;
-#X obj 206 701 m;
-#X obj 264 684 r on-lr-\$1-\$2-snd;
-#X floatatom 268 711 5 0 0 0 - - -, f 5;
+#X obj 314 862 m;
+#X obj 204 713 r on-lr-\$1-\$2-snd;
+#X floatatom 283 870 5 0 0 0 - - -, f 5;
 #X obj 102 506 mull~ 10 1;
 #X obj 226 441 r mute-OUT-\$1-\$2-snd;
 #X obj 226 464 sel 0 1;
@@ -862,7 +862,7 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X obj 30 476 tgl 8 0 bus-9-\$1-\$2-snd bus-9-\$1-\$2-rcv 9 2 5 2 8
 -250685 -250685 -128992 0 1;
 #X obj 30 485 tgl 8 0 bus-10-\$1-\$2-snd bus-10-\$1-\$2-rcv 10 0 5
-2 8 -250685 -250685 -128992 0 1;
+2 8 -257472 -257472 -90133 1 1;
 #X obj 16 476 tgl 8 0 bus-1-\$1-\$2-snd bus-1-\$1-\$2-rcv 1 2 5 2 8
 -250685 -250685 -128992 0 1;
 #X obj 16 485 tgl 8 0 bus-2-\$1-\$2-snd bus-2-\$1-\$2-rcv 2 2 5 2 8
@@ -890,7 +890,7 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X obj 30 530 tgl 8 0 bus-15-\$1-\$2-snd bus-15-\$1-\$2-rcv 15 0 5
 2 8 -250685 -250685 -128992 0 1;
 #X obj 30 539 tgl 8 0 bus-16-\$1-\$2-snd bus-16-\$1-\$2-rcv 16 0 5
-2 8 -257472 -257472 -90133 1 1;
+2 8 -250685 -250685 -128992 0 1;
 #N canvas 262 479 621 512 color_bus 0;
 #X obj 29 16 sel 0 1;
 #X msg 46 41 color 9 9 29;
@@ -1088,6 +1088,7 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X connect 0 0 15 0;
 #X connect 0 0 16 0;
 #X restore 29 797 pd bus-REC;
+#X obj 124 749 mull~ 0 10;
 #X connect 2 0 1 0;
 #X connect 2 0 16 0;
 #X connect 2 0 9 0;
@@ -1101,18 +1102,16 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X connect 10 0 79 0;
 #X connect 14 0 87 0;
 #X connect 15 0 77 1;
-#X connect 52 0 84 0;
+#X connect 52 0 79 1;
 #X connect 71 0 5 0;
 #X connect 74 0 73 0;
 #X connect 75 0 76 0;
 #X connect 76 0 77 0;
 #X connect 77 0 10 1;
 #X connect 78 0 52 0;
-#X connect 79 0 4 0;
 #X connect 79 0 117 0;
-#X connect 84 0 79 1;
-#X connect 85 0 84 1;
-#X connect 85 0 86 0;
+#X connect 79 0 118 0;
+#X connect 85 0 118 1;
 #X connect 87 0 2 0;
 #X connect 88 0 89 0;
 #X connect 88 0 98 0;
@@ -1128,4 +1127,5 @@ L<-->R 0 5 1 8 -257985 -258113 -1 1300 1;
 #X connect 95 1 94 0;
 #X connect 96 0 97 0;
 #X connect 97 0 87 1;
+#X connect 118 0 4 0;
 #X coords 0 -1 1 1 34 540 2 10 10;

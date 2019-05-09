@@ -1,0 +1,27 @@
+#N canvas 176 111 489 282 10;
+#X obj 49 50 PdClient \$0 kep felix-desktop.local;
+#X obj 168 220 s \$0-toserver;
+#X obj 217 196 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 168 157 r SYNCHRO-clock;
+#X obj 168 178 list prepend ck;
+#X obj 302 56 r /GAMME;
+#X obj 360 56 r /CHORD;
+#X obj 302 74 t b f;
+#X obj 360 76 t b f;
+#X obj 302 109 del 10;
+#X obj 302 130 f;
+#X obj 302 151 pack f f;
+#X obj 302 172 list prepend gam;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 7 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 7 1 10 1;
+#X connect 8 0 9 0;
+#X connect 8 1 11 1;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 11 0 12 0;
+#X connect 12 0 1 0;

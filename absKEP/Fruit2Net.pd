@@ -1,4 +1,5 @@
-#N canvas 242 276 450 329 10;
+#N canvas 318 167 450 329 10;
+#X declare -path maxlib;
 #X obj 148 71 r \$1-snd;
 #X obj 204 70 r \$1-rcv;
 #X obj 204 92 nroute set 2;
@@ -14,6 +15,7 @@
 #X symbolatom 300 273 10 0 0 0 - - -;
 #X obj 300 249 symbol;
 #X obj 277 291 outlet;
+#X obj 285 43 declare -path maxlib;
 #X connect 0 0 6 0;
 #X connect 1 0 2 0;
 #X connect 1 0 10 0;

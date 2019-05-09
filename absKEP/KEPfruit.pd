@@ -1,4 +1,4 @@
-#N canvas 250 585 362 367 10;
+#N canvas 250 401 362 367 10;
 #X obj 96 5 loadbang;
 #N canvas 721 79 431 693 telecom_FRAISE 0;
 #X obj 45 176 unpack f f f;

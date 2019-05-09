@@ -1,9 +1,10 @@
-#N canvas 1830 604 532 402 10;
+#N canvas 834 366 532 402 10;
+#X declare -path hcs;
 #X obj 30 36 apsubmaster \$1-\$2-RFID \$1 \$1-\$2-RFID;
 #X obj 32 67 apsym KEPcontrol \$1-\$2-prepa \$1-\$2-prepa;
 #X obj 30 88 apsym KEPcontrol \$1-\$2-type \$1-\$2-type;
 #X obj 30 109 api KEPcontrol \$1-\$2-num_type \$1-\$2-num_type;
-#N canvas 1743 83 728 364 telecom_INSTRU 0;
+#N canvas 638 83 728 364 telecom_INSTRU 1;
 #X obj 29 165 openpanel;
 #X obj 29 143 split_path;
 #X obj 29 88 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -311,7 +312,7 @@
 #X obj 113 122 list append;
 #X obj 85 81 t b b;
 #X obj 113 144 list trim;
-#X symbolatom 235 144 10 0 0 0 - - -, f 10;
+#X symbolatom 235 144 10 0 0 0 - - -;
 #X connect 0 0 6 1;
 #X connect 4 0 2 0;
 #X connect 4 0 3 0;
@@ -360,5 +361,6 @@
 #X obj 308 345 REMOTEbus \$1 \$2 tl4;
 #X obj 308 366 REMOTEbus \$1 \$2 tlREC;
 #X obj 308 214 REMOTEkep \$1 \$2 tSHIFT;
+#X obj 32 7 declare -path hcs;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;

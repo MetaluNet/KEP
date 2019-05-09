@@ -1,4 +1,4 @@
-#N canvas 194 818 903 430 10;
+#N canvas 0 780 903 430 10;
 #X obj 43 57 inlet~;
 #X obj 44 189 t b f;
 #X obj 573 172 tgl 30 0 \$1-\$2-rec \$1-\$2-rec rec 32 7 0 10 -258113
@@ -9,7 +9,7 @@
 #X obj 129 97 loadbang;
 #X text 154 117 max(sec);
 #X obj 403 218 nbx 5 14 10 100 0 0 \$1-\$2-thres-snd \$1-\$2-thres-rcv
-seuil 0 -8 0 10 -260818 -1 -1 10 256;
+seuil 0 -8 0 10 -261681 -1 -1 70 256;
 #X obj 465 220 hsl 60 12 0 1 0 0 \$1-\$2-thi-snd \$1-\$2-thi-rcv tHi:0.1s
 -2 -8 0 10 -4032 -1 -1 596 1;
 #X obj 462 263 i;
@@ -21,10 +21,10 @@ seuil 0 -8 0 10 -260818 -1 -1 10 256;
 #X text 54 3 autorec apref id [sample];
 #X msg 441 308 label tHi:\$1s;
 #X obj 563 220 hsl 60 12 0.1 3 0 0 \$1-\$2-tlow-snd \$1-\$2-tlow-rcv
-tLow:0.15s -2 -8 0 10 -4032 -1 -1 105 1;
+tLow:0.83s -2 -8 0 10 -4032 -1 -1 1500 1;
 #X obj 560 263 i;
 #X msg 560 307 label tLow:\$1s;
-#N canvas 12 338 644 537 record 0;
+#N canvas 1801 79 644 537 record 0;
 #X obj 210 308 timer;
 #X obj 210 352 / 1000;
 #X obj 279 293 delay 100;
@@ -106,7 +106,7 @@ tLow:0.15s -2 -8 0 10 -4032 -1 -1 105 1;
 #X connect 33 0 34 0;
 #X restore 44 160 pd record;
 #X obj 129 140 s \$0-recmax;
-#N canvas 840 959 445 420 auto 0;
+#N canvas 1366 780 445 420 auto 0;
 #N canvas 207 818 515 509 autorec 0;
 #X obj 55 14 inlet;
 #X obj 232 422 outlet;
@@ -148,7 +148,7 @@ tLow:0.15s -2 -8 0 10 -4032 -1 -1 105 1;
 #X obj 157 140 del 0;
 #X obj 55 37 t f b;
 #X obj 9 14 inlet~;
-#X obj 324 145 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 324 145 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 345 115 5 0 0 0 - - -, f 5;
 #X obj 393 207 s \$0-signal;
@@ -232,7 +232,7 @@ tLow:0.15s -2 -8 0 10 -4032 -1 -1 105 1;
 #X obj 24 16 inlet~;
 #X obj 194 59 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 76 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 76 245 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 264 315 - 0.6;
 #X obj 170 177 sel 1 0;
@@ -242,6 +242,7 @@ tLow:0.15s -2 -8 0 10 -4032 -1 -1 105 1;
 #X obj 94 81 r \$1-\$2-thres-snd;
 #X obj 145 103 r \$1-\$2-thi-snd;
 #X obj 223 123 r \$1-\$2-tlow-snd;
+#X floatatom 167 360 5 0 0 0 - - -, f 5;
 #X connect 0 0 12 0;
 #X connect 0 0 15 0;
 #X connect 0 1 11 0;
@@ -252,6 +253,7 @@ tLow:0.15s -2 -8 0 10 -4032 -1 -1 105 1;
 #X connect 5 0 6 0;
 #X connect 6 0 3 0;
 #X connect 7 0 1 0;
+#X connect 7 0 24 0;
 #X connect 9 0 2 0;
 #X connect 9 0 14 0;
 #X connect 10 0 9 0;
@@ -280,7 +282,7 @@ tLow:0.15s -2 -8 0 10 -4032 -1 -1 105 1;
 #X msg 550 73 color 14 22 22;
 #X obj 98 237 r \$0-sample;
 #X obj 405 176 hradio 20 1 0 4 \$1-\$2-sampnum-snd \$1-\$2-sampnum
-sample 0 -8 0 10 -262144 -1 -1 1;
+sample 0 -8 0 10 -262144 -1 -1 3;
 #X obj 266 289 s \$0-sample;
 #X obj 459 94 t a;
 #X obj 683 35 * 90;
@@ -306,6 +308,47 @@ sample 0 -8 0 10 -262144 -1 -1 1;
 #X floatatom 523 270 5 0 0 0 - - -, f 5;
 #X floatatom 412 247 5 0 0 0 - - -, f 5;
 #X obj 648 226 apf \$3-SETTING Thresh \$1-\$2-thres 2;
+#N canvas 1866 106 232 348 RecCligno 0;
+#X obj 84 304 s \$3-lR;
+#X obj 30 50 r \$1-\$2-auto;
+#X obj 119 49 r \$1-\$2-rec;
+#X obj 65 22 r \$3-tSHIFT-snd;
+#X obj 84 280 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 30 71 sel 0 1;
+#X obj 119 72 sel 0 1;
+#X msg 57 136 0, f 1;
+#X msg 84 136 1, f 1;
+#X obj 84 174 metro 250;
+#X obj 84 195 i;
+#X obj 113 195 + 1;
+#X obj 84 216 mod 2;
+#X obj 30 100 t b b;
+#X msg 30 136 0, f 1;
+#X obj 138 93 t b b;
+#X msg 138 136 1, f 1;
+#X connect 1 0 5 0;
+#X connect 2 0 6 0;
+#X connect 4 0 0 0;
+#X connect 5 0 13 0;
+#X connect 5 1 8 0;
+#X connect 6 0 7 0;
+#X connect 6 0 14 0;
+#X connect 6 1 15 0;
+#X connect 7 0 9 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 11 0;
+#X connect 10 0 12 0;
+#X connect 11 0 10 1;
+#X connect 12 0 4 0;
+#X connect 13 0 14 0;
+#X connect 13 1 7 0;
+#X connect 14 0 4 0;
+#X connect 15 0 16 0;
+#X connect 15 1 7 0;
+#X connect 16 0 4 0;
+#X restore 270 58 pd RecCligno;
 #X connect 0 0 20 0;
 #X connect 0 0 22 0;
 #X connect 1 0 10 0;

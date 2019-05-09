@@ -1,13 +1,12 @@
-#N canvas 2299 327 422 323 10;
-#X declare -lib libdir -lib ggee -stdpath ggee;
+#N canvas 944 327 422 323 10;
 #X obj 152 101 cnv 15 18 100 empty empty \$3 5 10 1 14 -4034 -66577
 0;
 #X obj 151 121 vsl 18 77 0 1 0 0 midi-XR18-\$1-snd midi-XR18-\$1-rcv
-empty 0 -9 0 10 -162280 -1 -1 4300 1;
-#X floatatom 26 103 5 0 0 0 - - -, f 5;
+empty 0 -9 0 10 -162280 -1 -1 0 1;
+#X floatatom 26 103 5 0 0 0 - - -;
 #X obj 15 65 / 127;
 #X obj 151 101 tgl 18 0 on-midi-XR18-\$3-snd on-midi-XR18-\$3-rcv \$3
-5 10 1 14 -24198 -24198 -262144 1 1;
+5 10 1 14 -24198 -24198 -262144 0 1;
 #X obj 151 208 spigot;
 #X obj 257 107 sel 0 1;
 #X msg 257 134 color 13 13 10;

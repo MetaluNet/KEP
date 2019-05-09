@@ -1,11 +1,11 @@
-#N canvas 472 185 833 552 10;
+#N canvas 1873 225 833 552 10;
 #X declare -path AutoPreset -stdpath moonlib -stdpath iemlib -lib zexy
 ;
 #N canvas 5 77 450 300 declares 0;
 #X obj 38 16 declare -path AutoPreset -stdpath moonlib -stdpath iemlib
 -lib zexy;
 #X restore 37 19 pd declares;
-#N canvas 4 328 542 366 masterMain 0;
+#N canvas 1366 328 542 366 masterMain 0;
 #X obj 184 42 mull~ 1 10;
 #X obj 349 33 mull~ 1 10;
 #X obj 91 34 mull~ 1 10;
@@ -20,8 +20,6 @@
 -1 -1 2400 1;
 #X obj 141 222 pow 2;
 #X obj 141 244 * 4;
-#X obj 312 126 loadbang;
-#X msg 312 148 \; pd dsp 1;
 #X obj 73 1 inlet~;
 #X obj 173 288 outlet~;
 #X obj 237 291 outlet~;
@@ -31,9 +29,9 @@
 #X connect 0 0 4 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;
-#X connect 3 0 19 0;
-#X connect 4 0 15 0;
-#X connect 5 0 16 0;
+#X connect 3 0 17 0;
+#X connect 4 0 13 0;
+#X connect 5 0 14 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 2 1;
@@ -41,10 +39,9 @@
 #X connect 10 0 11 0;
 #X connect 11 0 0 1;
 #X connect 11 0 1 1;
-#X connect 12 0 13 0;
-#X connect 14 0 2 0;
-#X connect 17 0 0 0;
-#X connect 18 0 1 0;
+#X connect 12 0 2 0;
+#X connect 15 0 0 0;
+#X connect 16 0 1 0;
 #X coords 0 -1 1 1 85 120 1 100 100;
 #X restore 104 194 pd masterMain;
 #X floatatom 215 228 5 0 0 0 - - -, f 5;
@@ -66,8 +63,8 @@
 #X msg 106 131 -1;
 #X msg 178 153 0 \$1;
 #X obj 136 227 pack f f;
-#X obj 147 22 hsl 128 30 20 240 0 0 clockBPM-snd clockBPM-rcv BPM:96
-8 15 0 12 -257985 -1 -1 4404 1;
+#X obj 147 22 hsl 128 30 20 240 0 0 clockBPM-snd clockBPM-rcv BPM:101
+8 15 0 12 -257985 -1 -1 4733 1;
 #X obj 318 122 r clockBPM-snd;
 #X obj 295 29 loadbang;
 #X msg 295 50 120;
@@ -159,8 +156,8 @@
 #X obj 17 135 l sample \$1 sample-4 60;
 #X obj 503 208 r \$1-Mode;
 #X obj 594 204 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 11600 1;
-#N canvas 460 529 450 300 MODE 1;
+-1 -1 0 1;
+#N canvas 460 529 450 300 MODE 0;
 #X obj 101 116 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1
 -1;
 #X obj 146 116 bng 15 250 50 0 empty empty save 16 7 0 10 -258113 -1

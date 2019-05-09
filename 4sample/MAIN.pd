@@ -1,4 +1,4 @@
-#N canvas 537 76 811 689 10;
+#N canvas 528 79 811 689 10;
 #X obj 1 1 cnv 15 40 654 empty empty \$1 1 5 1 8 -257985 -1 0;
 #X text -27 -26 KEPtype nomUnique;
 #X obj 8 642 bng 10 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
@@ -24,8 +24,8 @@
 #X obj 32 206 KEPbus \$1 s3 Rec3 t3;
 #X obj 33 227 KEPbus \$1 s4 Rec4 t4;
 #X restore 74 502 pd KEPboutons;
-#N canvas 78 239 716 518 son 1;
-#N canvas 729 79 637 689 ALLSOUND 0;
+#N canvas 72 237 716 518 son 0;
+#N canvas 723 79 637 689 ALLSOUND 0;
 #X obj 25 905 outlet~;
 #X msg 486 135 rec \$1;
 #X msg 269 170 time \$1;
@@ -221,7 +221,7 @@
 #X obj 175 392 unpack f f;
 #X obj 175 412 != -1;
 #X obj 175 478 ||;
-#X obj 273 423 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0
+#X obj 273 423 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1
 1;
 #X obj 273 403 sel 1;
 #X obj 27 530 mull~ 0.7 1;
@@ -360,7 +360,7 @@
 #X obj 487 378 sel 3;
 #X obj 195 44 s~ \$0-in;
 #X floatatom 103 258 5 0 0 0 - - -, f 5;
-#N canvas 5 79 526 689 play 0;
+#N canvas 2 79 526 689 play 0;
 #X msg 19 496 0 \$1;
 #X obj 19 476 f;
 #X obj 156 592 outlet~;
@@ -567,6 +567,8 @@
 #X floatatom 151 186 5 0 0 0 - - -, f 5;
 #X obj 19 70 ac;
 #X obj 283 16 inlet;
+#X floatatom 185 574 5 0 0 0 - - -, f 5;
+#X floatatom 116 569 5 0 0 0 - - -, f 5;
 #X connect 7 0 27 0;
 #X connect 7 1 2 0;
 #X connect 8 0 14 0;
@@ -593,8 +595,10 @@
 #X connect 24 0 17 0;
 #X connect 25 0 28 1;
 #X connect 26 0 34 1;
+#X connect 26 0 84 0;
 #X connect 28 0 26 0;
 #X connect 28 0 41 0;
+#X connect 28 0 83 0;
 #X connect 29 0 30 0;
 #X connect 30 0 31 0;
 #X connect 31 0 28 0;
@@ -661,7 +665,7 @@
 #X obj 379 146 t b;
 #X obj 379 124 r SYNCHRO-clock;
 #X obj 496 200 nbx 5 14 -1e+37 1e+37 0 0 \$0-Tempo-snd \$0-Tempo-rcv
-12 5 -8 0 10 -262144 -1 -1 0.151515 256;
+0.125 5 -8 0 10 -262144 -1 -1 0.0884005 256;
 #N canvas 2813 593 592 300 led 0;
 #X obj 113 -125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
@@ -746,7 +750,7 @@
 #X connect 16 0 2 1;
 #X connect 17 0 1 1;
 #X restore 88 186 pd touches;
-#N canvas 364 561 708 443 Vitesse 1;
+#N canvas 361 325 708 443 Vitesse 0;
 #X obj 140 365 outlet;
 #X obj 102 96 i;
 #X obj 150 324 t a;
@@ -844,7 +848,7 @@
 #X connect 36 0 5 0;
 #X connect 37 0 5 0;
 #X restore 87 114 pd Vitesse;
-#N canvas 153 392 740 507 trig 0;
+#N canvas 132 207 740 507 trig 0;
 #X obj 160 67 outlet;
 #X obj 160 -97 NDmetro;
 #X obj 160 44 sel 0;
@@ -902,7 +906,7 @@
 #X obj 131 -85 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 597 -106 s \$1-STEP-seq0;
-#X obj 597 -162 loadbang;
+#X obj 596 -179 loadbang;
 #X msg 597 -137 const 1 \, 0 64 \, 1 0;
 #X obj 498 -250 r \$1-Phrases;
 #X obj 514 -228 r \$1-Phrases_max;
@@ -918,7 +922,7 @@
 #X obj 160 -73 spigot;
 #X obj 219 -98 unpack f f;
 #X obj 218 -77 != 0;
-#N canvas 684 128 460 394 calctab 0;
+#N canvas 681 127 460 394 calctab 0;
 #X obj 154 5 inlet;
 #X obj 178 131 tabread \$0-tt;
 #X msg 188 52 set \$1;
@@ -951,6 +955,7 @@
 #X connect 11 0 12 0;
 #X restore 367 68 pd calctab;
 #X msg 367 89 tab \$1;
+#X msg 617 -158 const 0 \, 0 64;
 #X connect 1 0 66 0;
 #X connect 2 0 0 0;
 #X connect 3 0 1 0;
@@ -994,7 +999,7 @@
 #X connect 41 0 25 0;
 #X connect 41 0 31 0;
 #X connect 41 0 69 0;
-#X connect 53 0 54 0;
+#X connect 53 0 71 0;
 #X connect 54 0 52 0;
 #X connect 55 0 65 0;
 #X connect 56 0 64 0;
@@ -1011,6 +1016,7 @@
 #X connect 68 0 66 1;
 #X connect 69 0 70 0;
 #X connect 70 0 57 0;
+#X connect 71 0 52 0;
 #X restore 87 162 pd trig;
 #N canvas 505 535 313 391 vitesse_push 0;
 #X obj 56 278 outlet;
@@ -1060,7 +1066,7 @@
 #X obj 26 96 s \$0-onoff;
 #X obj 26 79 tgl 15 1 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
-#X obj 67 406 *~ 3;
+#X obj 67 406 *~ 1;
 #X connect 0 0 5 0;
 #X connect 1 0 0 0;
 #X connect 5 0 30 0;
@@ -1224,7 +1230,7 @@
 #X connect 59 0 44 1;
 #X connect 59 0 43 1;
 #X restore 129 536 pd rec;
-#N canvas 2100 606 450 465 keyboardmono 0;
+#N canvas 746 303 450 465 keyboardmono 0;
 #X obj 113 36 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 131 37 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0

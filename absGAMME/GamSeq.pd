@@ -1,10 +1,14 @@
-#N canvas 442 139 926 679 10;
+#N canvas 264 79 926 679 10;
 #X declare -path PdTl;
+#X declare -path motex;
+#X declare -path ../PdTl;
+#X declare -path ../absTL;
+#X declare -path maxlib;
 #X obj 817 316 declare -path PdTl;
 #X obj 728 16 tlGamme \$0 g1 1;
 #X msg 375 178 mes 4;
 #X msg 416 179 mes 3;
-#N canvas 759 281 546 594 Play 0;
+#N canvas 20 775 546 594 Play 0;
 #X obj 217 192 f;
 #X obj 176 216 t f f;
 #X obj 400 550 s \$0-song-S1-rcv;
@@ -58,7 +62,7 @@
 #X msg 331 78 1;
 #X obj 272 33 inlet;
 #X obj 144 306 outlet;
-#X floatatom 243 239 5 0 0 0 - - -, f 5;
+#X floatatom 243 239 5 0 0 0 - - -;
 #X obj 167 109 t f f;
 #X obj 179 183 t b f;
 #X msg 136 153 0;
@@ -102,7 +106,7 @@
 #X msg 331 78 1;
 #X obj 272 33 inlet;
 #X obj 144 287 outlet;
-#X floatatom 243 220 5 0 0 0 - - -, f 5;
+#X floatatom 243 220 5 0 0 0 - - -;
 #X obj 167 79 t f f;
 #X obj 179 164 t b f;
 #X msg 136 134 0;
@@ -140,7 +144,7 @@
 #X obj 98 564 s \$0-song-SP-rcv;
 #X obj 98 440 spigot;
 #X obj 399 187 t a a;
-#X floatatom 260 196 5 0 0 0 - - -, f 5;
+#X floatatom 260 196 5 0 0 0 - - -;
 #X obj 51 278 r \$0-play-snd;
 #X obj 232 81 r \$0-song-SP-snd;
 #X obj 159 315 s \$0-song-SP-rcv;
@@ -150,7 +154,7 @@
 #X obj 11 2 inlet;
 #X obj 53 3 inlet;
 #X obj 96 3 inlet;
-#X floatatom 236 516 5 0 0 0 - - -, f 5;
+#X floatatom 236 516 5 0 0 0 - - -;
 #X obj 98 362 r SYNCHRO-clock;
 #X obj 243 432 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -218,7 +222,7 @@
 #X connect 61 0 60 0;
 #X coords 0 -1 1 1 215 60 1 10 10;
 #X restore 491 387 pd Play;
-#N canvas 0 342 955 572 ApMaster 1;
+#N canvas 0 342 955 572 ApMaster 0;
 #X obj 448 14 r \$0-apmaster-rcv;
 #X obj 494 69 b;
 #X obj 448 35 route save load savefile loadfile loadin savein;
@@ -256,11 +260,11 @@
 #X obj 274 104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 274 159 symbol \$1/Seq/S1;
-#X symbolatom 14 81 25 0 0 0 - - -, f 25;
+#X symbolatom 14 81 25 0 0 0 - - -;
 #X obj 306 318 stripdir;
 #X obj 85 29 bng 15 250 50 0 empty empty update-dir 17 7 0 10 -257985
 -1 -1;
-#N canvas 942 75 494 554 readdir-rnd 0;
+#N canvas 872 79 494 554 readdir-rnd 0;
 #X obj 389 183 getdir;
 #X obj 379 149 bng 15 250 50 0 empty empty get_dirlist 17 7 0 10 -262144
 -1 -1;
@@ -297,7 +301,7 @@
 #X obj 15 355 t b b;
 #X msg 87 460 1;
 #X obj 42 377 s \$0-home-rcv;
-#X symbolatom 172 329 10 0 0 0 - - -, f 10;
+#X symbolatom 172 329 10 0 0 0 - - -;
 #X msg 1 304 stop;
 #X obj 15 184 random 5;
 #X obj 15 206 + 1;
@@ -311,6 +315,7 @@
 #X obj 267 74 symbol;
 #X msg 267 124 open \$1;
 #X msg 57 287 symbol \$2/\$1;
+#X obj 267 10 declare -path motex;
 #X connect 2 0 10 0;
 #X connect 3 0 4 0;
 #X connect 3 1 42 0;
@@ -437,7 +442,7 @@
 #X obj 389 257 r \$0-songsdir;
 #X msg 325 279 symbol \$2/\$1;
 #X obj 641 130 symbol;
-#X symbolatom 616 226 10 0 0 0 - - -, f 10;
+#X symbolatom 616 226 10 0 0 0 - - -;
 #X obj 619 81 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 641 87 r KEP_SETTINGSDIR;
@@ -542,7 +547,7 @@
 #X connect 7 0 8 0;
 #X restore 817 275 pd gammes;
 #N canvas 270 178 934 697 synth 0;
-#X floatatom 115 199 5 0 0 0 - - -, f 5;
+#X floatatom 115 199 5 0 0 0 - - -;
 #X obj 614 78 gamme 90 40 0 0 0 0 0 0 0 0 0 0 0 0;
 #X msg 630 48 setb \$1;
 #X obj 115 343 mtof;
@@ -552,7 +557,7 @@
 #X obj 115 369 phasor~;
 #X obj 115 393 lop~ 800;
 #X obj 212 400 phasor~;
-#X obj 212 258 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
+#X obj 212 258 gamme 90 40 1 0 0 1 0 0 0 1 0 0 0 0;
 #X msg 212 233 setb \$1;
 #X obj 211 428 lop~ 1800;
 #X obj 211 451 subamp;
@@ -561,27 +566,27 @@
 #X obj 211 378 mtof;
 #X msg 204 181 get 5 0;
 #X obj 308 400 phasor~;
-#X obj 308 258 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
+#X obj 308 258 gamme 90 40 1 0 0 1 0 0 0 1 0 0 0 0;
 #X msg 308 233 setb \$1;
 #X obj 307 428 lop~ 1800;
 #X obj 307 378 mtof;
 #X obj 401 398 phasor~;
-#X obj 402 255 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
+#X obj 402 255 gamme 90 40 1 0 0 1 0 0 0 1 0 0 0 0;
 #X msg 402 230 setb \$1;
 #X obj 401 425 lop~ 1800;
 #X obj 401 375 mtof;
 #X obj 499 404 phasor~;
-#X obj 499 262 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
+#X obj 499 262 gamme 90 40 1 0 0 1 0 0 0 1 0 0 0 0;
 #X msg 499 237 setb \$1;
 #X obj 498 432 lop~ 1800;
 #X obj 498 382 mtof;
 #X obj 595 404 phasor~;
-#X obj 595 262 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
+#X obj 595 262 gamme 90 40 1 0 0 1 0 0 0 1 0 0 0 0;
 #X msg 595 237 setb \$1;
 #X obj 594 432 lop~ 1800;
 #X obj 594 382 mtof;
 #X obj 689 401 phasor~;
-#X obj 689 259 gamme 90 40 1 0 0 0 1 0 0 0 0 1 0 0;
+#X obj 689 259 gamme 90 40 1 0 0 1 0 0 0 1 0 0 0 0;
 #X msg 689 234 setb \$1;
 #X obj 688 429 lop~ 1800;
 #X obj 688 379 mtof;
@@ -593,7 +598,7 @@
 #X obj 47 164 switch~;
 #X obj 105 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X floatatom 425 115 5 0 0 0 - - -, f 5;
+#X floatatom 425 115 5 0 0 0 - - -;
 #X obj 747 65 mtof;
 #X obj 746 116 lop~ 2800;
 #X obj 135 117 mknob 25 100 0.001 1 1 0 empty empty empty -2 -6 0 8
@@ -602,7 +607,7 @@
 #X obj 410 34 sel 0;
 #X msg 408 58 -1;
 #X obj 420 11 t f f;
-#X floatatom 967 278 5 0 0 0 - - -, f 5;
+#X floatatom 967 278 5 0 0 0 - - -;
 #X obj 828 163 - 0.5;
 #X obj 116 289 ++;
 #X obj 826 183 s \$0-gammefine;
@@ -637,7 +642,7 @@
 #X obj 614 26 r \$1-g1-rcv;
 #X obj 465 20 r \$1-clock;
 #X obj 459 69 ndmetro 12 3;
-#X floatatom 559 9 5 0 0 0 - - -, f 5;
+#X floatatom 559 9 5 0 0 0 - - -;
 #X obj 418 582 == 0;
 #X obj 411 607 m 1;
 #X obj 510 640 Vmull~;
@@ -806,7 +811,7 @@
 #X restore 339 441 pd ClearLoop;
 #X obj 339 385 bng 50 250 50 0 empty empty Continue 17 7 0 10 -4032
 -1 -1;
-#N canvas 331 61 450 300 hurface 0;
+#N canvas 1366 79 450 300 hurface 0;
 #X obj 190 59 r HurFace;
 #X obj 190 86 route tia;
 #X obj 191 135 sel 1;
@@ -827,7 +832,7 @@
 #X connect 7 1 5 0;
 #X connect 7 2 8 0;
 #X connect 8 0 9 0;
-#X restore 411 398 pd hurface;
+#X restore 404 390 pd hurface;
 #X obj 21 453 MuteCK \$0 mck 2 SP;
 #X obj 348 473 r \$0-SP-mute;
 #X obj 349 493 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -1017,6 +1022,13 @@
 #X obj 818 498 s GAMME1;
 #X obj 818 475 r \$0-gA;
 #X obj 722 442 outlet;
+#X obj 825 436 r /GAMME;
+#X obj 767 432 r /CHORD;
+#X floatatom 847 455 5 0 0 0 - - -;
+#X floatatom 768 455 5 0 0 0 - - -;
+#X obj 24 604 declare -path ../PdTl;
+#X obj 24 626 declare -path ../absTL;
+#X obj 25 646 declare -path maxlib;
 #X connect 2 0 24 0;
 #X connect 3 0 24 0;
 #X connect 5 0 55 0;
@@ -1037,7 +1049,6 @@
 #X connect 24 0 25 0;
 #X connect 30 0 29 0;
 #X connect 31 0 30 0;
-#X connect 31 2 4 2;
 #X connect 33 0 34 0;
 #X connect 34 0 40 0;
 #X connect 38 0 39 0;
@@ -1052,3 +1063,7 @@
 #X connect 45 0 42 0;
 #X connect 52 0 51 0;
 #X connect 54 0 53 0;
+#X connect 56 0 58 0;
+#X connect 56 0 53 0;
+#X connect 57 0 59 0;
+#X connect 57 0 51 0;

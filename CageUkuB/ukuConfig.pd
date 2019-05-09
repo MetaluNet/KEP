@@ -1,0 +1,16 @@
+#N canvas 1366 79 450 300 10;
+#X msg 260 61 c 2 c \$1;
+#X floatatom 260 38 5 0 0 0 - - -, f 5;
+#X msg 42 30 c 255;
+#X text 42 15 SAVE;
+#X obj 42 75 FMotor Uku 101 motor;
+#X obj 42 120 FPid Uku 110 speedpidB;
+#X obj 42 53 FruitSend Uku;
+#X msg 294 37 2;
+#X msg 324 36 20;
+#X obj 260 85 FruitSend Uku;
+#X connect 0 0 9 0;
+#X connect 1 0 0 0;
+#X connect 2 0 6 0;
+#X connect 7 0 0 0;
+#X connect 8 0 0 0;
